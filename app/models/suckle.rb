@@ -1,0 +1,2 @@
+class Suckle < ApplicationRecord
+end

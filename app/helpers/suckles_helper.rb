@@ -1,0 +1,2 @@
+module SucklesHelper
+end

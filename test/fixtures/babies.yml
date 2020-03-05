@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  baby_name: MyString
+  sex: false
+  birth: 2020-03-05
+  image_id: MyString
+
+two:
+  user_id: 1
+  baby_name: MyString
+  sex: false
+  birth: 2020-03-05
+  image_id: MyString

@@ -1,0 +1,2 @@
+class BodyTemperature < ApplicationRecord
+end

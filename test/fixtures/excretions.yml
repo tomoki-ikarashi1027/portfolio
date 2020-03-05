@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  baby_id: 1
+  shit: MyText
+  urine: MyText
+  shit_urine: MyText
+  image_id: MyString
+
+two:
+  user_id: 1
+  baby_id: 1
+  shit: MyText
+  urine: MyText
+  shit_urine: MyText
+  image_id: MyString
