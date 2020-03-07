@@ -3,7 +3,7 @@ class CreateBodyWeights < ActiveRecord::Migration[5.2]
     create_table :body_weights do |t|
       t.integer :user_id
       t.integer :baby_id
-
+      t.string :body
       t.timestamps
     end
   end

@@ -15,18 +15,18 @@ Rails.application.routes.draw do
  namespace :admin do
  	resources :comments, only:[:index, :show, :destroy]
  	resources :problems, only:[:index, :show, :destroy]
- 	resources :communitys, only:[:index, :show, :destroy]
+ 	resources :communities, only:[:index, :show, :destroy]
  	resources :expertises
- 	resources :categories, only: [:index, :new, :edit, :create, :update, :destroy]
+ 	resources :categories, except: [:show]
  end
 #会員側
- resources :babys
- resources :excretions, only: [:create, :destroy]
- resources :body_weights, only: [:create, :destroy]
- resources :suckles, only: [:create, :destroy]
- resources :body_temperatures, only: [:create, :destroy]
+ resources :babies, except: [:index, :destroy]
+ resources :excretions, only: [:new, :create, :edit, :update, :destroy]
+ resources :body_weights, only: [:new, :create, :edit, :update, :destroy]
+ resources :suckles, only: [:new, :create, :edit, :update, :destroy]
+ resources :body_temperatures, only: [:new, :create, :edit, :update, :destroy]
  resources :problems,only:  [:index, :new, :show, :create, :destroy]
- resources :communitys, only: [:index, :new, :show, :create, :destroy]
+ resources :communities, only: [:index, :new, :show, :create, :destroy]
  resources :comments, only: [:create, :destroy] do
  	resource :likes, only: [:create, :destroy]
  end

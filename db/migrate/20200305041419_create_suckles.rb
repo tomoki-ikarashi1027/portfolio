@@ -5,6 +5,7 @@ class CreateSuckles < ActiveRecord::Migration[5.2]
       t.integer :baby_id
       t.integer :mother_milk
       t.integer :milk_powder
+      t.string :body
 
       t.timestamps
     end

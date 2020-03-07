@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_121100) do
   create_table "body_temperatures", force: :cascade do |t|
     t.integer "user_id"
     t.integer "baby_id"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_121100) do
   create_table "body_weights", force: :cascade do |t|
     t.integer "user_id"
     t.integer "baby_id"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -120,6 +122,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_121100) do
     t.integer "baby_id"
     t.integer "mother_milk"
     t.integer "milk_powder"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
