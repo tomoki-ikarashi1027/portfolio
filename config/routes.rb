@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-    devise_for :admin, controllers: {
-    sessions:      'admin/sessions',
-    passwords:     'admin/passwords',
-    registrations: 'admin/registrations'
-    }
+  devise_for :admin, controllers: {
+  sessions:      'admin/sessions',
+  passwords:     'admin/passwords',
+  registrations: 'admin/registrations'
+  }
 	devise_for :customers, controllers: {
 	sessions:      'customers/sessions',
 	passwords:     'customers/passwords',
@@ -17,14 +17,15 @@ Rails.application.routes.draw do
  	resources :problems, only:[:index, :show, :destroy]
  	resources :communities, only:[:index, :show, :destroy]
  	resources :expertises
- 	resources :categories, except: [:show]
+ 	resources :categories, except: [:show, :new]
  end
 #会員側
- resources :babies, except: [:index, :destroy]
- resources :excretions, only: [:new, :create, :edit, :update, :destroy]
- resources :body_weights, only: [:new, :create, :edit, :update, :destroy]
- resources :suckles, only: [:new, :create, :edit, :update, :destroy]
- resources :body_temperatures, only: [:new, :create, :edit, :update, :destroy]
+ resources :babies, except: [:destroy] do
+   resource :excretions, only: [:new, :create, :edit, :update, :destroy]
+   resource :body_weights, only: [:new, :create, :edit, :update, :destroy]
+   resource :suckles, only: [:new, :create, :edit, :update, :destroy]
+   resource :body_temperatures, only: [:new, :create, :edit, :update, :destroy]
+ end
  resources :problems,only:  [:index, :new, :show, :create, :destroy]
  resources :communities, only: [:index, :new, :show, :create, :destroy]
  resources :comments, only: [:create, :destroy] do
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
  end
  resources :expertises, only: [:index, :show]
   resource :customer, only: [:show, :edit, :update, :destroy]
+ resources :select_babies, only: [:index]
 
 
  get 'homes/about' => "homes#about"

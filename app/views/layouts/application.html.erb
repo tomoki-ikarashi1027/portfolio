@@ -4,12 +4,23 @@
     <title>LovelyBaby</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/9f7238856e.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <nav>
+        <ul>
+          <% current_customer.babies.each do |baby| %>
+            <li>
+              <%= link_to baby.baby_name, baby_path(baby) %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header><!-- /header -->
     <%= yield %>
   </body>
 </html>

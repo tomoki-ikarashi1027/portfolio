@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_121100) do
+ActiveRecord::Schema.define(version: 2020_03_11_115613) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_121100) do
   end
 
   create_table "babies", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "customer_id"
     t.string "baby_name"
     t.integer "sex"
     t.date "birth"
@@ -30,17 +30,19 @@ ActiveRecord::Schema.define(version: 2020_03_05_121100) do
   end
 
   create_table "body_temperatures", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "customer_id"
     t.integer "baby_id"
-    t.string "body"
+    t.integer "body"
+    t.time "create_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "body_weights", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "customer_id"
     t.integer "baby_id"
-    t.string "body"
+    t.integer "body"
+    t.time "create_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_121100) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "customer_id"
     t.integer "problem_id"
     t.text "body"
     t.datetime "created_at", null: false
@@ -74,55 +76,43 @@ ActiveRecord::Schema.define(version: 2020_03_05_121100) do
   end
 
   create_table "excretions", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "customer_id"
     t.integer "baby_id"
-    t.text "shit"
-    t.text "urine"
-    t.text "shit_urine"
-    t.string "image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "expertises", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
     t.text "body"
     t.string "image_id"
+    t.time "create_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "only"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "customer_id"
     t.integer "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "problems", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "category_id"
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "requests", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "suckles", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "milk_powders", force: :cascade do |t|
     t.integer "baby_id"
-    t.integer "mother_milk"
-    t.integer "milk_powder"
-    t.string "body"
+    t.integer "customer_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mother_milks", force: :cascade do |t|
+    t.integer "baby_id"
+    t.integer "customer_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "problems", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "category_id"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

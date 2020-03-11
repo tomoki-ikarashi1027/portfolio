@@ -1,0 +1,2 @@
+class MotherMilk < ApplicationRecord
+end

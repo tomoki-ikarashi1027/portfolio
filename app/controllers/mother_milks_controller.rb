@@ -1,0 +1,2 @@
+class MotherMilksController < ApplicationController
+end

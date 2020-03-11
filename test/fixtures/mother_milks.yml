@@ -1,13 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
   baby_id: 1
-  mother_milk: 1
-  milk_powder: 1
+  customer_id: 1
+  body: MyText
 
 two:
-  user_id: 1
   baby_id: 1
-  mother_milk: 1
-  milk_powder: 1
+  customer_id: 1
+  body: MyText

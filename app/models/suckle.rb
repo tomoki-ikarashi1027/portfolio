@@ -1,2 +1,0 @@
-class Suckle < ApplicationRecord
-end

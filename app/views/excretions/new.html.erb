@@ -1,0 +1,37 @@
+<h2>オシメ</h2>
+<p id="RealtimeClockArea2"></p>
+        <script src="application.js"></script>
+
+<%= form_for(@excretion) do |f| %>
+
+	<!-- 	<button type="button" >
+		 <i class="fas fa-poo" id="excretion1"></i>
+		</button>
+
+		<button type="button">
+		  <i class="fas fa-baby" id="excretion2"></i>
+		</button>
+
+		<button type="button">
+		 <i class="fas fa-poo" id="excretion3"></i>
+		</button><br> -->
+	<i class="fas fa-poo" ></i>
+	<%=f.radio_button :only, 'excretion1' %>
+	<i class="fas fa-baby" ></i>
+	<%=f.radio_button :only, 'excretion2' %>
+	<i class="fas fa-poo" ></i><br>
+	<%=f.radio_button :only, 'excretion3' %>
+
+
+<!--  <%= radio_button_tag("only", "excretion1") %><i class="fas fa-poo" ></i>うんこ<br> -->
+<!-- 	<input type="radio" name="osime" value="excretion1" id="apple"><i class="fas fa-poo" ></i>
+	 -->
+	<style>
+	 input[type=radio] {
+	 display: none;
+	 }
+	</style>
+
+		<%= f.text_area :body %><br>
+		<%= f.submit '保存する' %>
+<% end %>

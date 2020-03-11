@@ -13,6 +13,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery 
+//= require jquery_ujs 
 //= require_tree .
 function set2fig(num) {
    // 桁数が1桁だったら先頭に0を加えて2桁に調整する
@@ -30,3 +32,28 @@ function showClock2() {
    document.getElementById("RealtimeClockArea2").innerHTML = msg;
 }
 setInterval('showClock2()',1000);
+
+
+$(function(){
+    $('.fas.fa-poo').on('click', function(){
+      console.log("aa")
+         $('.fas.fa-poo').css('color','black');
+         $('.fas.fa-baby').css('color','black');
+        $(this).css('color','red');
+        $(this).next("input[type=radio]").attr("checked", true)
+    });
+
+    $('.fas.fa-baby').on('click', function(){
+      console.log("aa")
+         $('.fas.fa-poo').css('color','black');
+        $(this).css('color','red');
+    });
+});
+
+// $(function(){
+//     $('.fas.fa-poo').on('click', function(){
+//       console.log("aa")
+//          $('.fas.fa-poo').css('color','black');
+//         $(this).css('color','red');
+//     });
+// });

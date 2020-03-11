@@ -1,0 +1,17 @@
+<h2>赤ちゃんの選択</h2>
+	 <label>赤ちゃんの名前</label>
+	 <% @babies.each do |baby| %>
+	 <td><%= baby.baby_name %></td>
+	 <% end %>
+
+
+	   <%= link_to "赤ちゃん追加", new_baby_path	 %>
+	   <%= link_to "赤ちゃん編集", edit_baby_path(@babies)%>
+	   <%= link_to "体重", new_baby_body_weight_path(@baby)%>
+
+
+	   	<!--  <%= form_with(model: @baby, url:babies_path,local: true) do |f| %>
+	   <%= f.select :baby_id, Baby.all.map { |baby| [baby.baby_name, baby.id] } %>
+	   <%= f.submit '赤ちゃんを変える' %>
+	   <% end %>
+ -->
