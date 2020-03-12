@@ -1,5 +1,4 @@
 class Excretion < ApplicationRecord
-	belongs_to :user
 	belongs_to :baby
 	
 	enum onlies: {

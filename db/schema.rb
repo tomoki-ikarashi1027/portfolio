@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
   end
 
   create_table "body_temperatures", force: :cascade do |t|
-    t.integer "customer_id"
     t.integer "baby_id"
     t.integer "body"
     t.time "create_time"
@@ -39,7 +38,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
   end
 
   create_table "body_weights", force: :cascade do |t|
-    t.integer "customer_id"
     t.integer "baby_id"
     t.integer "body"
     t.time "create_time"
@@ -76,7 +74,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
   end
 
   create_table "excretions", force: :cascade do |t|
-    t.integer "customer_id"
     t.integer "baby_id"
     t.text "body"
     t.string "image_id"
@@ -95,7 +92,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
 
   create_table "milk_powders", force: :cascade do |t|
     t.integer "baby_id"
-    t.integer "customer_id"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -103,7 +99,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
 
   create_table "mother_milks", force: :cascade do |t|
     t.integer "baby_id"
-    t.integer "customer_id"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

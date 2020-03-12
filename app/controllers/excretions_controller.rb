@@ -1,26 +1,27 @@
 class ExcretionsController < ApplicationController
 	before_action :authenticate_customer!
 	def new
+		@baby = Baby.find(params[:baby_id])
 		@excretion = Excretion.new
 		@enum = Excretion.onlies.keys
 	end
 	def create
+		@baby = Baby.find(params[:baby_id])
 		# @excretion = current_user.excretions.build(excretions_params)
-		@excretion = Excretion.new(excretion_params)
-		@excretion.baby_id  = current_customer.select_baby.id
+		@excretion = @baby.excretion.new(excretion_params)
 		@excretion.save
-		redirect_to  edit_excretion_path(@excretion.id)
+		redirect_to  edit_baby_excretions_path(@excretion.id)
 	end
 	def edit
-		@excretion = Excretion.find(params[:id])
+		@excretion = Excretion.find(params[:baby_id])
 	end
 	def update
-		@excretion = Excretion.find(params[:id])
+		@excretion = Excretion.find(params[:baby_id])
 		@excretion.save
-		redirect_to  edit_excretion_path(@excretion.id)
+		redirect_to  baby_path(@excretion.id)
 	end
 	def destroy
-		@excretion = Excretion.find(params[:id])
+		@excretion = Excretion.find(params[:baby_id])
 		@excretion.destroy
 	end
 	private

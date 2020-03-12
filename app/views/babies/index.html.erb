@@ -7,7 +7,8 @@
 
 	   <%= link_to "赤ちゃん追加", new_baby_path	 %>
 	   <%= link_to "赤ちゃん編集", edit_baby_path(@babies)%>
-	   <%= link_to "体重", new_baby_body_weight_path(@baby)%>
+	   <%= link_to "体重", new_baby_body_weights_path(@baby)%>
+	   <%= link_to "体重", edit_baby_body_weight_path(@baby,@body_weight)%>
 
 
 	   	<!--  <%= form_with(model: @baby, url:babies_path,local: true) do |f| %>

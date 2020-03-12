@@ -1,7 +1,7 @@
 class BabiesController < ApplicationController
 	before_action :authenticate_customer!
 	def index
-		@babies = current_customer.babies
+	    @babies = current_customer.babies
 	end
 	def new
 		@baby = Baby.new

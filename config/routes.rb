@@ -23,8 +23,9 @@ Rails.application.routes.draw do
  resources :babies, except: [:destroy] do
    resource :excretions, only: [:new, :create, :edit, :update, :destroy]
    resource :body_weights, only: [:new, :create, :edit, :update, :destroy]
-   resource :suckles, only: [:new, :create, :edit, :update, :destroy]
    resource :body_temperatures, only: [:new, :create, :edit, :update, :destroy]
+   resource :mother_milks, only: [:new, :create, :edit, :update, :destroy]
+   resource :milk_powders, only: [:new, :create, :edit, :update, :destroy]
  end
  resources :problems,only:  [:index, :new, :show, :create, :destroy]
  resources :communities, only: [:index, :new, :show, :create, :destroy]

@@ -2,7 +2,7 @@
 
 <p id="RealtimeClockArea2"></p>
 
-<%= form_for(@body_temperature) do |f| %>
+<%= form_for [@baby,@body_temperature] do |f| %>
 	<%= f.text_field :body %>℃<br>
 	<%= f.submit '保存する' %>
 	<% end %>

@@ -11,15 +11,19 @@
 
   <body>
     <header>
+      <% if customer_signed_in? && request.fullpath.index("/admin/") == nil %>
       <nav>
         <ul>
           <% current_customer.babies.each do |baby| %>
             <li>
               <%= link_to baby.baby_name, baby_path(baby) %>
             </li>
+            <else>
+              <h4>ログイン未</h4>
           <% end %>
         </ul>
       </nav>
+      <% end %>
     </header><!-- /header -->
     <%= yield %>
   </body>

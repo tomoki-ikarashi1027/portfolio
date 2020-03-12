@@ -1,5 +1,6 @@
 <h2>体重・編集</h2>
-<%= form_for(@body_weight) do |f| %>
-	<%= f.text_field :body %>
+
+<%= form_for [@baby, @body_weight] , url:baby_body_weights_path do |f| %>
+	<%= f.text_field :body %><br>
 	<%= f.submit '保存する' %>
 <% end %>
