@@ -6,19 +6,21 @@ class ExcretionsController < ApplicationController
 		@enum = Excretion.onlies.keys
 	end
 	def create
+		binding.pry
 		@baby = Baby.find(params[:baby_id])
 		# @excretion = current_user.excretions.build(excretions_params)
-		@excretion = @baby.excretion.new(excretion_params)
+		@excretion = @baby.excretions.new(excretion_params)
 		@excretion.save
-		redirect_to  edit_baby_excretions_path(@excretion.id)
+		redirect_to  edit_baby_excretions_path(@baby)
 	end
 	def edit
 		@excretion = Excretion.find(params[:baby_id])
 	end
 	def update
+	    @baby = Baby.find(params[:baby_id])
 		@excretion = Excretion.find(params[:baby_id])
 		@excretion.save
-		redirect_to  baby_path(@excretion.id)
+		redirect_to  baby_path(@baby)
 	end
 	def destroy
 		@excretion = Excretion.find(params[:baby_id])

@@ -8,15 +8,16 @@ class BodyWeightsController < ApplicationController
 		@baby = Baby.find(params[:baby_id])
 		@body_weight = @baby.body_weights.new(body_weight_params)
 		@body_weight.save
-		redirect_to edit_baby_body_weights_path(@body_weight.id)
+		redirect_to edit_baby_body_weights_path(@baby)
 	end
 	def edit
 		@body_weight = BodyWeight.find(params[:baby_id])
 	end
 	def update
+		@baby = Baby.find(params[:baby_id])
 		@body_weight = BodyWeight.find(params[:baby_id])
 		if @body_weight.update(body_weight_params)
-			redirect_to baby_path(@body_weight.id)
+			redirect_to baby_path(@baby)
 		end
 	end
 	def destroy

@@ -5,24 +5,24 @@ class MotherMilksController < ApplicationController
 	end
 	def create
 		@baby = Baby.find(params[:baby_id])
-		@mother_milk = current_customer.mother_milk.new(mother_milk_params)
-		@mother_milk.baby_id = baby.id
+		@mother_milk = @baby.mother_milks.new(mother_milk_params)
 		@mother_milk.save
-		redirect_to edit_mother_milk_path(@mother_milk.id)
+		redirect_to edit_baby_mother_milks_path(@baby)
 	end
 	def edit
-		@mother_milk = MotherMilk.find(params[:id])
+		@mother_milk = MotherMilk.find(params[:baby_id])
 	end
 	def update
-		@mother_milk = MotherMilk.find(params[:id])
+		@baby = Baby.find(params[:baby_id])
+		@mother_milk = MotherMilk.find(params[:baby_id])
 		@mother_milk.update(mother_milk_params)
-		redirect_to edit_mother_milk_path(@mother_milk.id)
+		redirect_to baby_path(@baby)
 	end
 	def destroy
 	end
 
 	private
 	def mother_milk_params
-		params.require(:mother_milk).permit(:baby_id, :customer_id, :body)
+		params.require(:mother_milk).permit(:baby_id, :body)
 	end
 end

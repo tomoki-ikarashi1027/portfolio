@@ -1,11 +1,11 @@
 <h2>みんなのお悩み</h2>
+<%= link_to "相談する",new_problem_path  %>
 <table>
 	<tbody>
 	 <% @problems.each do |problem| %>
 <tr>
-<td><%= link_to @problems.body,problem_path(problem) %></td>
+<td><%= link_to problem.body,problem_path(problem) %></td>
 </tr>
 </tbody>
 </table>
 <% end %>
-<%= link_to "相談する",new_problem_path  %>

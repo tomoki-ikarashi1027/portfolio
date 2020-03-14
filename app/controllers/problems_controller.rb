@@ -8,12 +8,12 @@ class ProblemsController < ApplicationController
 	end
 	def show
 		@problem = Problem.find(params[:id])
+		
 
 	end
 	def create
 		@problem = Problem.new(problem_params)
 		@problem.customer_id = current_customer.id
-		binding.pry
 		if @problem.save
 		flash[:notice] = "投稿しました"
 		redirect_to problems_path

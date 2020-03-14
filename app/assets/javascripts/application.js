@@ -12,9 +12,9 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
-//= require jquery 
-//= require jquery_ujs 
+//= require jquery
+
+//= require jquery_ujs
 //= require_tree .
 function set2fig(num) {
    // 桁数が1桁だったら先頭に0を加えて2桁に調整する
@@ -47,6 +47,7 @@ $(function(){
       console.log("aa")
          $('.fas.fa-poo').css('color','black');
         $(this).css('color','red');
+        $(this).next("input[type=radio]").attr("checked", true)
     });
 });
 
