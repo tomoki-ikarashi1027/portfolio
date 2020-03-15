@@ -26,6 +26,7 @@ Rails.application.routes.draw do
    resource :body_temperatures, only: [:new, :create, :edit, :update, :destroy]
    resource :mother_milks, only: [:new, :create, :edit, :update, :destroy]
    resource :milk_powders, only: [:new, :create, :edit, :update, :destroy]
+   get 'history', on: :member
  end
  resources :problems,only:  [:index, :new, :show, :create, :destroy]
  resources :communities, only: [:index, :new, :show, :create, :destroy]
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
  	resource :likes, only: [:create, :destroy]
  end
  resources :expertises, only: [:index, :show]
-  resource :customer, only: [:show, :edit, :update, :destroy]
+ resource :customer, only: [:show, :edit, :update, :destroy]
  resources :select_babies, only: [:index]
 
 

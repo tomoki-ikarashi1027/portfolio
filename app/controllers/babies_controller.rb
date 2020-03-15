@@ -26,6 +26,17 @@ class BabiesController < ApplicationController
 			redirect_to edit_baby_path(@baby.id)
 		end
 	end
+	def history
+		@baby = Baby.find(params[:id])
+		@date = params[:date] || Time.zone.today
+		@body_temperatures = BodyTemperature.where(created_at: @date.in_time_zone.all_day)
+		@body_weights = BodyWeight.where(created_at: @date.in_time_zone.all_day)
+		@excretions = Excretion.where(created_at: @date.in_time_zone.all_day)
+		@milk_powders = MilkPowder.where(created_at: @date.in_time_zone.all_day)
+		@mother_milks = MotherMilk.where(created_at: @date.in_time_zone.all_day)
+
+		# 　このあと描画
+	end
 	private
 	def baby_params
 		params.require(:baby).permit(:sex, :birth, :baby_name, :customer_id)

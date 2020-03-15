@@ -58,3 +58,20 @@ $(function(){
 //         $(this).css('color','red');
 //     });
 // });
+
+document.getElementById("days").style.display ="none";
+
+function myfunc(value) {
+ var days = document.getElementById("days");
+
+  if(days.style.display=="block"){
+    // noneで非表示
+    days.style.display ="none";
+  }else{
+    // blockで表示
+    days.style.display ="block";
+  }
+}
+
+
+

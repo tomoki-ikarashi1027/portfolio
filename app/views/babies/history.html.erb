@@ -1,0 +1,44 @@
+<%= form_with url: history_baby_path(@baby), method: :get, local: true do |f| %>
+     <%= f.date_field :date, value: @date %>
+     <%= f.submit "検索する" %>
+<% end %>
+
+<!-- <div id='history'>aaa
+</div> -->
+
+
+<table>
+	<th>記録</th>
+	<% @body_temperatures.each do |body_temperature| %>
+	<tr>
+		<td>体温<%= body_temperature.body %>℃</td>
+		<td><%= link_to "編集する", edit_baby_body_temperatures_path(@baby) %>
+		<% end %>
+	</tr>
+
+		<% @body_weights.each do |body_weight| %>
+	<tr>
+		<td>体重<%= body_weight.body %>KG</td>
+		<td><%= link_to "編集する", edit_baby_body_weights_path(@baby) %></td>
+		<% end %>
+	</tr>
+
+	<% @excretions.each do |excretion| %>
+	<tr>
+		<td>排泄<%= excretion.body %></td>
+		<td><%= link_to "編集する", edit_baby_excretions_path(@baby) %></td>
+		<% end %>
+	</tr>
+	<% @milk_powders.each do |milk_powder| %>
+	<tr>
+		<td>ミルク<%= milk_powder.body %>CC</td>
+		<td><%= link_to "編集する", edit_baby_milk_powders_path(@baby) %></td>
+		<% end %>
+	</tr>
+	<% @mother_milks.each do |mother_milk| %>
+	<tr>
+		<td>母乳<%= mother_milk.body %>CC</td>
+		<td><%= link_to "編集する", edit_baby_mother_milks_path(@baby) %></td>
+	</tr>
+	<% end %>
+</table>

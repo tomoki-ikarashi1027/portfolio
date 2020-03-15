@@ -20,3 +20,19 @@
 .excretion-button1 {
   background: #21759b;
 }
+
+
+
+
+//ボックス部分
+input[type="date"] {
+  padding: 10px;
+  text-align: center;
+}
+
+input[type="date"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+input[type="date"]::-webkit-clear-button{
+  -webkit-appearance: none;
+}
