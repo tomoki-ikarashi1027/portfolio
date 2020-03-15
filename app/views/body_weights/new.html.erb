@@ -1,0 +1,8 @@
+<h2>体重</h2>
+<p id="RealtimeClockArea2"></p>
+
+<%= form_for [@baby, @body_weight] do |f| %>
+
+	<%= f.text_field :body %>kg<br>
+	<%= f.submit '保存する' %>
+<% end %>

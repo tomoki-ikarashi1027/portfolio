@@ -1,0 +1,2 @@
+module MilkPowdersHelper
+end

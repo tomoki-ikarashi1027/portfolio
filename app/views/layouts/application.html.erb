@@ -4,12 +4,38 @@
     <title>LovelyBaby</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/9f7238856e.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+     <nav>
+       <ul class="nav navbar-nav navbar-right">
+
+      <% if customer_signed_in? && request.fullpath.index("/admin/") == nil %>
+            <% current_customer.babies.each do |baby| %>
+              <li>
+                <%= link_to baby.baby_name, baby_path(baby) %>
+              </li>
+                <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+            <% end %>
+          </ul>
+      <% elsif admin_signed_in? %>
+      　<li class="nav-list-item">
+      　<%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+      <% else %>
+        <li class="nav-list-item">
+          <%= link_to "ログイン", new_customer_session_path %>
+        </li>
+        <li class="nav-list-item">
+          <%= link_to "管理者の方はこちら", new_admin_session_path %>
+         </li>
+     </nav>
+     <% end %>
+   </header>
+    </header><!-- /header -->
     <%= yield %>
   </body>
 </html>
