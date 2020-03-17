@@ -28,11 +28,12 @@ Rails.application.routes.draw do
    resource :milk_powders, only: [:new, :create, :edit, :update, :destroy]
    get 'history', on: :member
  end
- resources :problems,only:  [:index, :new, :show, :create, :destroy]
- resources :communities, only: [:index, :new, :show, :create, :destroy]
- resources :comments, only: [:create, :destroy] do
- 	resource :likes, only: [:create, :destroy]
- end
+   resources :communities, only: [:index, :new, :show, :create, :destroy]
+   resources :problems,only:  [:index, :new, :show, :create, :destroy] do
+   end
+  resources :comments, only: [:create, :destroy] do
+   	resource :likes, only: [:create, :destroy]
+   end
  resources :expertises, only: [:index, :show]
  resource :customer, only: [:show, :edit, :update, :destroy]
  resources :select_babies, only: [:index]

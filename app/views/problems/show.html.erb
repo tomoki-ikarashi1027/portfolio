@@ -1,5 +1,36 @@
 <h2>お悩み詳細</h2>
+<table class="table">
+	<tr>
+		<td><%= @problem.category.problem_name %></td>
+	</tr>
+	<tr>
+		<td><%= @problem.body %></td>
+	</tr>
+		<td>コメント数：<%= @problem.comments.count %></td>
+	</tr>
+</table>
+<table>
+	<h3>コメント</h3>
+		<%= form_for (@comment) ,url: comments_path  do |f| %>
+		<%= f.text_area :body %>
+		<%= f.hidden_field :problem_id, :value => @problem.id %>
+		<%= f.submit "投稿する" %>
+		<% end %>
 
-<td><%= @problem.category.problem_name %></td>
-	<td><%= @problem.body %></td>
+	<% @comments.each do |comment| %>
+	<tr>
+		<td><%= comment.body %></td>
+		<!--   <% if comment.favorited_by?(current_customer) %>
+		   <td><%=link_to "#", comment_likes_path(comment.id), method: :delete, remote: true %>
+        <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i></td><td><%= comment.likes.count %></td>
+    <% else %>
+        <td><%=link_to "#", comment_likes_path(comment.id), method: :post, remote: true %>
+        <i class="fa fa-heart-o" aria-hidden="true"></i></td><td><%= comment.likes.count %></td>
+        ] <% end %> -->
 
+        <td id="likes_buttons_<%= comment.id %>">
+	<%= render partial: 'likes/like', locals: { comment: comment} %></td>
+		<td><%= link_to "削除",  comment_path(comment), method: :delete %></td>
+	<% end %>
+	</tr>
+</table>

@@ -8,8 +8,8 @@ class ProblemsController < ApplicationController
 	end
 	def show
 		@problem = Problem.find(params[:id])
-		
-
+		@comment = Comment.new
+		@comments = @problem.comments
 	end
 	def create
 		@problem = Problem.new(problem_params)
