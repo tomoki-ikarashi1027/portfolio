@@ -7,9 +7,10 @@ class ProblemsController < ApplicationController
 		@problem = Problem.new
 	end
 	def show
+		# @baby = Baby.find(params[:baby_id])
 		@problem = Problem.find(params[:id])
-		
-
+		@comment = Comment.new
+		@comments = @problem.comments
 	end
 	def create
 		@problem = Problem.new(problem_params)

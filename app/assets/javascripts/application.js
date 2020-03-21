@@ -10,12 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
-//= require jquery
 
+
+//= require jquery
 //= require jquery_ujs
+//= require activestorage
 //= require_tree .
+//= require turbolinks
+
+
 function set2fig(num) {
    // 桁数が1桁だったら先頭に0を加えて2桁に調整する
    var ret;
@@ -51,13 +54,13 @@ $(function(){
     });
 });
 
-// $(function(){
-//     $('.fas.fa-poo').on('click', function(){
-//       console.log("aa")
-//          $('.fas.fa-poo').css('color','black');
-//         $(this).css('color','red');
-//     });
-// });
+$(function(){
+    $('.fas.fa-poo').on('click', function(){
+      console.log("aa")
+         $('.fas.fa-poo').css('color','black');
+        $(this).css('color','red');
+    });
+});
 
 document.getElementById("days").style.display ="none";
 
@@ -72,6 +75,4 @@ function myfunc(value) {
     days.style.display ="block";
   }
 }
-
-
 

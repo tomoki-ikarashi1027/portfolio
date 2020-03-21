@@ -1,5 +1,8 @@
 <h2>みんなのお悩み</h2>
 <%= link_to "相談する",new_problem_path  %>
+<%= link_to :back do %>
+  <label>戻る</label>
+<% end %>
 <table>
 	<tbody>
 	 <% @problems.each do |problem| %>

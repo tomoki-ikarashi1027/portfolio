@@ -1,0 +1,7 @@
+<!-- 
+    <% if current_page?(controller: 'babies', action: 'show') %>
+        <%= @baby.baby_name %> -->
+              <li>
+                <%#= link_to current_customer.babies.last.baby_name , babies_path(current_customer.babies.last) %>
+
+              </li>

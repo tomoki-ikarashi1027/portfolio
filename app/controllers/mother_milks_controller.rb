@@ -7,7 +7,7 @@ class MotherMilksController < ApplicationController
 		@baby = Baby.find(params[:baby_id])
 		@mother_milk = @baby.mother_milks.new(mother_milk_params)
 		@mother_milk.save
-		redirect_to edit_baby_mother_milks_path(@baby)
+		redirect_to baby_path(@baby)
 	end
 	def edit
 		@mother_milk = MotherMilk.find(params[:baby_id])
@@ -19,6 +19,9 @@ class MotherMilksController < ApplicationController
 		redirect_to baby_path(@baby)
 	end
 	def destroy
+		@mother_milk = MotherMilk.find(params[:baby_id])
+		@mother_milk.destroy
+		redirect_back(fallback_location: root_path)
 	end
 
 	private
