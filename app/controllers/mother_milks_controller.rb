@@ -13,8 +13,8 @@ class MotherMilksController < ApplicationController
 		@mother_milk = MotherMilk.find(params[:baby_id])
 	end
 	def update
-		@baby = Baby.find(params[:baby_id])
-		@mother_milk = MotherMilk.find(params[:baby_id])
+		@baby = Baby.find(params[:id])
+		@mother_milk = MotherMilk.find(params[:id])
 		@mother_milk.update(mother_milk_params)
 		redirect_to baby_path(@baby)
 	end

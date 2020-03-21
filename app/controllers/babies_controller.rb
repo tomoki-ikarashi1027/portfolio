@@ -29,11 +29,12 @@ class BabiesController < ApplicationController
 	def history
 		@baby = Baby.find(params[:id])
 		@date = params[:date] || Time.zone.today
-		@body_temperatures = BodyTemperature.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
-		@body_weights = BodyWeight.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
-		@excretions = Excretion.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
-		@milk_powders = MilkPowder.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
-		@mother_milks = MotherMilk.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
+		@body_temperatures = BodyTemperature.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('body_temperatures.created_at asc')
+		@body_weights = BodyWeight.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('body_weights.created_at asc')
+		@excretions = Excretion.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('excretions.created_at asc')
+		@milk_powders = MilkPowder.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('milk_powders.created_at asc')
+		@mother_milks = MotherMilk.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('mother_milks.created_at asc')
+		@sorted = (@mother_milks + @body_weights + @excretions + @milk_powders + @mother_milks).sort_by {|record| record.created_at}
 
 		# 　このあと描画
 	end
@@ -42,3 +43,4 @@ class BabiesController < ApplicationController
 		params.require(:baby).permit(:sex, :birth, :baby_name, :customer_id)
  	end
 end
+

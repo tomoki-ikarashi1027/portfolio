@@ -1,0 +1,15 @@
+<h2>みんなのお悩み</h2>
+<%= link_to :back do %>
+  	<label>戻る</label>
+<% end %>
+<table>
+	<tbody>
+	 <% @problems.each do |problem| %>
+		<tr>
+			<td><%= link_to problem.body,admin_problem_path(problem) %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+
+ <%= link_to "コメント", admin_comments_path %>

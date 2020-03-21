@@ -15,12 +15,10 @@ Rails.application.routes.draw do
  namespace :admin do
  	resources :comments, only:[:index, :show, :destroy]
  	resources :problems, only:[:index, :show, :destroy]
- 	resources :communities, only:[:index, :show, :destroy]
- 	resources :expertises
  	resources :categories, except: [:show, :new]
  end
 #会員側
- resources :babies, except: [:destroy] do
+ resources  :babies, except: [:destroy] do
    resource :excretions, only: [:new, :create, :edit, :update, :destroy]
    resource :body_weights, only: [:new, :create, :edit, :update, :destroy]
    resource :body_temperatures, only: [:new, :create, :edit, :update, :destroy]

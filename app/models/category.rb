@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-	has_many :problem, dependent: :destroy
+	has_many :problems, dependent: :destroy
 end
