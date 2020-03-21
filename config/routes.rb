@@ -29,9 +29,8 @@ Rails.application.routes.draw do
    get 'history', on: :member
  end
    resources :communities, only: [:index, :new, :show, :create, :destroy]
-   resources :problems,only:  [:index, :new, :show, :create, :destroy] do
-   end
-  resources :comments, only: [:create, :destroy] do
+   resources :problems,only:  [:index, :new, :show, :create, :destroy]
+   resources :comments, only: [:create, :destroy] do
    	resource :likes, only: [:create, :destroy]
    end
  resources :expertises, only: [:index, :show]

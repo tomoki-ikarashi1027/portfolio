@@ -7,7 +7,7 @@ class MilkPowdersController < ApplicationController
 		@baby = Baby.find(params[:baby_id])
 		@milk_powder = @baby.milk_powders.new(milk_powder_params)
 		@milk_powder.save
-		redirect_to edit_baby_milk_powders_path(@baby)
+		redirect_to baby_path(@baby)
 	end
 	def edit
 		@milk_powder = MilkPowder.find(params[:baby_id])
@@ -19,6 +19,9 @@ class MilkPowdersController < ApplicationController
 		redirect_to baby_path(@baby)
 	end
 	def destroy
+		@milk_powder = MilkPowder.find(params[:baby_id])
+		@milk_powder.destroy
+		redirect_back(fallback_location: root_path)
 	end
 	private
 	def milk_powder_params

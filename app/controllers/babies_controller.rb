@@ -8,7 +8,7 @@ class BabiesController < ApplicationController
 	end
 	def show
 		@baby = Baby.find(params[:id])
-		@babys = Baby.all
+		@babies = Baby.all
 	    @body_weight = BodyWeight.new
 	end
 	def create
@@ -29,11 +29,11 @@ class BabiesController < ApplicationController
 	def history
 		@baby = Baby.find(params[:id])
 		@date = params[:date] || Time.zone.today
-		@body_temperatures = BodyTemperature.where(created_at: @date.in_time_zone.all_day)
-		@body_weights = BodyWeight.where(created_at: @date.in_time_zone.all_day)
-		@excretions = Excretion.where(created_at: @date.in_time_zone.all_day)
-		@milk_powders = MilkPowder.where(created_at: @date.in_time_zone.all_day)
-		@mother_milks = MotherMilk.where(created_at: @date.in_time_zone.all_day)
+		@body_temperatures = BodyTemperature.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
+		@body_weights = BodyWeight.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
+		@excretions = Excretion.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
+		@milk_powders = MilkPowder.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
+		@mother_milks = MotherMilk.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby)
 
 		# 　このあと描画
 	end

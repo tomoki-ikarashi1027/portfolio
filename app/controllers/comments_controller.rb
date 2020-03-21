@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :authenticate_customer!
 	def create
-
 		@problem = Problem.find(params[:comment][:problem_id])
 		@comment = @problem.comments.new(comment_params)
 		@comment.customer_id = current_customer.id

@@ -1,4 +1,5 @@
 <h2>お悩み詳細</h2>
+<%= link_to "相談する",new_problem_path  %>
 <table class="table">
 	<tr>
 		<td><%= @problem.category.problem_name %></td>
@@ -29,8 +30,11 @@
         ] <% end %> -->
 
         <td id="likes_buttons_<%= comment.id %>">
-	<%= render partial: 'likes/like', locals: { comment: comment} %></td>
+			<%= render partial: 'likes/like', locals: { comment: comment} %>
+		</td>
+		<% if comment.customer_id == current_customer.id %>
 		<td><%= link_to "削除",  comment_path(comment), method: :delete %></td>
+		<% end %>
 	<% end %>
 	</tr>
 </table>
