@@ -1,0 +1,7 @@
+SELECT 
+	"body_weights".* 
+FROM "body_weights" 
+WHERE 
+	"body_weights"."created_at" BETWEEN '2020-03-19 15:00:00' AND '2020-03-20 14:59:59.999999'
+AND 
+	"body_weights"."baby_id" = 1

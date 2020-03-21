@@ -1,9 +1,5 @@
 class Excretion < ApplicationRecord
 	belongs_to :baby
-	
-	enum onlies: {
-		excretion1: "おしっこ",
-		excretion2: "うんち",
-		excretion3: "おしっこ&うんち"
-	}
+
+	enum only: {"うんち" =>0, "おしっこ" =>1, "どっちも" =>2 }
 end

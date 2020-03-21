@@ -13,7 +13,7 @@ class MilkPowdersController < ApplicationController
 		@milk_powder = MilkPowder.find(params[:baby_id])
 	end
 	def update
-		@baby = Baby.find(params[:baby_id])
+		@baby = Baby.find(params[:id])
 		@milk_powder = MilkPowder.find(params[:baby_id])
 		@milk_powder.update(milk_powder_params)
 		redirect_to baby_path(@baby)

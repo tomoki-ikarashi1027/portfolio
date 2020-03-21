@@ -9,6 +9,12 @@
 
 <table>
 	<th>記録</th>
+<!-- 	<% @sorted.each do |item| %>
+	<tr>
+		<td><%= item.created_at.strftime("%H:%M") %></td>
+	</tr>
+	<% end %> -->
+
 	<% @body_temperatures.each do |body_temperature| %>
 		<tr>
 			<td><%= body_temperature.created_at.strftime("%H:%M") %></td>
@@ -30,8 +36,11 @@
 	<% @excretions.each do |excretion| %>
 		<tr>
 			<td><%= excretion.created_at.strftime("%H:%M") %></td>
-			<td>排泄<%= excretion.body %></td>
-			<td><%= link_to "編集", edit_baby_excretions_path(@baby,@excretions) %></td>
+			<td>排泄<%= excretion.only %></td>
+			<% if excretion.body.present? %>
+			<td>内容<%= excretion.body %></td>
+			<% end %>
+			<td><%= link_to "編集", edit_baby_excretions_path(@baby,baby_id: excretion.id ) %></td>
 			<td><%= link_to "削除", baby_excretions_path(excretion), method: :delete %></td>
 		</tr>
 	<% end %>
@@ -39,7 +48,7 @@
 		<tr>
 			<td><%= milk_powder.created_at.strftime("%H:%M") %></td>
 			<td>ミルク<%= milk_powder.body %>CC</td>
-			<td><%= link_to "編集", edit_baby_milk_powders_path(@baby,@milk_powders) %></td>
+			<td><%= link_to "編集", edit_baby_milk_powders_path(@baby,baby_id: milk_powder.id ) %></td>
 			<td><%= link_to "削除", baby_milk_powders_path(milk_powder), method: :delete %></td>
 		</tr>
 	<% end %>
@@ -47,7 +56,7 @@
 		<tr>
 			<td><%= mother_milk.created_at.strftime("%H:%M") %></td>
 			<td>母乳<%= mother_milk.body %>CC</td>
-			<td><%= link_to "編集", edit_baby_mother_milks_path(@baby,@mother_milks) %></td>
+			<td><%= link_to "編集", edit_baby_mother_milks_path(@baby,baby_id: mother_milk.id ) %></td>
 			<td><%= link_to "削除", baby_mother_milks_path(mother_milk), method: :delete %></td>
 		</tr>
 	<% end %>

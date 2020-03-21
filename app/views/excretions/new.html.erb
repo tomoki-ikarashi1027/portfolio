@@ -6,11 +6,11 @@
 
 
 	<i class="fas fa-poo" ></i>
-	<%=f.radio_button :only, 'excretion1' %>うんち
+	<%=f.radio_button :only, "うんち" ,data: {"tubolinks" => false} %>うんち
 	<i class="fas fa-baby" ></i>
-	<%=f.radio_button :only, 'excretion2' %>おしっこ
-	<i class="fas fa-poo" ></i><br>
-	<%=f.radio_button :only, 'excretion3' %>両方
+	<%=f.radio_button :only, "おしっこ" %>おしっこ
+	<i class="fas fa-poo" ></i>
+	<%=f.radio_button :only, "どっちも" %>どっちも<br>
 
 	<style>
 		 input[type=radio] {

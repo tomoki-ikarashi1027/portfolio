@@ -1,5 +1,5 @@
 <h2>オシメ・編集</h2>
-<%= form_for [@baby, @excretion] , url: baby_excretions_path do |f| %>
+<%= form_for [@baby, @excretion] , url: baby_excretions_path(baby_id: @excretion.id, id:@excretion.baby_id ) do |f| %>
 <script src="application.js"></script>
 
 
@@ -8,13 +8,12 @@
 	<%=f.radio_button :only, 'excretion3' %><i class="fas fa-poo" ></i><br>
  -->
 
-
 	<i class="fas fa-poo" ></i>
-	<%=f.radio_button :only, 'excretion1' %>
+	<%=f.radio_button :only, "うんち" %>うんち
 	<i class="fas fa-baby" ></i>
-	<%=f.radio_button :only, 'excretion2' %>
-	<i class="fas fa-poo" ></i><br>
-	<%=f.radio_button :only, 'excretion3' %>
+	<%=f.radio_button :only, "おしっこ" %>おしっこ
+	<i class="fas fa-poo" ></i>
+	<%=f.radio_button :only, "どっちも" %>どっちも<br>
 
 	<style>
 		input[type=radio] {

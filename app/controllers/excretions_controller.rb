@@ -3,7 +3,7 @@ class ExcretionsController < ApplicationController
 	def new
 		@baby = Baby.find(params[:baby_id])
 		@excretion = Excretion.new
-		@enum = Excretion.onlies.keys
+		# @enum = Excretion.onlies.keys
 	end
 	def create
 		@baby = Baby.find(params[:baby_id])
@@ -16,10 +16,11 @@ class ExcretionsController < ApplicationController
 		@excretion = Excretion.find(params[:baby_id])
 	end
 	def update
-	    @baby = Baby.find(params[:baby_id])
+	    @baby = Baby.find(params[:id])
 		@excretion = Excretion.find(params[:baby_id])
-		@excretion.save
+		if @excretion.update(excretion_params)
 		redirect_to  baby_path(@baby)
+		end
 	end
 	def destroy
 		@excretion = Excretion.find(params[:baby_id])
@@ -28,6 +29,6 @@ class ExcretionsController < ApplicationController
 	end
 	private
 	def excretion_params
-		params.require(:excretion).permit(:customer_id, :baby_id, :body, :only ,:create_time )
+		params.require(:excretion).permit(:baby_id, :body, :only )
 	end
 end
