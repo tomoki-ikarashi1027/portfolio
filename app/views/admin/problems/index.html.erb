@@ -7,9 +7,10 @@
 	 <% @problems.each do |problem| %>
 		<tr>
 			<td><%= link_to problem.body,admin_problem_path(problem) %></td>
+			<td><%= link_to "削除",  problem_path(problem), method: :delete %></td>
 		</tr>
 	<% end %>
 	</tbody>
 </table>
 
- <%= link_to "コメント", admin_comments_path %>
+ <%= link_to "コメント一覧", admin_comments_path %>

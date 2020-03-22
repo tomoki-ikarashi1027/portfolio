@@ -1,14 +1,19 @@
 <h2>お悩み詳細</h2>
-<%= link_to "相談する",new_problem_path  %>
+
 <table class="table">
 	<tr>
 		<td><%= @problem.category.problem_name %></td>
 	</tr>
 	<tr>
 		<td><%= @problem.body %></td>
+		
+		<% if @problem.customer_id == current_customer.id %>
+		<td><%= link_to "削除",  problem_path(@problem), method: :delete %></td>
+		<% end %>
 	</tr>
 		<td>コメント数：<%= @problem.comments.count %></td>
 	</tr>
+	<td><%= link_to "戻る",problems_path(@problem) %></td>
 </table>
 <table>
 	<h3>コメント</h3>
