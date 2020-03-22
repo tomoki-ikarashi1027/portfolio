@@ -1,9 +1,14 @@
 <h2>赤ちゃんの選択</h2>
-<table>
+<table class="table">
 	 <% @babies.each do |baby| %>
-<tr>
-	 <td><%= baby.baby_name %></td>
-	 <td><%= link_to "選択",  baby_path(baby.id) %></td>
-	 <td><%= link_to "編集", edit_baby_path(baby.id) %></td>
-	 <% end %>
+		<tr>
+			 <td><%= baby.baby_name %></td>
+			 <td><%= link_to "選択",  baby_path(baby.id) %></td>
+			 <td><%= link_to "編集", edit_baby_path(baby.id) %></td>
+		</tr>
+	<% end %>
+		<tr>
+			<td><%= ;link_to "赤ちゃんを追加する", new_baby_path %></td>
+		</tr>
+</table>
 

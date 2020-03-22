@@ -27,6 +27,9 @@ class ProblemsController < ApplicationController
 		end
 	end
 	def destroy
+		@Problem = Problem.find(params[:id])
+		@Problem.destroy
+		redirect_to problems_path
 	end
 	private
 	def problem_params
