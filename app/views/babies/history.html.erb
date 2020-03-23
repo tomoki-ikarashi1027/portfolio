@@ -2,9 +2,7 @@
      <%= f.date_field :date, value: @date %>
      <%= f.submit "検索する" %>
 <% end %>
-
-<!-- <div id='history'>aaa
-</div> -->
+<%= link_to "赤ちゃん管理ページ", baby_path(@baby) %>
 
 
 <table>
@@ -37,9 +35,9 @@
 		<tr>
 			<td><%= excretion.created_at.strftime("%H:%M") %></td>
 			<td>排泄<%= excretion.only %></td>
-			<% if excretion.body.present? %>
+		<% if excretion.body.present? %>
 			<td>内容<%= excretion.body %></td>
-			<% end %>
+		<% end %>
 			<td><%= link_to "編集", edit_baby_excretions_path(@baby,baby_id: excretion.id ) %></td>
 			<td><%= link_to "削除", baby_excretions_path(excretion), method: :delete %></td>
 		</tr>
@@ -55,7 +53,11 @@
 	<% @mother_milks.each do |mother_milk| %>
 		<tr>
 			<td><%= mother_milk.created_at.strftime("%H:%M") %></td>
+		<% if mother_milk.body.present? %>
 			<td>母乳<%= mother_milk.body %>CC</td>
+		<% else %>
+			<td>母乳</td>
+		<% end %>
 			<td><%= link_to "編集", edit_baby_mother_milks_path(@baby,baby_id: mother_milk.id ) %></td>
 			<td><%= link_to "削除", baby_mother_milks_path(mother_milk), method: :delete %></td>
 		</tr>

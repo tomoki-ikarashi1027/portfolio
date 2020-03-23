@@ -17,7 +17,7 @@ class BodyWeightsController < ApplicationController
 		@baby = Baby.find(params[:id])
 		@body_weight = BodyWeight.find(params[:baby_id])
 		if @body_weight.update(body_weight_params)
-			redirect_to baby_path(@baby)
+			redirect_to  history_baby_path(@baby)
 		end
 	end
 	def destroy

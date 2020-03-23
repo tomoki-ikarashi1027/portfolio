@@ -18,7 +18,8 @@ class ProblemsController < ApplicationController
 		if @problem.save
 		flash[:notice] = "投稿しました"
 		redirect_to problems_path
-	end
+		else render :new
+		end
 	end
 	def edit
 		@problem = Problem.find(params[:id])
@@ -33,6 +34,6 @@ class ProblemsController < ApplicationController
 	end
 	private
 	def problem_params
-		params.require(:problem).permit(:customer_id, :category_id, :body)
+		params.require(:problem).permit(:customer_id, :category_id, :body, :name)
 end
 end

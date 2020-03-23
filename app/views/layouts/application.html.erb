@@ -15,7 +15,8 @@
         <% if customer_signed_in?
                if request.fullpath.index("/admin/") == nil
         %>
-                <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+                <%= link_to "相談", problems_path  %>
+                <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
                 <% if @baby && @baby.baby_name %>
                   <%= link_to @baby.baby_name, babies_path %>
                 <% end %>

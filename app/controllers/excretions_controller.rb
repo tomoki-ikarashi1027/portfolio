@@ -19,7 +19,7 @@ class ExcretionsController < ApplicationController
 	    @baby = Baby.find(params[:id])
 		@excretion = Excretion.find(params[:baby_id])
 		if @excretion.update(excretion_params)
-		redirect_to  baby_path(@baby)
+		redirect_to  history_baby_path(@baby)
 		end
 	end
 	def destroy

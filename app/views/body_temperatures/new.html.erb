@@ -5,4 +5,5 @@
 <%= form_for [@baby,@body_temperature] do |f| %>
 	<%= f.text_field :body %>℃<br>
 	<%= f.submit '保存する' %>
-	<% end %>
+<% end %>
+<%= link_to "戻る", baby_path(@baby.id) %>
