@@ -3,7 +3,6 @@ class CreateBodyTemperatures < ActiveRecord::Migration[5.2]
     create_table :body_temperatures do |t|
       t.integer :baby_id
       t.integer :body
-      t.time :create_time
       t.timestamps
     end
   end

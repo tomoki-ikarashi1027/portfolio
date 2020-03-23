@@ -4,14 +4,18 @@ class CommentsController < ApplicationController
 		@problem = Problem.find(params[:comment][:problem_id])
 		@comment = @problem.comments.new(comment_params)
 		@comment.customer_id = current_customer.id
-		@comment.save
-		redirect_back(fallback_location: root_path)
+		if@comment.save
+		redirect_to problem_path(@problem)
+		else
+		@comments = Comment.where(problem_id: @problem.id)
+		render template: "problems/show"
+	end
 	end
 	def destroy
 		@comment = Comment.find(params[:id])
 		@problem = @comment.problem
 		@comment.destroy
-		redirect_back(fallback_location: root_path)
+		redirect_to problem_path(@problem)
 
 	end
 	private

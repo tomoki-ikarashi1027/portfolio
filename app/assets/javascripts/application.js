@@ -14,9 +14,10 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require activestorage
 //= require_tree .
-//= require turbolinks
+// require turbolinks
 
 
 function set2fig(num) {
@@ -27,12 +28,15 @@ function set2fig(num) {
    return ret;
 }
 function showClock2() {
+
    var nowTime = new Date();
    var nowHour = set2fig( nowTime.getHours() );
    var nowMin  = set2fig( nowTime.getMinutes() );
 
-   var msg =  nowHour + ":" + nowMin ;
+   var msg =  "時刻 " + nowHour + "時" + nowMin + "分" ;
+
    document.getElementById("RealtimeClockArea2").innerHTML = msg;
+
 }
 setInterval('showClock2()',1000);
 
@@ -62,17 +66,5 @@ $(function(){
     });
 });
 
-document.getElementById("days").style.display ="none";
 
-function myfunc(value) {
- var days = document.getElementById("days");
-
-  if(days.style.display=="block"){
-    // noneで非表示
-    days.style.display ="none";
-  }else{
-    // blockで表示
-    days.style.display ="block";
-  }
-}
 

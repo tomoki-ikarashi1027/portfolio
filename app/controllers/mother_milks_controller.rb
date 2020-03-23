@@ -14,9 +14,9 @@ class MotherMilksController < ApplicationController
 	end
 	def update
 		@baby = Baby.find(params[:id])
-		@mother_milk = MotherMilk.find(params[:id])
+		@mother_milk = MotherMilk.find(params[:baby_id])
 		@mother_milk.update(mother_milk_params)
-		redirect_to baby_path(@baby)
+		redirect_to  history_baby_path(@baby)
 	end
 	def destroy
 		@mother_milk = MotherMilk.find(params[:baby_id])

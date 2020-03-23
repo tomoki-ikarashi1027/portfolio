@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
   create_table "body_temperatures", force: :cascade do |t|
     t.integer "baby_id"
     t.integer "body"
-    t.time "create_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
   create_table "body_weights", force: :cascade do |t|
     t.integer "baby_id"
     t.integer "body"
-    t.time "create_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,12 +58,12 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "nick_name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
@@ -76,7 +74,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
     t.integer "baby_id"
     t.text "body"
     t.string "image_id"
-    t.time "create_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "only"

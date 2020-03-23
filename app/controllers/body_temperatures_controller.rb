@@ -17,7 +17,7 @@ class BodyTemperaturesController < ApplicationController
 		@baby = Baby.find(params[:id])
 		@body_temperature = BodyTemperature.find(params[:baby_id])
 		if @body_temperature.update(body_temperature_params)
-			redirect_to  baby_path(@baby, baby_id: @baby.id)
+			redirect_to  history_baby_path(@baby)
 	    end
     end
 	def destroy

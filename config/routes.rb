@@ -26,7 +26,6 @@ Rails.application.routes.draw do
    resource :milk_powders, only: [:new, :create, :edit, :update, :destroy]
    get 'history', on: :member
  end
-   resources :communities, only: [:index, :new, :show, :create, :destroy]
    resources :problems,only:  [:index, :new, :show, :create, :destroy]
    resources :comments, only: [:create, :destroy] do
    	resource :likes, only: [:create, :destroy]

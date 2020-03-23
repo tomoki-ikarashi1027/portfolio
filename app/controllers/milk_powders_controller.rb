@@ -16,7 +16,7 @@ class MilkPowdersController < ApplicationController
 		@baby = Baby.find(params[:id])
 		@milk_powder = MilkPowder.find(params[:baby_id])
 		@milk_powder.update(milk_powder_params)
-		redirect_to baby_path(@baby)
+		redirect_to  history_baby_path(@baby)
 	end
 	def destroy
 		@milk_powder = MilkPowder.find(params[:baby_id])
