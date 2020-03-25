@@ -13,18 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
-.excretion-button1 {
-  background: #232323;
-}
-.excretion-button1 {
-  background: #21759b;
-}
-
-
-
-
-//ボックス部分
 input[type="date"] {
   padding: 10px;
   text-align: center;

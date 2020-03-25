@@ -7,10 +7,11 @@
     <script src="https://kit.fontawesome.com/9f7238856e.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:500&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <header>
+    <header class="header">
      <nav>
         <% if customer_signed_in?
                if request.fullpath.index("/admin/") == nil

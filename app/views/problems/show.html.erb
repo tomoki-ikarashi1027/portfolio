@@ -1,44 +1,46 @@
-<h2>お悩み詳細</h2>
-
-<table class="table">
-	<tr>
-		<td><%= @problem.category.problem_name %></td>
-	</tr>
-	<tr>
-		<td><%= @problem.body %></td>
-
-		<% if @problem.customer_id == current_customer.id %>
-		<td><%= link_to "削除",  problem_path(@problem), method: :delete %></td>
-		<% end %>
-	</tr>
-		<td>コメント数：<%= @problem.comments.count %></td>
-	</tr>
-	<td><%= link_to "戻る",problems_path(@problem) %></td>
-</table>
-<%= form_for (@comment) ,url: comments_path  do |f| %>
-	<% if @comment.errors.any? %>
-	<% @comment.errors.full_messages.each do |message| %>
-	<li><%= message %></li>
-	<% end %>
-	<% end %>
-<table>
-		<h3>コメント</h3>
-
-			<%= f.text_area :body %>
-			<%= f.hidden_field :problem_id, :value => @problem.id %>
-			<%= f.submit "投稿する"  %>
-<% end %>
-<% @comments.each do |comment| %>
-	<tr>
-		<td><%= comment.body %></td>
-
-        <td id="likes_buttons_<%= comment.id %>">
-			<%= render partial: 'likes/like', locals: { comment: comment} %>
-		</td>
-	<% if comment.customer_id == current_customer.id %>
-		<td><%= link_to "削除",  comment_path(comment), method: :delete %></td>
-	<% end %>
-	</tr>
-<% end %>
-</table>
-
+<div class="container">
+	<div class="row">
+        <div class="col-xs-3">
+			<h2>お悩み詳細</h2>
+			<table class="table">
+				<tr>
+					<td>カテゴリー: <%= @problem.category.problem_name %></td>
+				</tr>
+				<tr>
+					<td>内容: <%= @problem.body %></td>
+					<% if @problem.customer_id == current_customer.id %>
+						<td><%= link_to "削除",  problem_path(@problem), method: :delete %></td>
+					<% end %>
+				</tr>
+				<tr>
+					<td>コメント数: <%= @problem.comments.count %></td>
+				</tr>
+				<td><%= link_to "戻る",problems_path(@problem) %></td>
+			</table>
+				<%= form_for (@comment) ,url: comments_path  do |f| %>
+				<% if @comment.errors.any? %>
+					<% @comment.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+				<% end %>
+			<table>
+					<h3>コメント</h3>
+						<%= f.text_area :body %>
+						<%= f.hidden_field :problem_id, :value => @problem.id %><br>
+						<%= f.submit "投稿する"  %>
+				<% end %>
+				<% @comments.each do |comment| %>
+					<tr>
+						<td><%= comment.body %></td>
+				        <td id="likes_buttons_<%= comment.id %>">
+							<%= render partial: 'likes/like', locals: { comment: comment} %>
+						</td>
+					<% if comment.customer_id == current_customer.id %>
+						<td><%= link_to "コメント削除",  comment_path(comment), method: :delete %></td>
+					<% end %>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
