@@ -18,7 +18,7 @@ Rails.application.routes.draw do
  	resources :categories, except: [:show, :new]
  end
 #会員側
- resources  :babies, except: [:destroy] do
+ resources  :babies do
    resource :excretions, only: [:new, :create, :edit, :update, :destroy]
    resource :body_weights, only: [:new, :create, :edit, :update, :destroy]
    resource :body_temperatures, only: [:new, :create, :edit, :update, :destroy]

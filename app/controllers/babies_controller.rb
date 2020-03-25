@@ -12,19 +12,24 @@ class BabiesController < ApplicationController
 	    @body_weight = BodyWeight.new
 	end
 	def create
-		@baby = Baby.new(baby_params)
-		@baby.customer_id = current_customer.id
-	    @baby.save
-			redirect_to edit_baby_path(@baby.id)
+		baby = Baby.new(baby_params)
+		baby.customer_id = current_customer.id
+	    baby.save
+		redirect_to babies_path
 	end
 	def edit
 		@baby = Baby.find(params[:id])
 	end
 	def update
-		@baby = Baby.find(params[:id])
+		baby = Baby.find(params[:id])
 		if @baby.update(baby_params)
 			redirect_to edit_baby_path(@baby.id)
 		end
+	end
+	def destroy
+		@baby = Baby.find(params[:id])
+		@baby.destroy
+		redirect_to babies_path
 	end
 	def history
 		@baby = Baby.find(params[:id])
@@ -35,8 +40,6 @@ class BabiesController < ApplicationController
 		@milk_powders = MilkPowder.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('milk_powders.created_at asc')
 		@mother_milks = MotherMilk.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('mother_milks.created_at asc')
 		@sorted = (@mother_milks + @body_weights + @excretions + @milk_powders + @mother_milks).sort_by {|record| record.created_at}
-
-		# 　このあと描画
 	end
 	private
 	def baby_params

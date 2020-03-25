@@ -1,22 +1,28 @@
-
-<%= link_to "相談する",new_problem_path  %>
-<%= link_to :back do %>
-  <label>ひとつ前に戻る</label>
-  <td> <%= link_to "赤ちゃん選択画面" , babies_path %></td>
-<% end %>
-<table>
-	<thead>
-		<th>みんなのお悩み</th>
-	</thead>
-	<tbody>
-	 <% @problems.each do |problem| %>
-<tr>
-	<td><%= problem.category.problem_name %>
-		<%=  problem.customer.name %>
-		<%= link_to problem.body,problem_path(problem) %>
-	</td>
-</tr>
-<% end %>
-</tbody>
-</table>
-
+<div class="container">
+	<div class="row">
+        <div class="col-xs-3">
+			<% if flash[:notice] %>
+			    <div class="flash">
+			    <%= flash[:notice] %>
+			    </div>
+			<% end %>
+			<%= link_to "投稿する",new_problem_path  %>
+			<td> <%= link_to "赤ちゃん選択画面" , babies_path %></td>
+			<table>
+				<thead>
+					<th>みんなのお悩み</th>
+				</thead>
+				<tbody>
+				 <% @problems.each do |problem| %>
+					<tr>
+						<td><%= problem.category.problem_name %><br>
+							<%=  problem.customer.name %><br>
+							<%= link_to problem.body,problem_path(problem) %>
+						</td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

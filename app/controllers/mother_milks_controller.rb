@@ -1,4 +1,5 @@
 class MotherMilksController < ApplicationController
+	before_action :authenticate_customer!
 	def new
 		@baby = Baby.find(params[:baby_id])
 		@mother_milk = MotherMilk.new

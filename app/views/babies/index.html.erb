@@ -1,14 +1,21 @@
-<h2>赤ちゃんの選択</h2>
-<table class="table">
-	 <% @babies.each do |baby| %>
-		<tr>
-			 <td><%= baby.baby_name %></td>
-			 <td><%= link_to "選択",  baby_path(baby.id) %></td>
-			 <td><%= link_to "編集", edit_baby_path(baby.id) %></td>
-		</tr>
-	<% end %>
-		<tr>
-			<td><%= ;link_to "赤ちゃんを追加する", new_baby_path %></td>
-		</tr>
-</table>
-
+<div class="container">
+	<div class="row">
+        <div class="col-xs-3"><h2>赤ちゃんの選択</h2>
+			<table class="table">
+				<tbody>
+				 	<% @babies.each do |baby| %>
+						<tr>
+							 <td><%= baby.baby_name %></td>
+							 <td><%= link_to "選択",  baby_path(baby.id) %></td>
+							 <td><%= link_to "編集", edit_baby_path(baby.id) %></td>
+							 <td><%= link_to "削除", baby_path(baby.id), method: :delete, data: { confirm: '本当に消しますか？' } %></td>
+						</tr>
+					<% end %>
+				</tbody>
+				<tr>
+					<td><%= ;link_to "赤ちゃんを追加する", new_baby_path %></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
