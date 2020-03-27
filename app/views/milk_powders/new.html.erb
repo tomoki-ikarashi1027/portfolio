@@ -5,7 +5,7 @@
          <h2>ミルク・記録</h2>
          <%= form_for [@baby, @milk_powder] do |f| %>
          	<%= f.text_field :body %>CC<br>
-         	<%= f.submit '保存する' %>
+         	<%= f.submit '保存する',class: "btn btn-primary"  %>
          <% end %>
          <%= link_to "戻る", baby_path(@baby.id) %>
       </div>

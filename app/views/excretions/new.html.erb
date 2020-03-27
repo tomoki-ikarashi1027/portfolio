@@ -1,18 +1,24 @@
 <div class="container">
 	<div class="row">
-        <div class="col-xs-3">
+        <div class="col-xs-5">
         	<p id="RealtimeClockArea2"></p>
 			<h2>おむつ・記録</h2>
 			<%= form_for [@baby, @excretion] do |f| %>
 
-				<i class="fas fa-poo" ></i>
-				<%=f.radio_button :only, "うんち" ,data: {"tubolinks" => false} %>うんち
-				<i class="fas fa-baby" ></i>
-				<%=f.radio_button :only, "おしっこ" ,data: {"tubolinks" => false} %>おしっこ
-				<i class="fas fa-poo" ></i>
-				<%=f.radio_button :only, "どっちも",data: {"tubolinks" => false}  %>どっちも<br>
-					<%= f.text_area :body %><br>
-					<%= f.submit '保存する' %>
+
+			<div class="haisetu">
+				<%= image_tag 'excretion1', size: '100x100' , class: 'excretion1' %>
+				<%=f.radio_button :only, "うんち"  %>
+				
+				<%= image_tag 'excretion3', size: '100x100' , class: 'excretion3' %>
+				<%=f.radio_button :only, "どっちも"  %>
+				
+				<%= image_tag 'excretion2', size: '100x100' , class: 'excretion2' %>
+				<%=f.radio_button :only, "おしっこ" %>
+
+			</div>
+					<%= f.text_area :body , class: 'text-area' %><br>
+					<%= f.submit '保存する',class: "btn btn-primary" %>
 				<% end %>
 				<%= link_to "戻る", baby_path(@baby.id) %>
 		</div>

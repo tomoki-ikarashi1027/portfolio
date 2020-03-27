@@ -4,7 +4,7 @@
 			<h2>体温・編集</h2>
 			<%= form_for [@baby, @body_temperature] , url:baby_body_temperatures_path(id:@body_temperature.baby_id) do |f| %>
 				<%= f.text_field :body %>℃<br>
-				<%= f.submit '保存する' %>
+				<%= f.submit '保存する' ,class: "btn btn-primary" %>
 			<% end %>
 		</div>
 	</div>

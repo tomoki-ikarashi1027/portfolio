@@ -24,29 +24,28 @@
 
 
 $(function(){
-    $('.fas.fa-poo').on('click', function(){
+    $('.excretion1').on('click', function(){
       console.log("aa")
-         $('.fas.fa-poo').css('color','black');
-         $('.fas.fa-baby').css('color','black');
-        $(this).css('color','red');
+        $(this).addClass('green')
+        $('.excretion2').removeClass('green')
+        $('.excretion3').removeClass('green')
         $(this).next("input[type=radio]").attr("checked", true)
     });
 
-    $('.fas.fa-baby').on('click', function(){
+    $('.excretion2').on('click', function(){
       console.log("aa")
-         $('.fas.fa-poo').css('color','black');
-        $(this).css('color','red');
+        $(this).addClass('green')
+        $('.excretion1').removeClass('green')
+        $('.excretion3').removeClass('green')
         $(this).next("input[type=radio]").attr("checked", true)
     });
-});
 
-$(function(){
-    $('.fas.fa-poo').on('click', function(){
-      console.log("aa")
-         $('.fas.fa-poo').css('color','black');
-        $(this).css('color','red');
+    $('.excretion3').on('click', function(){
+  console.log("aa")
+    $(this).addClass('green')
+    $('.excretion1').removeClass('green')
+    $('.excretion2').removeClass('green')
+    $(this).next("input[type=radio]").attr("checked", true)
     });
 });
-
-
 
