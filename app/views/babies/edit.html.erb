@@ -18,7 +18,7 @@
 					<label>性別</label>
 					<label><%= f.radio_button :sex, "man" %> 男の子 </label>
 					<label><%= f.radio_button :sex, "woman" %> 女の子</label><br>
-					<%= f.submit '保存する' %>
+					<%= f.submit '保存する' ,class: "btn btn-primary" %>
 				<% end %>
 				<%= link_to '赤ちゃん選択画面', babies_path %>
 		</div>

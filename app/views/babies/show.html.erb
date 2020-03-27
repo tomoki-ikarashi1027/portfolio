@@ -7,11 +7,12 @@
 
 </div> -->
 
-
-<%= link_to image_tag('mother-milk.jpg',width: '250' ), new_baby_mother_milks_path(@baby) %>
+<div class="container">
+<%= link_to image_tag('mother-milk3.jpg',width: 250 ), new_baby_mother_milks_path(@baby) %>
 <%= link_to image_tag('powder-milk.jpg', width: '250'), new_baby_milk_powders_path(@baby) %>
-<%= link_to image_tag('excretion.jpg',width: '250'),new_baby_excretions_path(@baby) %>
+<%= link_to image_tag('excretion.jpg',width: '250'),new_baby_excretions_path(@baby) %><br>
 <%= link_to image_tag('body-weight.jpg',width: '250'),new_baby_body_weights_path(@baby)%>
 <%= link_to image_tag('body-temperature.jpg',width:250), new_baby_body_temperatures_path(@baby)%>
-<%= link_to image_tag('body-temperature.jpg',width:250),  history_baby_path(@baby) %>
+<%= link_to image_tag('history.jpg',width:250),  history_baby_path(@baby) %>
 
+</div>

@@ -4,7 +4,7 @@
 			<h2>ミルク・編集</h2>
 			<%= form_for [@baby, @milk_powder] , url:baby_milk_powders_path(id:@milk_powder.baby_id) do |f| %>
 				<%= f.text_field :body %>
-				<%= f.submit '保存する' %>
+				<%= f.submit '保存する',class: "btn btn-primary"  %>
 			<% end %>
 		</div>
 	</div>
