@@ -7,8 +7,10 @@ class MilkPowdersController < ApplicationController
 	def create
 		@baby = Baby.find(params[:baby_id])
 		@milk_powder = @baby.milk_powders.new(milk_powder_params)
-		@milk_powder.save
+		if@milk_powder.save
 		redirect_to baby_path(@baby)
+		else render :new
+		end
 	end
 	def edit
 		@milk_powder = MilkPowder.find(params[:baby_id])
@@ -16,8 +18,10 @@ class MilkPowdersController < ApplicationController
 	def update
 		@baby = Baby.find(params[:id])
 		@milk_powder = MilkPowder.find(params[:baby_id])
-		@milk_powder.update(milk_powder_params)
-		redirect_to  history_baby_path(@baby)
+		if@milk_powder.update(milk_powder_params)
+		   redirect_to  history_baby_path(@baby)
+		else render :edit
+		end
 	end
 	def destroy
 		@milk_powder = MilkPowder.find(params[:baby_id])

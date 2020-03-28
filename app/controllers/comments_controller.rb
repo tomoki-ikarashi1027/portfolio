@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 		@comment = @problem.comments.new(comment_params)
 		@comment.customer_id = current_customer.id
 		if@comment.save
-		redirect_to problem_path(@problem)
+		  redirect_to problem_path(@problem)
 		else
 		@comments = Comment.where(problem_id: @problem.id)
 		render template: "problems/show"

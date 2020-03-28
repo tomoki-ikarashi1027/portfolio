@@ -37,3 +37,4 @@ class ProblemsController < ApplicationController
 		params.require(:problem).permit(:customer_id, :category_id, :body, :name)
 end
 end
+

@@ -7,8 +7,10 @@ class BodyWeightsController < ApplicationController
 	def create
 		@baby = Baby.find(params[:baby_id])
 		@body_weight = @baby.body_weights.new(body_weight_params)
-		@body_weight.save
-		redirect_to baby_path(@baby)
+		if @body_weight.save
+		   redirect_to baby_path(@baby)
+		else render :new
+		end
 	end
 	def edit
 		@body_weight = BodyWeight.find(params[:baby_id])
@@ -18,6 +20,7 @@ class BodyWeightsController < ApplicationController
 		@body_weight = BodyWeight.find(params[:baby_id])
 		if @body_weight.update(body_weight_params)
 			redirect_to  history_baby_path(@baby)
+		else render :edit
 		end
 	end
 	def destroy

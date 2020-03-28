@@ -3,6 +3,11 @@
         <div class="col-xs-3">
 			<h2>ミルク・編集</h2>
 			<%= form_for [@baby, @milk_powder] , url:baby_milk_powders_path(id:@milk_powder.baby_id) do |f| %>
+			<% if @milk_powder.errors.any? %>
+          		<% @milk_powder.errors.full_messages.each do |message| %>
+            		<li><%= message %></li>
+          		<% end %>
+       		<% end %>
 				<%= f.text_field :body %>
 				<%= f.submit '保存する',class: "btn btn-primary"  %>
 			<% end %>

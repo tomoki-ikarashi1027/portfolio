@@ -6,4 +6,5 @@ class Baby < ApplicationRecord
 	has_many :milk_powders, dependent: :destroy
 	has_many :mother_milks, dependent: :destroy
     enum sex: { man: 0, woman: 1}
+    validates :baby_name,presence: true
 end

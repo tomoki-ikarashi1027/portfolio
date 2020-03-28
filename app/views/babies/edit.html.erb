@@ -3,6 +3,11 @@
         <div class="col-xs-3">
 			<h2>赤ちゃんの編集</h2>
 				<%= form_for(@baby) do |f| %>
+				  <% if @baby.errors.any? %>
+			          <% @baby.errors.full_messages.each do |message| %>
+			            <li><%= message %></li>
+			          <% end %>
+			      <% end %>
 					<label>お名前</label>
 					<%= f.text_field :baby_name %><br>
 					<%= f.label :お誕生日 %>
