@@ -1,26 +1,29 @@
 <div class="container">
 	<div class="row">
         <div class="col-xs-5">
-        	<p id="RealtimeClockArea2"></p>
+        	<p class="tokei-box" id="RealtimeClockArea2"></p>
 			<h2>おむつ・記録</h2>
 			<%= form_for [@baby, @excretion] do |f| %>
+				<% if @excretion.errors.any? %>
+					<% @excretion.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				<% end %>
 
+				<div class="haisetu"><%= image_tag 'excretion1', size: '100x100' , class: 'excretion1' %>
+				<%=f.radio_button :only, "うんち"  %><p>うんち</p></div>
 
-			<div class="haisetu">
-				<%= image_tag 'excretion1', size: '100x100' , class: 'excretion1' %>
-				<%=f.radio_button :only, "うんち"  %>
-				
-				<%= image_tag 'excretion3', size: '100x100' , class: 'excretion3' %>
-				<%=f.radio_button :only, "どっちも"  %>
-				
-				<%= image_tag 'excretion2', size: '100x100' , class: 'excretion2' %>
-				<%=f.radio_button :only, "おしっこ" %>
+				<div class="haisetu"><%= image_tag 'excretion3', size: '100x100' , class: 'excretion3' %>
+				<%=f.radio_button :only, "どっちも"  %><p>どっちも</p></div>
 
-			</div>
+				<div class="haisetu"><%= image_tag 'excretion2', size: '100x100' , class: 'excretion2' %>
+				<%=f.radio_button :only, "おしっこ" %><p>おしっこ</p></div>
+
 					<%= f.text_area :body , class: 'text-area' %><br>
 					<%= f.submit '保存する',class: "btn btn-primary" %>
-				<% end %>
-				<%= link_to "戻る", baby_path(@baby.id) %>
+			<% end %>
+			<%= link_to "戻る", baby_path(@baby.id) %>
+
 		</div>
 	</div>
 </div>

@@ -1,9 +1,14 @@
 <div class="container">
 	<div class="row">
       <div class="col-xs-3">
-         <p id="RealtimeClockArea2"></p>
+         <p class="tokei-box" id="RealtimeClockArea2"></p>
          <h2>ミルク・記録</h2>
          <%= form_for [@baby, @milk_powder] do |f| %>
+            <% if @milk_powder.errors.any? %>
+               <% @milk_powder.errors.full_messages.each do |message| %>
+               <li><%= message %></li>
+            <% end %>
+            <% end %>
          	<%= f.text_field :body %>CC<br>
          	<%= f.submit '保存する',class: "btn btn-primary"  %>
          <% end %>

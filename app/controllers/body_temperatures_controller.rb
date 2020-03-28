@@ -7,8 +7,10 @@ class BodyTemperaturesController < ApplicationController
 	def create
 		@baby = Baby.find(params[:baby_id])
 		@body_temperature = @baby.body_temperatures.new(body_temperature_params)
-		@body_temperature.save
-		redirect_to  baby_path(@baby)
+		if@body_temperature.save
+		  redirect_to  baby_path(@baby)
+		else render :new
+		end
 	end
 	def edit
 		@body_temperature = BodyTemperature.find(params[:baby_id])
@@ -18,6 +20,7 @@ class BodyTemperaturesController < ApplicationController
 		@body_temperature = BodyTemperature.find(params[:baby_id])
 		if @body_temperature.update(body_temperature_params)
 			redirect_to  history_baby_path(@baby)
+		else render :edit
 	    end
     end
 	def destroy

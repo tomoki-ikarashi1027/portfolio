@@ -1,16 +1,18 @@
 <div class="container">
 	<div class="row">
-        <div class="col-xs-3">
+        <div class="col-xs-5">
 			<h2>オシメ・編集</h2>
 			<%= form_for [@baby, @excretion] , url: baby_excretions_path(id:@excretion.baby_id ) do |f| %>
 				<script src="application.js"></script>
 
-				<i class="fas fa-poo" ></i>
-				<%=f.radio_button :only, "うんち" %>うんち
-				<i class="fas fa-baby" ></i>
-				<%=f.radio_button :only, "おしっこ" %>おしっこ
-				<i class="fas fa-poo" ></i>
-				<%=f.radio_button :only, "どっちも" %>どっちも<br>
+				<div class="haisetu"><%= image_tag 'excretion1', size: '100x100' , class: 'excretion1' %>
+				<%=f.radio_button :only, "うんち"  %><p>うんち</p></div>
+
+				<div class="haisetu"><%= image_tag 'excretion3', size: '100x100' , class: 'excretion3' %>
+				<%=f.radio_button :only, "どっちも"  %><p>どっちも</p></div>
+
+				<div class="haisetu"><%= image_tag 'excretion2', size: '100x100' , class: 'excretion2' %>
+				<%=f.radio_button :only, "おしっこ" %><p>おしっこ</p></div>
 				<%= f.text_area :body %><br>
 				<%= f.submit '保存する',class: "btn btn-primary" %>
 			<% end %>

@@ -1,9 +1,14 @@
 <div class="container">
 	<div class="row">
-      <div class="col-xs-3">
-         <p id="RealtimeClockArea2"></p>
+      <div class="all-body">
+         <p class="tokei-box" id="RealtimeClockArea2"></p>
          <h2>体重・記録</h2>
          <%= form_for [@baby, @body_weight] do |f| %>
+          <% if @body_weight.errors.any? %>
+               <% @body_weight.errors.full_messages.each do |message| %>
+               <li><%= message %></li>
+            <% end %>
+            <% end %>
          	<%= f.text_field :body %>kg<br>
          	<%= f.submit '保存する' ,class: "btn btn-primary" %>
          <% end %>

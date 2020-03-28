@@ -5,3 +5,11 @@ ja:
         body: 内容
       comment:
         body: コメント
+      body_weight:
+        body: 内容
+      body_temperature:
+        body: 内容
+      milk_powder:
+        body: 内容
+      baby:
+        baby_name: お名前

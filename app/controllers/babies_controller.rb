@@ -14,8 +14,10 @@ class BabiesController < ApplicationController
 	def create
 		baby = Baby.new(baby_params)
 		baby.customer_id = current_customer.id
-	    baby.save
-		redirect_to babies_path
+	    if baby.save
+		   redirect_to babies_path
+		else render :new
+		end
 	end
 	def edit
 		@baby = Baby.find(params[:id])
@@ -24,6 +26,7 @@ class BabiesController < ApplicationController
 		@baby = Baby.find(params[:id])
 		if @baby.update(baby_params)
 			redirect_to edit_baby_path(@baby.id)
+		else render :edit
 		end
 	end
 	def destroy

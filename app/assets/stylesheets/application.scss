@@ -29,7 +29,7 @@ input[type="date"]::-webkit-clear-button{
 }
 
 header{
- height: 100px;
+ height: 70px;
  font-size: 15px;
  background-color:orange;
  color:#664d51;
@@ -37,19 +37,19 @@ header{
  width:100%;
 
  }
- .nav{
- font-size:25px;
- float: left;
- }
- .baby_name{
- font-size:40px;
- text-align:center;
- padding-top:20px;
- }
-.navbar-right{
-	padding-top:70px;
+
+ .navbar-brand{
+ position: absolute;
+ width: 100%;
+ left: 0;
+ text-align: center;
+ margin:0 auto;
+ font-size:35px;
 }
 
+li{
+	display: inline-block;
+}
  body{
  font-family:"serif";
  color:#664d51;
@@ -58,6 +58,7 @@ header{
  margin:0;
  font-family: 'M PLUS Rounded 1c', sans-serif;
  background-image:  image-url('back-image.jpeg');
+ background-size: cover;
  }
 
 .clearfix::after {
@@ -68,23 +69,19 @@ header{
 
 footer{
 	width:100%;
-	height:100px;
+	height:70px;
 	bottom: 0;
-	position: absolute;
+	position: fixed;
 	background-color:black;
-	background-position: center;
-	background-size: cover;
+
 }
 .col-xs-10{
 	width:100%;
 }
 .tokei-box{
 	 width: 100%;
- padding: 10px;
- font-family:"serif";
- background-color:orange;
- margin:20px 0;
- font-size:30px;
+	 font-family:"serif";
+	 font-size:25px;
 
 }
 .green {
@@ -95,11 +92,48 @@ footer{
 }
 .myButton{
 	margin-bottom:20px;
+
+	font-family: 'Roboto Slab', serif;
+
+}
+.haisetu{
+	display: inline-block;
+	text-align: center;
 	margin-right:5px;
+}
+.item{
+	display: inline-block;
+}
+.items{
+ text-align: center;
+ margin-top:30px;
+ }
+ a:hover{
+ color:#664d51;
+ text-decoration: none;
+ }
+.text-area{
+	margin-top:10px;
+}
+.side{
+	float:left;
+}
+
+.like{
+	padding:111px;
+}
+.table{
+	font-size:20px;
+}
+.category{
+	background-color:red;
+}
+.box{
+	padding-left:200px;
 }
 .haisetu{
 	float:left;
 }
-.text-area{
-	margin-top:10px;
+.navbar-right{
+	padding-top:35px;
 }
