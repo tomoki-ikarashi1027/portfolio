@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :admin, controllers: {
-    sessions:      'admin/sessions',
-    passwords:     'admin/passwords',
-    registrations: 'admin/registrations'
+  devise_for :admins, controllers: {
+    sessions:      'admins/sessions',
+    passwords:     'admins/passwords',
+    registrations: 'admins/registrations'
   }
 	devise_for :customers, controllers: {
   	sessions:      'customers/sessions',
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  root to: "homes#top"
 
- namespace :admin do
+ namespace :admins do
  	resources :comments, only:[:index, :show, :destroy]
  	resources :problems, only:[:index, :show, :destroy]
  	resources :categories, except: [:show, :new]

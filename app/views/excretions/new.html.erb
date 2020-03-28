@@ -11,13 +11,13 @@
 				<% end %>
 
 				<div class="haisetu"><%= image_tag 'excretion1', size: '100x100' , class: 'excretion1' %>
-				<%=f.radio_button :only, "うんち"  %><p>うんち</p></div>
+				<%=f.radio_button :only, :うんち  %><p>うんち</p></div>
 
 				<div class="haisetu"><%= image_tag 'excretion3', size: '100x100' , class: 'excretion3' %>
-				<%=f.radio_button :only, "どっちも"  %><p>どっちも</p></div>
+				<%=f.radio_button :only, :どっちも  %><p>どっちも</p></div>
 
 				<div class="haisetu"><%= image_tag 'excretion2', size: '100x100' , class: 'excretion2' %>
-				<%=f.radio_button :only, "おしっこ" %><p>おしっこ</p></div>
+				<%=f.radio_button :only, :おしっこ %><p>おしっこ</p></div>
 
 					<%= f.text_area :body , class: 'text-area' %><br>
 					<%= f.submit '保存する',class: "btn btn-primary" %>

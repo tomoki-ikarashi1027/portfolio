@@ -1,9 +1,0 @@
-	<h3>コメント一覧</h3>
-<table>
-	<% @comments.each do |comment| %>
-		<tr>
-			<td><%= comment.body %></td>
-			<td><%= link_to "削除",  comment_path(comment), method: :delete %></td>
-		</tr>
-	<% end %>
-</table>
