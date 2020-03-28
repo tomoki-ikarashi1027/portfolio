@@ -15,9 +15,8 @@
 				<tbody>
 				 <% @problems.each do |problem| %>
 					<tr>
-						<div class="category">
-						<td><%= problem.category.problem_name  %></div>
-							<%=  problem.customer.name %><br>
+						<td style="color:maroon;"><%= problem.category.problem_name  %></td>
+							<td><%=  problem.customer.name %><br>
 							<%= link_to problem.body,problem_path(problem) %>
 						</td>
 					</tr>

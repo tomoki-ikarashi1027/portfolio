@@ -23,17 +23,20 @@
 					<li><%= message %></li>
 				<% end %>
 				<% end %>
-			<table>
+			
 					<h3>コメント</h3>
 						<%= f.text_area :body %>
 						<%= f.hidden_field :problem_id, :value => @problem.id %><br>
 						<%= f.submit "投稿する"  %>
 				<% end %>
+			</div>
+		</div>
+		<div class="row">
+				<div class="col-xs-9">
+				<table>
 				<% @comments.each do |comment| %>
 					<tr>
-					
-						<td><%= comment.body %></td>
-					
+						<td style="color:black;"><%= comment.body %></td>
 				        <td id="likes_buttons_<%= comment.id %>">
 							<%= render partial: 'likes/like', locals: { comment: comment} , class: 'like' %>
 						</td>
@@ -43,6 +46,6 @@
 					</tr>
 				<% end %>
 			</table>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>

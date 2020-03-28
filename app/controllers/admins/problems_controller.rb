@@ -1,4 +1,4 @@
-class Admin::ProblemsController < ApplicationController
+class Admins::ProblemsController < ApplicationController
 	before_action :authenticate_admin!
 	def index
 		@problems = Problem.all
