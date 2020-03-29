@@ -14,9 +14,13 @@
     <header class="header">
       <div class="container">
        <nav>
+
         <% if customer_signed_in?
                if request.fullpath.index("/admins/") == nil%>
           <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-left">
+                <li><%= image_tag 'logo.jpg', size: '160x60' %></li>
+              </ul>
             <ul class="nav navbar-nav navbar-right">
               <span><i class="fas fa-hands-helping"></i>
                <li><%= link_to "悩みを相談", problems_path  %></li></span>
@@ -25,7 +29,6 @@
                <span><i class="glyphicon glyphicon-log-out logout"></i>
                <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li></span>
             </ul>
-         
 
           <% if @baby && @baby.baby_name %>
             <ul class="navbar-brand">
@@ -34,17 +37,24 @@
           <% end %>
         </div>
         <% end %>
-          <% elsif admin_signed_in? %>
+        <% elsif admin_signed_in? %>
+            <ul class="nav navbar-nav navbar-left">
+              <li><%= image_tag 'logo.jpg', size: '160x60' %></li>
+            </ul>
             <nav class="nav navbar-right">
                   <i class="glyphicon glyphicon-log-out logout"></i>
-                　<%= link_to "ログアウト", destroy_admins_session_path, method: :delete %>
-            <% else %>
+                　<%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+          <% else %>
+            <ul class="nav navbar-nav navbar-left">
+              <li><%= image_tag 'logo.jpg', size: '160x60' %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
                     <i class= "fas fa-book-open 2x"></i>
                     <%= link_to "使い方",homes_about_path  %>
-                    <i class="fas fa-book-open 2x"></i>
-                    <%= link_to "ログイン", new_customer_session_path %>
-                    <%= link_to "管理者の方はこちら", new_admins_session_path %>
-            <% end %>
+                    <i class="glyphicon glyphicon-log-in sign_in"></i>
+                    <%= link_to "管理者の方はこちら", new_admin_session_path %>
+            </ul>
+        <% end %>
       </nav>
       </nav>
       </div>
@@ -53,7 +63,7 @@
        <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-xs-3 col-xs-offset-9">
+          <div class="col-xs-offset-9 footer-text">
           <p>Lovely Baby</p>
         </div>
         </div>
