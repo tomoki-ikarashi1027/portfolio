@@ -1,7 +1,7 @@
 class ProblemsController < ApplicationController
 	before_action :authenticate_customer!
 	def index
-		@problems = Problem.all
+		@problems = Problem.all.page(params[:page]).reverse_order
 	end
 	def new
 		@problem = Problem.new

@@ -9,7 +9,6 @@ class ExcretionsController < ApplicationController
 		@baby = Baby.find(params[:baby_id])
 		# @excretion = current_user.excretions.build(excretions_params)
 		@excretion = @baby.excretions.new(excretion_params)
-		binding.pry
 		if @excretion.save
 		redirect_to  baby_path(@baby)
 		else render :new

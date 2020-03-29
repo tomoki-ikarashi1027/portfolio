@@ -31,7 +31,7 @@ input[type="date"]::-webkit-clear-button{
 header{
  height: 70px;
  font-size: 15px;
- background-color:orange;
+ background-color:gold;
  color:#664d51;
  margin-bottom: 10px;
  width:100%;
@@ -45,6 +45,7 @@ header{
  text-align: center;
  margin:0 auto;
  font-size:35px;
+ padding-top:25px;
 }
 
 li{
@@ -55,10 +56,11 @@ li{
  color:#664d51;
  height: 100%;
  padding:0;
- margin:0;
+ margin:0 auto;
  font-family: 'M PLUS Rounded 1c', sans-serif;
- background-image:  image-url('back-image.jpeg');
- background-size: cover;
+ background-image:  image-url('back-image.jpg');
+ background-size:cover;
+ background-potion:left;
  }
 
 .clearfix::after {
@@ -72,7 +74,8 @@ footer{
 	height:70px;
 	bottom: 0;
 	position: fixed;
-	background-color:black;
+	background-color:palegoldenrod;
+
 
 }
 .col-xs-10{
@@ -129,11 +132,23 @@ footer{
 	background-color:red;
 }
 .box{
-	padding-left:200px;
+	padding-left:100px;
+	padding-top:30px;
 }
 .haisetu{
 	float:left;
 }
 .navbar-right{
 	padding-top:35px;
+}
+.sss{
+	display:inline-block;
+	float:left;
+}
+.ploblem-image{
+	background-image:  image-url('back-image1.jpg');
+}
+.footer-text{
+	font-size:30px;
+	padding-top:15px;
 }
