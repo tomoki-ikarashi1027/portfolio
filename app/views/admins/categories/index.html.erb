@@ -9,13 +9,13 @@
 			<th>カテゴリー名</th>
 		</tr>
 		<tbody>
-			<tr>
 			<% @categories.each do |category| %>
+			<tr>
 				<td><%= category.problem_name %></td>
 				<td><%= link_to '編集', edit_admins_category_path(category.id) %></td>
+				<td><%= link_to '削除', admins_category_path(category) , method: :delete %></td>
 			</tr>
 			<% end %>
 		</tbody>
 	</table>
 </div>
-

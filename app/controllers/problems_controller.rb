@@ -31,8 +31,6 @@ class ProblemsController < ApplicationController
 		@Problem.destroy
 		redirect_to problems_path
 	end
-	def search
-	end
 	private
 	def problem_params
 		params.require(:problem).permit(:customer_id, :category_id, :body, :name)
