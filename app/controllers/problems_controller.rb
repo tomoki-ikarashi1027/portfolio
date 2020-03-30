@@ -1,13 +1,12 @@
 class ProblemsController < ApplicationController
 	before_action :authenticate_customer!
 	def index
-		@problems = Problem.all.page(params[:page]).reverse_order
+		@problems = Problem.search(params[:search],params[:problem_name]).page(params[:page]).reverse_order
 	end
 	def new
 		@problem = Problem.new
 	end
 	def show
-		# @baby = Baby.find(params[:baby_id])
 		@problem = Problem.find(params[:id])
 		@comment = Comment.new
 		@comments = @problem.comments.page(params[:page]).reverse_order
@@ -31,6 +30,8 @@ class ProblemsController < ApplicationController
 		@Problem = Problem.find(params[:id])
 		@Problem.destroy
 		redirect_to problems_path
+	end
+	def search
 	end
 	private
 	def problem_params

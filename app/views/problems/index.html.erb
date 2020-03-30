@@ -1,6 +1,20 @@
 <div class="container problem-image">
 	<div class="row">
-        <div class="col-xs-5">
+        <div class="col-xs-10">
+        	<div class="search">
+				<%= form_tag problems_path, :method => 'get' do %>
+
+				  <p>
+				    <%= text_field_tag :search, params[:search] ,placeholder: "キーワード検索" %>
+				    <%= submit_tag "検索", :body => nil %>
+				  </p>
+				<% end %>
+				<%= form_tag(problems_path, method: "get") do %>
+			 <%= select_tag "problem_name", options_for_select([["沐浴", "沐浴"],["寝ない","寝ない"],["夜泣き","夜泣き"],["社会","社会"]]),include_blank: true  %>
+			 <%= submit_tag "検索" %>
+			<% end %>
+
+			</div>
 
 			<% if flash[:notice] %>
 			    <div class="flash">
@@ -24,7 +38,7 @@
 				<% end %>
 				</tbody>
 			</table>
-	<%= paginate @problems, class: "paginate" %>
+			<%= paginate @problems, class: "paginate" %>
 		</div>
 	</div>
 </div>
