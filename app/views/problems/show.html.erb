@@ -18,34 +18,32 @@
 				<td><%= link_to "戻る",problems_path(@problem) %></td>
 			</table>
 				<%= form_for (@comment) ,url: comments_path  do |f| %>
-				<% if @comment.errors.any? %>
-					<% @comment.errors.full_messages.each do |message| %>
-					<li><%= message %></li>
-				<% end %>
-				<% end %>
-			
-					<h3>コメント</h3>
-						<%= f.text_area :body %>
-						<%= f.hidden_field :problem_id, :value => @problem.id %><br>
-						<%= f.submit "投稿する"  %>
-				<% end %>
-			</div>
-		</div>
-		<div class="row">
-				<div class="col-xs-7">
-				<table class="table sss">
-				<% @comments.each do |comment| %>
-					<tr>
-						<td style="color:black;"><%= comment.body %></td>
-				        <td id="likes_buttons_<%= comment.id %>">
-							<%= render partial: 'likes/like', locals: { comment: comment} , class: 'like' %>
-						</td>
-					<% if comment.customer_id == current_customer.id %>
-						<td><%= link_to "コメント削除",  comment_path(comment), method: :delete %></td>
+					<% if @comment.errors.any? %>
+						<% @comment.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
 					<% end %>
-					</tr>
 				<% end %>
-			</table>
-				</div>
+				<h3>コメント</h3>
+					<%= f.text_area :body %>
+					<%= f.hidden_field :problem_id, :value => @problem.id %><br>
+					<%= f.submit "投稿する"  %>
+				<% end %>
 			</div>
+			<div class="col-xs-7">
+				<table class="table sss">
+					<% @comments.each do |comment| %>
+						<tr>
+							<td style="color:black;"><%= comment.body %></td>
+					        <td id="likes_buttons_<%= comment.id %>">
+								<%= render partial: 'likes/like', locals: { comment: comment} , class: 'like' %>
+							</td>
+						<% if comment.customer_id == current_customer.id %>
+							<td><%= link_to "コメント削除",  comment_path(comment), method: :delete %></td>
+						<% end %>
+						</tr>
+					<% end %>
+				</table>
+				<%= paginate @comments, class: "paginate" %>
 		</div>
+	</div>
+</div>
