@@ -14,8 +14,8 @@ class ProblemsController < ApplicationController
 	def create
 		@problem = Problem.new(problem_params)
 		@problem.customer_id = current_customer.id
+		@problem.score = Language.get_data(params[:problem][:body] )
 		if @problem.save
-		flash[:notice] = "投稿しました"
 		redirect_to problems_path
 		else render :new
 		end

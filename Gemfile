@@ -73,6 +73,7 @@ gem 'pry-byebug'
 gem 'jquery-turbolinks'
 gem 'dotenv-rails'
 gem 'rails-i18n'
+gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
