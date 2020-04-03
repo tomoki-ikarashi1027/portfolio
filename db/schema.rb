@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
     t.integer "customer_id"
     t.integer "problem_id"
     t.text "body"
+    t.decimal "score", precision: 5, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -104,6 +105,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
     t.integer "customer_id"
     t.integer "category_id"
     t.text "body"
+    t.decimal "score", precision: 5, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

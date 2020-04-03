@@ -41,10 +41,13 @@
             <ul class="nav navbar-nav navbar-left">
               <li><%= image_tag 'logo.jpg', size: '160x60' %></li>
             </ul>
-            <nav class="nav navbar-right">
-                  <i class="glyphicon glyphicon-log-out logout"></i>
-                　<%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-          <% else %>
+            <ul class="nav navbar-right">
+                <span><i class="glyphicon glyphicon-log-out logout"></i>
+                　<li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li></span>
+                <%= link_to 'コメント一覧',  admins_comments_path %>
+                <%= link_to 'お悩み一覧' ,  admins_problems_path %>
+            </ul>
+        <% else %>
             <ul class="nav navbar-nav navbar-left">
               <li><%= image_tag 'logo.jpg', size: '160x60' %></li>
             </ul>

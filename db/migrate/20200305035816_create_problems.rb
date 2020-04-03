@@ -4,7 +4,7 @@ class CreateProblems < ActiveRecord::Migration[5.2]
       t.integer :customer_id
       t.integer :category_id
       t.text :body
-
+      t.decimal :score, precision: 5, scale: 3
       t.timestamps
     end
   end
