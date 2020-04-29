@@ -9,8 +9,7 @@
 							<td><%= link_to problem.body,admins_problem_path(problem) %></td>
 							<td><%= link_to "削除",  problem_path(problem), method: :delete %></td>
 						<% if problem.score <=  -0.4  %>
-							<td><i class="fas fa-exclamation-triangle"></i></td>
-							<td class="score_comment2">投稿内容に応じて削除して下さい</td>
+							<td class="score_comment2"><i class="fas fa-exclamation-triangle"></i>投稿内容に応じて削除して下さい</td>
 						<% end %>
 						</tr>
 					<% end %>

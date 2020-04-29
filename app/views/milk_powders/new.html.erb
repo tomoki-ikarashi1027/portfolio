@@ -9,7 +9,7 @@
                <li><%= message %></li>
             <% end %>
             <% end %>
-         	<%= f.text_field :body %>CC<br>
+            <%= f.select :body, grouped_options_for_select(MilkPowder::SELECT_OPTIONS) %>cc<br>
          	<%= f.submit '保存する',class: "btn btn-primary"  %>
          <% end %>
          <%= link_to "戻る", baby_path(@baby.id) %>

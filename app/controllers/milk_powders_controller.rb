@@ -18,6 +18,7 @@ class MilkPowdersController < ApplicationController
 	def update
 		@baby = Baby.find(params[:id])
 		@milk_powder = MilkPowder.find(params[:baby_id])
+		# binding.pry
 		if@milk_powder.update(milk_powder_params)
 		   redirect_to  history_baby_path(@baby)
 		else render :edit
