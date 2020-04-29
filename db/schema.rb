@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_115613) do
+ActiveRecord::Schema.define(version: 2020_04_28_021556) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 2020_03_11_115613) do
 
   create_table "body_temperatures", force: :cascade do |t|
     t.integer "baby_id"
-    t.integer "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "body"
   end
 
   create_table "body_weights", force: :cascade do |t|
     t.integer "baby_id"
-    t.integer "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "body"
   end
 
   create_table "categories", force: :cascade do |t|
