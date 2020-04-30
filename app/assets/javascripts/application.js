@@ -19,10 +19,6 @@
 //= require_tree .
 // require turbolinks
 
-
-
-
-
 $(function(){
     $('.excretion1').on('click', function(){
       console.log("aa")
@@ -49,3 +45,21 @@ $(function(){
     });
 });
 
+$(function() {
+  $('.jscroll').jscroll({
+    contentSelector: '.problem-list',
+    nextSelector: 'span.next:last a'
+  });
+});
+$(window).on('scroll', function() {
+
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+           console.log("!!!")
+          $('.jscroll').jscroll({
+            contentSelector: '.problem-list',
+            nextSelector: 'span.next:last a'
+          });
+    }
+});

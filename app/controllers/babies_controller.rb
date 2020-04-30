@@ -42,7 +42,22 @@ class BabiesController < ApplicationController
 		@excretions = Excretion.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('excretions.created_at asc')
 		@milk_powders = MilkPowder.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('milk_powders.created_at asc')
 		@mother_milks = MotherMilk.where(created_at: @date.in_time_zone.all_day).where(baby_id: @baby).order('mother_milks.created_at asc')
-		@sorted = (@mother_milks + @body_weights + @excretions + @milk_powders + @mother_milks).sort_by {|record| record.created_at}
+		@array =  Array.new
+		@body_temperatures.each do |body_temperature|
+			@array << body_temperature
+		end
+		@body_weights.each do |body_weight|
+			@array << body_weight
+		end
+		@milk_powders.each do |milk_powder|
+			@array << milk_powder
+		end
+		@excretions.each do |excretion|
+			@array << excretion
+		end
+		@mother_milks.each do |mother_milk|
+			@array << mother_milk
+		end
 	end
 	private
 	def baby_params

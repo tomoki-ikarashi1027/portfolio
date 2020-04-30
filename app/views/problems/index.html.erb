@@ -18,21 +18,17 @@
 			<%= link_to "投稿する",new_problem_path  %>
 			<td> <%= link_to "赤ちゃん選択画面" , babies_path %></td>
 			<table class="table">
-				<thead>
-					<th>みんなのお悩み</th>
-				</thead>
-				<tbody>
-				 <% @problems.each do |problem| %>
-					<tr>
-						<td style="color:maroon;"><%= problem.category.problem_name  %></td>
-							<td><%=  problem.customer.name %><br>
-							<%= link_to problem.body,problem_path(problem) %>
-						</td>
-					</tr>
-				<% end %>
-				</tbody>
+				<th>みんなのお悩み</th>
+				<ul class="problem-list jscroll">
+					 <% @problems.each do |problem| %>
+						<tr>
+							<td style="color:maroon;"><%= problem.category.problem_name  %></td>
+								<td><%=  problem.customer.name %><br><%= link_to problem.body,problem_path(problem) %></td>
+						</tr>
+					<% end %>
+				</ul>
 			</table>
-			<%= paginate @problems, class: "paginate" %>
+			<%= paginate @problems %>
 		</div>
 	</div>
 </div>
