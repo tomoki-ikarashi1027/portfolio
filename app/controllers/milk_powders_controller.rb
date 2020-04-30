@@ -13,7 +13,8 @@ class MilkPowdersController < ApplicationController
 		end
 	end
 	def edit
-		@milk_powder = MilkPowder.find(params[:baby_id])
+	    @baby = Baby.find(params[:baby_id])
+		@milk_powder =  @baby.MilkPowder.find(params[:baby_id])
 	end
 	def update
 		@baby = Baby.find(params[:id])

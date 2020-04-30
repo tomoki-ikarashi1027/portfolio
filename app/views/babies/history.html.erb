@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="row">
         <div class="col-xs-5">
+        	<div class="jscroll">
 			<%= form_with url: history_baby_path(@baby), method: :get, local: true do |f| %>
 			     <%= f.date_field :date, value: @date %>
 			     <%= f.submit "検索する" ,class: "btn btn-info" %>
@@ -58,6 +59,7 @@
 					</tr>
 				<% end %>
 			</table>
+		</div>
 		</div>
 	</div>
 </div>

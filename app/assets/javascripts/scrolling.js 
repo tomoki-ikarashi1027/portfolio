@@ -1,0 +1,11 @@
+$(window).on('scroll', function() {
+console.log("!!!")
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+          $('.jscroll').jscroll({
+            contentSelector: '.problem-list',
+            nextSelector: 'span.next:last a'
+          });
+    }
+});

@@ -1,7 +1,8 @@
 class ProblemsController < ApplicationController
 	before_action :authenticate_customer!
 	def index
-		@problems = Problem.search(params[:search],params[:problem_name]).page(params[:page]).reverse_order
+		@problems = Problem.search(params[:search],params[:problem_name])
+		@problems = @problems.page(params[:page]).reverse_order.per(5)
 	end
 	def new
 		@problem = Problem.new
@@ -9,7 +10,7 @@ class ProblemsController < ApplicationController
 	def show
 		@problem = Problem.find(params[:id])
 		@comment = Comment.new
-		@comments = @problem.comments.page(params[:page]).reverse_order
+		@comments = @problem.comments.page(params[:page]).per(5).reverse_order
 	end
 	def create
 		@problem = Problem.new(problem_params)

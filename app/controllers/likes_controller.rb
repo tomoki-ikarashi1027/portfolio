@@ -2,6 +2,7 @@ class LikesController < ApplicationController
 	def create
 		@comment = Comment.find(params[:comment_id])
 		like = current_customer.likes.new(comment_id: @comment.id)
+		binding.pry
 		like.save
 	end
 	def destroy
