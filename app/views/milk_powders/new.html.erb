@@ -4,16 +4,16 @@
          <p class="tokei-box" id="RealtimeClockArea2"></p>
          <h2>ミルク・記録</h2>
          <%= form_for [@baby, @milk_powder] do |f| %>
-            <% if @milk_powder.errors.any? %>
-               <% @milk_powder.errors.full_messages.each do |message| %>
-               <li><%= message %></li>
-            <% end %>
-            <% end %>
-         <div class="milk-powder-select">
-            <%= f.select :body, grouped_options_for_select(MilkPowder::SELECT_OPTIONS), {include_blank: '授乳量を選択'} %>
-            <span class="aa">cc</span><br>
-         </div>
-         	<%= f.submit '保存する',class: "btn btn-primary"  %>
+               <% if @milk_powder.errors.any? %>
+                  <% @milk_powder.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+               <% end %>
+               <% end %>
+            <div class="milk-powder-select">
+               <%= f.select :body, grouped_options_for_select(MilkPowder::SELECT_OPTIONS), {include_blank: '授乳量を選択'} %>
+               <span class="aa">cc</span><br>
+            </div>
+            <%= f.submit '保存する',class: "btn btn-primary"  %>
          <% end %>
          <%= link_to "戻る", baby_path(@baby.id) %>
       </div>
