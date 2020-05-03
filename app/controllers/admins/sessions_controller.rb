@@ -6,7 +6,7 @@ class Admins::SessionsController < Devise::SessionsController
     admins_categories_path
   end
   def after_sign_out_path_for(resource)
-    admins_session_path
+    admin_session_path
   end
   # before_action :configure_sign_in_params, only: [:create]
 

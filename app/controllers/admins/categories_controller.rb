@@ -20,6 +20,7 @@ class Admins::CategoriesController < ApplicationController
 	def destroy
 		@category = Category.find(params[:id])
 		@category.destroy
+		redirect_to admins_categories_path
 	end
 	private
 	def category_params
