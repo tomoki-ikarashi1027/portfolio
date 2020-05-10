@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row">
+	<div class="modal1">
 	   <h2>ミルク・編集</h2>
 		 <%= form_for [@baby, @milk_powder] , url:baby_milk_powders_path(id:@milk_powder.baby_id) do |f| %>
 		    <% if @milk_powder.errors.any? %>
@@ -11,7 +11,7 @@
 	        	<%= f.select :body, grouped_options_for_select(MilkPowder::SELECT_OPTIONS), {include_blank: '授乳量を選択'} %>
 	        	<span class="aa">cc</span><br>
 	        </div>
-	        <%= f.submit '保存する',class: "btn btn-primary"  %>
+	        <%= f.submit '保存する',class: "btn btn-primary "  %>
 		<% end %>
 	</div>
 </div>

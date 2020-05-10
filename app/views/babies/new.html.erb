@@ -1,6 +1,5 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-5">
+  <div class="modal1">
       <h2>赤ちゃん登録</h2>
         <%= form_for(@baby) do |f| %>
           <% if @baby.errors.any? %>
@@ -8,23 +7,24 @@
                 <li><%= message %></li>
               <% end %>
           <% end %>
-          <label>お名前</label><br>
-          	<%= f.text_field :baby_name %><br>
-          	<%= f.label :お誕生日 %>
-           	<%= raw sprintf(
-              f.date_select(
-                :birth,
-                use_month_numbers: true,
-                start_year: 2020,
-                end_year: (Time.now.year - 18),
-                default: Date.new(2020, 1, 1),
-                date_separator: '%s'),
-              '年 ', '月 ') + '日' %><br>
-          	<label>性別</label>
-          	<label><%= f.radio_button :sex, "man" %> 男の子 </label>
-          	<label><%= f.radio_button :sex, "woman" %> 女の子</label><br>
-          	<%= f.submit '保存する',class: "btn btn-primary"  %>
+          <div class="baby-modal">
+              <label class="baby-modal" >お名前</label>
+              <%= f.text_field :baby_name %><br>
+              <label class="baby-modal">お誕生日</label>
+             	<%= raw sprintf(
+                f.date_select(
+                  :birth,
+                  use_month_numbers: true,
+                  start_year: 2020,
+                  end_year: (Time.now.year - 18),
+                  default: Date.new(2020, 1, 1),
+                  date_separator: '%s'),
+                '年 ', '月 ') + '日' %><br>
+            	<label class="baby-modal" >性別</label>
+            	<label><%= f.radio_button :sex, "man" %> 男の子 </label>
+            	<label><%= f.radio_button :sex, "woman" %> 女の子</label><br>
+            	<%= f.submit '保存する',class: "btn btn-primary btn2"  %>
+          </div>
         <% end %>
-    </div>
   </div>
 </div>

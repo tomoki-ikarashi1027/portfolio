@@ -1,6 +1,5 @@
 <div class="container">
-	<div class="row">
-        <div class="col-xs-3">
+	<div class="modal1">
 			<h2>体重・編集</h2>
 			<%= form_for [@baby, @body_weight] , url:baby_body_weights_path(id:@body_weight.baby_id ) do |f| %>
 			<% if @body_weight.errors.any? %>
@@ -8,9 +7,8 @@
                <li><%= message %></li>
             <% end %>
             <% end %>
-				<%= f.text_field :body %><br>
+				<%= f.text_field :body %>KG<br>
 				<%= f.submit '保存する' ,class: "btn btn-primary" %>
 			<% end %>
-		</div>
 	</div>
 </div>

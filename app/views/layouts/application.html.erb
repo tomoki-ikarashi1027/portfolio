@@ -12,6 +12,7 @@
   </head>
 
   <body>
+  <div class="wrap">
     <header class="header">
       <div class="container">
         <nav>
@@ -66,11 +67,9 @@
         </nav>
       </div>
     </header>
+    <div class ="contents">
     <%= yield %>
-    <footer class="footer">
-      <div class="col-xs-offset-9 footer-text">
-        <p>Lovely Baby</p>
-      </div>
-    </footer>
+  </div>
+</div>
   </body>
 </html>

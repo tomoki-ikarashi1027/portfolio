@@ -28,13 +28,24 @@ input[type="date"]::-webkit-clear-button{
   -webkit-appearance: none;
 }
 
+html, body{
+  margin: 0;  /* 余白の削除 */
+  padding: 0; /* 余白の削除 */
+  height: 100%; /* 縦の高さを100% */
+  width: 100%;  /* 横の幅を100% */
+  background-color:#F0F8FF;
+}
+
+
 header{
- height: 70px;
+ height: 80px;
  font-size: 15px;
  background-color:gold;
  color:#664d51;
- margin-bottom: 10px;
  width:100%;
+ position:fixed;
+ top:0;
+ z-index:100;
 
  }
 
@@ -53,30 +64,11 @@ li{
 }
  body{
  color:#664d51;
- height: 100%;
- padding:0;
- margin:0 auto;
+ min-height: 100%;
  font-family: 'M PLUS Rounded 1c', sans-serif;
- background-image:  image-url('back-image.jpg');
- background-size:cover;
- background-potion:left;
  }
 
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
-}
 
-footer{
-	width:100%;
-	height:70px;
-	bottom: 0;
-	position: fixed;
-	background-color:palegoldenrod;
-
-
-}
 .col-xs-10{
 	width:100%;
 }
@@ -102,7 +94,6 @@ footer{
 	display: inline-block;
 	text-align: center;
 	margin-right:5px;
-	float:left;
 }
 .item{
 	display: inline-block;
@@ -129,10 +120,6 @@ footer{
 .category{
 	background-color:red;
 }
-.box{
-	padding-left:100px;
-	padding-top:30px;
-}
 
 .navbar-right{
 	padding-top:35px;
@@ -141,10 +128,7 @@ footer{
 .ploblem-image{
 	background-image:  image-url('back-image1.jpg');
 }
-.footer-text{
-	font-size:30px;
-	padding-top:15px;
-}
+
 .paginate {
 	a {
 		text-decoration: none;
@@ -158,3 +142,27 @@ nav ul li{
     display: inline;
     width:20%;
     }
+
+.wrap{
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+     }
+
+.contents{
+	padding-top:70px;
+}
+
+.modal1 {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 40px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
