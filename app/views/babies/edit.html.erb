@@ -1,6 +1,5 @@
 <div class="container">
-	<div class="row">
-        <div class="col-xs-3">
+	<div class="modal1">
 			<h2>赤ちゃんの編集</h2>
 				<%= form_for(@baby) do |f| %>
 				  <% if @baby.errors.any? %>
@@ -19,13 +18,12 @@
 						end_year: (Time.now.year - 18),
 						default: Date.new(2020, 1, 1),
 						date_separator: '%s'),
-					'年' , '月') + '日'%>
+					'年' , '月') + '日'%><br>
 					<label>性別</label>
 					<label><%= f.radio_button :sex, "man" %> 男の子 </label>
 					<label><%= f.radio_button :sex, "woman" %> 女の子</label><br>
 					<%= f.submit '保存する' ,class: "btn btn-primary" %>
 				<% end %>
 			<%= link_to '赤ちゃん選択画面', babies_path %>
-		</div>
 	</div>
 </div>
