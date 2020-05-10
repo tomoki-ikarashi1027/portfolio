@@ -1,7 +1,5 @@
 <div class="container">
-	<div class="row">
-        <div class="col-xs-5">
-        	<div class="box">
+	<div class="modal1">
         	<p class="tokei-box" id="RealtimeClockArea2"></p>
 			<h2>おむつ・記録</h2>
 			<%= form_for [@baby, @excretion] do |f| %>
@@ -24,8 +22,6 @@
 					<%= f.submit '保存する',class: "btn btn-primary" %>
 			<% end %>
 			<%= link_to "戻る", baby_path(@baby.id) %>
-			</div>
-		</div>
 	</div>
 </div>
 

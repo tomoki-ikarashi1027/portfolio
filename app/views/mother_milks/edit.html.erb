@@ -1,11 +1,9 @@
 <div class="container">
-	<div class="row">
-        <div class="col-xs-3">
+	<div class="modal1">
 			<h2>母乳・編集</h2>
 			<%= form_for [@baby, @mother_milk] , url: baby_mother_milks_path(id:@mother_milk.baby_id ) do |f| %>
-				<%= f.text_field :body %>
+				<%= f.text_field :body %><br>
 				<%= f.submit '保存する' ,class: "btn btn-primary" %>
 			<% end %>
-		</div>
 	</div>
 </div>

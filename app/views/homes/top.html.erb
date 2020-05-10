@@ -1,9 +1,11 @@
-<div class="container">
-	<div class="row">
-		<div class="col-xs-8">
-			<h2>Lovely Baby</h2>
-			<%= link_to "赤ちゃん登録", new_baby_path %><br>
-			<%= link_to "登録済みの方はこちら", babies_path %>
-		</div>
+<section id="mv" >
+	<div class="baby-link">
+		<h1 class="top-title" >I'll protect an important baby</h1>
+		<p class="top-content">大切な赤ちゃんを守るために<br>
+		   私たちがやるべきこと<br>
+		   毎日の記録を手助けするアプリです
+		</p>
+		<%= link_to "赤ちゃん登録", new_baby_path ,class: "btn btn-info baby-btn" %><br>
+		<%= link_to "登録済みの方はこちら", babies_path , class: "btn btn-success baby-btn" %>
 	</div>
-</div>
+</section>
