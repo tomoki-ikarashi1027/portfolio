@@ -1,11 +1,11 @@
 <div class="container">
-	<div class="row">
-        <div class="col-xs-5"><h2>赤ちゃんの選択</h2>
+	<div class="modal1">
+        <h2>SELECT BABY</h2>
 			<table class="table">
 				<tbody>
 				 	<% @babies.each do |baby| %>
 						<tr>
-							 <td><%= baby.baby_name %></td>
+							 <td><%= baby.baby_name +  "(" + baby.sex + ")" %></td>
 							 <td><%= link_to "選択",  baby_path(baby.id) %></td>
 							 <td><%= link_to "編集", edit_baby_path(baby.id) %></td>
 							 <td><%= link_to "削除", baby_path(baby.id), method: :delete, data: { confirm: '本当に消しますか？' } %></td>
@@ -13,9 +13,8 @@
 					<% end %>
 				</tbody>
 				<tr>
-					<td><%= link_to "赤ちゃんを追加する", new_baby_path %></td>
+					<td><%= link_to "赤ちゃんの追加", new_baby_path ,class: "btn btn-default"%></td>
 				</tr>
 			</table>
-		</div>
 	</div>
 </div>

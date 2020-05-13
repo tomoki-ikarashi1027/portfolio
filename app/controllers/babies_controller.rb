@@ -25,7 +25,7 @@ class BabiesController < ApplicationController
 	def update
 		@baby = Baby.find(params[:id])
 		if @baby.update(baby_params)
-			redirect_to edit_baby_path(@baby.id)
+			redirect_to babies_path
 		else render :edit
 		end
 	end
