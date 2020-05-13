@@ -16,17 +16,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-input[type="date"] {
-  padding: 10px;
-  text-align: center;
-}
-
-input[type="date"]::-webkit-inner-spin-button{
-  -webkit-appearance: none;
-}
-input[type="date"]::-webkit-clear-button{
-  -webkit-appearance: none;
-}
+*{box-sizing :border-box;}
 
 html, body{
   margin: 0;  /* 余白の削除 */
@@ -45,7 +35,7 @@ header{
  width:100%;
  position:fixed;
  top:0;
- z-index:100;
+ z-index:10;
 
  }
 
@@ -78,26 +68,30 @@ li{
 	 font-size:25px;
 
 }
+
 .green {
     filter: invert(17%) sepia(91%) saturate(7085%) hue-rotate(128deg) brightness(100%) contrast(106%);
 }
+
 .btn{
 	margin-top:10px;
 }
+
 .myButton{
 	margin-bottom:20px;
-
 	font-family: 'Roboto Slab', serif;
-
 }
+
 .haisetu{
 	display: inline-block;
 	text-align: center;
 	margin-right:5px;
 }
+
 .item{
 	display: inline-block;
 }
+
 .items{
  text-align: center;
  margin-top:30px;
@@ -165,4 +159,28 @@ nav ul li{
   width: 450px;
   height: auto;
   text-align: center;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+  text-align:center;
+  line-height:50px;
+}
+
+footer {
+  height:50px;
+  background-color:gold;
+}
+
+input[type="date"] {
+  padding: 10px;
+  text-align: center;
+}
+
+input[type="date"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+input[type="date"]::-webkit-clear-button{
+  -webkit-appearance: none;
 }

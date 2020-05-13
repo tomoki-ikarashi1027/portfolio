@@ -20,7 +20,7 @@
 						date_separator: '%s'),
 					'年' , '月') + '日'%><br>
 					<label>性別</label>
-					<label><%= f.radio_button :sex, "man" %> 男の子 </label>
+					<label><%= f.radio_button :sex, "man" ,required: true  %> 男の子 </label>
 					<label><%= f.radio_button :sex, "woman" %> 女の子</label><br>
 					<%= f.submit '保存する' ,class: "btn btn-primary" %>
 				<% end %>
