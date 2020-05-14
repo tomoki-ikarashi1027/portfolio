@@ -64,14 +64,13 @@
 
 }
 
-.side{
-	height:50px;
-}
+
 .about-box{
 	margin-top
 	:1em;
 	font-family: 'Playfair Display', serif;
 	font-size:20px;
+    width:50%;
 	}
 
 #mv{
@@ -84,14 +83,46 @@
 
 .baby-link{
     margin-left:100px;
-    padding-top:130px;
+    padding-top:100px;
 }
 .top-title{
     font-size:40px;
     opacity: 0.4;
     color:#00008B;
+    margin-bottom:30px;
 }
 
 .top-content{
+    font-size:25px;
+}
+.top-content2{
     font-size:20px;
+}
+
+.baby-content{
+    display:flex;
+}
+
+
+@media(max-width: 1000px){
+    .baby-content{
+       flex-direction:column;
+       margin-top:40px;
+    }
+    .about-box {
+       margin:0 auto;
+    }
+
+}
+
+@media(max-width: 670px){
+    .baby-content{
+       flex-direction:column;
+       margin-top:40px;
+    }
+    .about-box {
+       margin:0 auto;
+       width:80%;
+    }
+
 }

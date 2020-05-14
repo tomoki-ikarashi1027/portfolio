@@ -15,7 +15,7 @@ class ProblemsController < ApplicationController
 	def create
 		@problem = Problem.new(problem_params)
 		@problem.customer_id = current_customer.id
-		@problem.score = Language.get_data(params[:problem][:body] )
+		# @problem.score = Language.get_data(params[:problem][:body] )
 		if @problem.save
 		redirect_to problems_path
 		else render :new
@@ -35,6 +35,6 @@ class ProblemsController < ApplicationController
 	private
 	def problem_params
 		params.require(:problem).permit(:customer_id, :category_id, :body, :name)
-end
+	end
 end
 

@@ -1,8 +1,8 @@
 <div class="container">
-	<div class="row">
-        <div class="col-xs-5">
+	<div class="problem">
+        <div class="problem-content">
 			<h2>お悩み詳細</h2>
-			<table class="table sss">
+			<table >
 				<tr>
 					<td>カテゴリー: <%= @problem.category.problem_name %></td>
 				</tr>
@@ -29,13 +29,13 @@
 					<%= f.submit "投稿する"  %>
 			<% end %>
 		</div>
-		<div class="col-xs-7">
-			<table class="table sss">
+		<div class="problem-comment">
+			<table class="table">
 				<% @comments.each do |comment| %>
 					<tr>
 						<td style="color:black;"><%= comment.body %></td>
 						<td id="likes_buttons_<%= comment.id %>">
-									<%= render partial: 'likes/like', locals: { comment: comment} , class: 'like' %>
+							<%= render partial: 'likes/like', locals: { comment: comment} , class: 'like' %>
 						</td>
 						<% if comment.customer_id == current_customer.id %>
 								<td><%= link_to "コメント削除",  comment_path(comment), method: :delete %></td>
