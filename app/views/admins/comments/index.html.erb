@@ -1,20 +1,23 @@
 <div class="container">
-	<h3>コメント一覧</h3>
-	<table>
-		<% @comments.each do |comment| %>
-			<tr>
-				<td><%= comment.body %></td>
-				<td><%= link_to "削除",  comment_path(comment), method: :delete %></td>
-			<% if comment.score <= 0 && comment.score >= 0.5  %>
-				<td><i class="far fa-thumbs-down"></i></td>
-				<div>
-					<td class="score_comment1">評価の低いコメントです</td>
-				</div>
-			<% elsif comment.score <=  -0.4  %>
-				<td><i class="fas fa-exclamation-triangle"></i></td>
-				<td class="score_comment2">コメント内容に応じて削除して下さい</td>
+	<div class="admin-box">
+		<h1>コメント一覧</h1>
+		<table class="table">
+			<% @comments.each do |comment| %>
+				<tr>
+					<td><%= comment.body %></td>
+					<td><%= link_to "削除",  admins_comment_path(comment), method: :delete %></td>
+				<% if comment.score.to_i <= 0 && comment.score.to_i >= 0.5  %>
+					<td><i class="far fa-thumbs-down"></i></td>
+					<div>
+						<td class="score_comment1">評価の低いコメントです</td>
+					</div>
+				<% elsif comment.score.to_i <=  -0.4  %>
+					<td><i class="fas fa-exclamation-triangle"></i></td>
+					<td class="score_comment2">コメント内容に応じて削除して下さい</td>
+				<% end %>
+				</tr>
 			<% end %>
-			</tr>
-		<% end %>
-	</table>
+		</table>
+		<%= paginate @comments, class: "paginate" %>
+	</div>
 </div>

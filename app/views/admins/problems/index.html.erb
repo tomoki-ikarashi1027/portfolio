@@ -1,20 +1,18 @@
 <div class="container">
-	<div class="row">
-        <div class="col-xs-10">
-			<h2>みんなのお悩み</h2>
-			<table class="table">
-				<tbody>
-					<% @problems.each do |problem| %>
-						<tr>
-							<td><%= link_to problem.body,admins_problem_path(problem) %></td>
-							<td><%= link_to "削除",  admins_problem_path(problem), method: :delete %></td>
-						<% if problem.score <=  -0.4  %>
-							<td class="score_comment2"><i class="fas fa-exclamation-triangle"></i>投稿内容に応じて削除して下さい</td>
-						<% end %>
-						</tr>
+	<div class="admin-box">
+		<h1>お悩み一覧</h1>
+		<table class="table">
+			<tbody>
+				<% @problems.each do |problem| %>
+					<tr>
+						<td><%= link_to problem.body,admins_problem_path(problem) %></td>
+						<td><%= link_to "削除",  admins_problem_path(problem), method: :delete %></td>
+					<% if problem.score.to_i <=  -0.4  %>
+						<td class="score_comment2"><i class="fas fa-exclamation-triangle"></i>投稿内容に応じて削除して下さい</td>
 					<% end %>
-				</tbody>
-			</table>
-		</div>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
 	</div>
 </div>

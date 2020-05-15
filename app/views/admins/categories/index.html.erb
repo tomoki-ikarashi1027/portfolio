@@ -1,21 +1,23 @@
 <div class="container">
-	<h2>悩みのカテゴリ-追加・一覧</h2>
-	<%= form_for(@category, url:admins_categories_path) do |f| %>
-		<label>カテゴリー<%= f.text_field :problem_name %></label>
-		<%= f.submit '追加' %>
-	<% end %>
-	<table>
-		<tr>
-			<th>カテゴリー名</th>
-		</tr>
-		<tbody>
-			<% @categories.each do |category| %>
+	<div class="admin-box">
+		<h1>悩みのカテゴリ-追加・一覧</h1>
+		<%= form_for(@category, url:admins_categories_path) do |f| %>
+			<label>カテゴリー<%= f.text_field :problem_name %></label>
+			<%= f.submit '追加' %>
+		<% end %>
+		<table>
 			<tr>
-				<td><%= category.problem_name %></td>
-				<td><%= link_to '編集', edit_admins_category_path(category.id) %></td>
-				<td><%= link_to '削除', admins_category_path(category) , method: :delete %></td>
+				<th>カテゴリー名</th>
 			</tr>
+			<tbody>
+			<% @categories.each do |category| %>
+				<tr>
+					<td><%= category.problem_name %></td>
+					<td><%= link_to '編集', edit_admins_category_path(category.id) %></td>
+					<td><%= link_to '削除', admins_category_path(category) , method: :delete %></td>
+				</tr>
 			<% end %>
-		</tbody>
-	</table>
+			</tbody>
+		</table>
+	</div>
 </div>
