@@ -1,14 +1,16 @@
 <div class="container">
-	<h2>お悩み詳細</h2>
-	<table class="table">
-		<tr>
-			<td><%= @problem.category.problem_name %></td>
-		</tr>
-		<tr>
-			<td><%= @problem.body %></td>
-		</tr>
-			<td>コメント数：<%= @problem.comments.count %></td>
-		</tr>
-	</table>
+	<div class="admin-box">
+		<h1>お悩み詳細</h1>
+		<table class="table">
+			<tr>
+				<td><%= @problem.category.problem_name %></td>
+			</tr>
+			<tr>
+				<td><%= @problem.body %></td>
+			</tr>
+				<td>コメント数：<%= @problem.comments.count %></td>
+			</tr>
+		</table>
+	</div>
 </div>
 

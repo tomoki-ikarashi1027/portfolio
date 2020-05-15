@@ -15,25 +15,24 @@
   <body>
   <div class="wrap">
     <header class="header">
-      <div class="container">
         <nav>
             <% if customer_signed_in?
                    if request.fullpath.index("/admins/") == nil%>
-              <div class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav navbar-left">
-                    <li><%= image_tag 'logo.jpg', size: '160x60' %></li>
+              <div>
+                  <ul >
+                    <li><%= image_tag 'logo.jpg',class: "logo " %></li>
                   </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                    <span><i class="fas fa-hands-helping"></i>
-                     <li><%= link_to "悩みを相談", problems_path  %></li></span>
-                     <span><i class= "fas fa-book-open 2x"></i>
-                     <li><%= link_to "使い方",homes_about_path  %></li></span>
-                     <span><i class="glyphicon glyphicon-log-out logout"></i>
-                     <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li></span>
+                  <ul class="navbar-bran nav-right">
+                    <i class="fas fa-hands-helping "></i>
+                     <li><%= link_to "悩みを相談", problems_path  %></li>
+                     <i class= "fas fa-book-open 2x"></i>
+                     <li><%= link_to "使い方",homes_about_path  %></li>
+                     <i class="glyphicon glyphicon-log-out logout"></i>
+                     <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
                   </ul>
-
+                  <span class="fa fa-bars menu-icon"></span>
                 <% if @baby && @baby.baby_name %>
-                  <ul class="navbar-brand">
+                  <ul class="navbar-brand baby-name">
                      <li><%= link_to @baby.baby_name, babies_path %></li>
                   </ul>
                 <% end %>
@@ -66,7 +65,6 @@
                 </ul>
             <% end %>
         </nav>
-      </div>
     </header>
     <div class ="contents">
     <%= yield %>
