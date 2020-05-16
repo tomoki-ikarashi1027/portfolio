@@ -17,3 +17,34 @@ ul.problem-list {
 	width:100%;
 	font-size:15px;
 }
+
+.problem-wrapper h1{
+	font-size:30px;	
+}
+
+.problemname{
+	font-size:15px;
+}
+
+
+@media(max-width: 670px){
+	
+	.problem-table th{
+	font-size:16px;
+	padding-top:10px;
+	}
+	.problem-table td{
+	font-size:14px;
+	}
+	.problem-wrapper h1{
+	font-size:20px;
+	}
+	.problem-comment td{
+	padding:0px;
+	}
+	.problemname{
+	font-size:10px;
+	}
+}
+
+

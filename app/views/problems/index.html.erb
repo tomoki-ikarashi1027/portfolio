@@ -1,4 +1,4 @@
-<div class="container problem-image">
+<div class="container problem-wrapper">
 	<div class="row">
         <div class="col-xs-10">
         	<div class="search">
@@ -13,14 +13,18 @@
 					<%= submit_tag "検索" %>
 				<% end %>
 			</div>
+			<h1>お悩み相談室</h1>
 			<%= link_to "投稿する",new_problem_path  %>
 			<td> <%= link_to "赤ちゃん選択画面" , babies_path %></td>
-			<table class="table">
-				<th>みんなのお悩み</th>
+			<table class="table problem-table">
+				<th>カテゴリ</th>
+				<th>投稿者</th>
+				<th>投稿内容</th>
 					 <% @problems.each do |problem| %>
 						<tr>
-							<td style="color:maroon;"><%= problem.category.problem_name  %></td>
-							<td><%=  problem.customer.name %><br><%= link_to problem.body,problem_path(problem) %></td>
+							<td class="problem-category col-xs-3" ><%= problem.category.problem_name  %></td>
+							<td ><%= problem.customer.name   %><span class="problemname">さん</span></td>
+							<td><%= link_to problem.body,problem_path(problem) %></td>
 						</tr>
 					<% end %>
 			</table>

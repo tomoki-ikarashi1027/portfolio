@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 		@problem = Problem.find(params[:comment][:problem_id])
 		@comment = @problem.comments.new(comment_params)
 		@comment.customer_id = current_customer.id
-		@comment.score = Language.get_data(params[:comment][:body] )
+		# @comment.score = Language.get_data(params[:comment][:body] )
 		if@comment.save
 		  redirect_to problem_path(@problem)
 		else

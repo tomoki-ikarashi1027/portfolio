@@ -1,3 +1,49 @@
 // Place all the styles related to the mother_milks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+nav.menu {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    width: 100%;
+}
+ 
+nav.menu ul {
+    background: #ccc;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+ 
+nav.menu ul li {
+    font-size: 1.1em;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px dotted #333;
+}
+ 
+/* 最後はラインを描かない */
+nav.menu ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+ 
+nav.menu ul li a {
+    display: block;
+    color: #000;
+    padding: 1em 0;
+}
+ 
+/* このクラスを、jQueryで付与・削除する */
+nav.menu.active {
+    transform: translateY(0%);
+}
