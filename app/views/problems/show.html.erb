@@ -38,7 +38,7 @@
 							<%= render partial: 'likes/like', locals: { comment: comment} , class: 'like' %>
 						</td>
 						<% if comment.customer_id == current_customer.id %>
-								<td><%= link_to "コメント削除",  comment_path(comment), method: :delete %></td>
+								<td ><%= link_to "削除",  comment_path(comment), method: :delete %></td>
 						<% end %>
 						<% if comment.score.to_i >= 1.5  %>
 							<i class="fas fa-praying-hands"></i>

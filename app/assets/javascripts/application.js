@@ -45,22 +45,22 @@ $(function(){
     });
 });
 
-$(function() {
-  $('.jscroll').jscroll({
-    contentSelector: '.problem-list',
-    nextSelector: 'span.next:last a'
-  });
-});
-$(window).on('scroll', function() {
 
-    scrollHeight = $(document).height();
-    scrollPosition = $(window).height() + $(window).scrollTop();
-    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
-           console.log("!!!")
-          $('.jscroll').jscroll({
-            contentSelector: '.problem-list',
-            nextSelector: 'span.next:last a'
-          });
-    }
-});
+$(function(){
+  $('.menu-icon').click(function(){
+    $('.menu-icon').hide()
+    $('.close-icon').fadeIn()
+    $('.nav-right').addClass('nav-open')
+    $('.nav-right').fadeIn('slow');
+  })
+})
+$(function(){
+  $('.close-icon').click(function(){
+    $('.close-icon').hide()
+    $('.menu-icon').fadeIn()
+    $('.nav-right').fadeOut('slow');
+  })
+})
+
+
 
