@@ -47,4 +47,17 @@ ul.problem-list {
 	}
 }
 
+.problem-table {
+	padding-bottom:20px;
+	font-size:17px;
+}
 
+.problem_btn {
+	margin-top:8px;
+	box-shadow:0 6px  #808080 ;
+}
+.problem_btn:active {
+	box-shadow:none;
+	position:relative;
+	top:6px;
+}
