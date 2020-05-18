@@ -19,26 +19,86 @@
 	margin-top:30px;
 }
 
+.mothermilk{
+	padding-left:6px;
+}
+
 .items {
 	text-align: center;
 	margin-top:30px;
 	display:flex;
 	flex-wrap :wrap;
-	padding:20px;
+	padding-top:30px;
+
 }
 .item {
+	position: relative;
 	flex:auto;
 	width:33%;
-	padding-bottom:20px;
+}
+
+
+.first-item .first-p {
+	position:absolute;
+	top:35%;
+	left:40%;
+	font-size:25px;
+}
+
+.first-item {
+	margin-bottom:50px;
+}
+
+.first-item .second-p {
+	position:absolute;
+	top:50%;
+	left:37%;
+	font-size:15px;
+	width:28%;
+	font-family:"Times New Roman";
+}
+
+.socond-item .first-p {
+	position:absolute;
+	top:35%;
+	left:43%;
+	font-size:25px;
+}
+
+.socond-item .second-p {
+	position:absolute;
+	top:50%;
+	left:37%;
+	font-size:15px;
+	width:26%;
+	font-family:"Times New Roman";
 }
 
 @media(max-width: 670px){
 	.items{
 	display:flex;
 	flex-wrap :wrap;
+	width:80%;
+	text-align:center;
+	margin:0 auto;
 	}
 	.item{
 	width:50%;
+	margin-bottom:10px;
+	padding-right:10px;
+	}
+	.first-item .second-p {
+	display:none;
+	}
+	.socond-item .second-p{
+	display:none;
+	}
+	.first-item .first-p {
+	left:23%;
+	}
+	.socond-item .first-p {
+	left:30%;
+	top:33%;
 	}
 }
 
