@@ -18,6 +18,11 @@
 
 *{box-sizing :border-box;}
 
+.first-item .second-p {
+
+}
+
+
 html, body{
   margin: 0;  /* 余白の削除 */
   padding: 0; /* 余白の削除 */
@@ -187,6 +192,18 @@ input[type="date"]::-webkit-clear-button{
   
 }
 
+.baby-name{
+  padding-top:18px;
+  text-align: center;
+  margin:0 auto;
+  position: absolute;
+  width: 50%;
+  margin-left:25%;
+  font-size:30px;
+}
+
+
+
 @media(max-width: 1000px){
   .modal1{
    width: 300px;
@@ -203,7 +220,7 @@ input[type="date"]::-webkit-clear-button{
   display:none;
   }
 
-  ul .baby-name{
+  .baby-name{
   font-size:20px;
   }
 
@@ -241,15 +258,7 @@ input[type="date"]::-webkit-clear-button{
    width:15%;
    margin-left:40px;
 }
-.baby-name{
-  padding-top:18px;
-  text-align: center;
-  margin:0 auto;
-  position: absolute;
-  width: 50%;
-  margin-left:25%;
-  font-size:30px;
-}
+
 
 .menu.active {
     transform: translateY(0%);

@@ -9,11 +9,29 @@
 
 <div class="container">
 		<div class="items">
-			<div class="item"><%= link_to image_tag('mother-milk.jpg' ), new_baby_mother_milks_path(@baby) %></div>
-			<div class="item"><%= link_to image_tag('powder-milk.jpg'), new_baby_milk_powders_path(@baby) %></div>
-			<div class="item"><%= link_to image_tag('excretion.jpg'),new_baby_excretions_path(@baby) %></div>
-			<div class="item"><%= link_to image_tag('body-weight.jpg'),new_baby_body_weights_path(@baby)%></div>
-			<div class="item"><%= link_to image_tag('body-temperature.jpg'), new_baby_body_temperatures_path(@baby)%></div>
-			<div class="item"><%= link_to image_tag('history.jpg'),  history_baby_path(@baby) %></div>
+			<div class="item first-item"><%= link_to image_tag('mother-milk2.jpg' ), new_baby_mother_milks_path(@baby)  %>
+				<p class="first-p mothermilk">母乳</p>
+				<p class="second-p">Mother Milk</p>
+			</div>
+			<div class="item first-item"><%= link_to image_tag('powder-milk2.jpg'), new_baby_milk_powders_path(@baby) %>
+				<P class="first-p">ミルク</P>
+				<p class="second-p">Milk Powder</p>
+			</div>
+			<div class="item first-item"><%= link_to image_tag('excretion4.jpg'),new_baby_excretions_path(@baby) %>
+				<p class="first-p">おむつ</p>
+				<p class="second-p">Excretion</p>
+			</div>
+			<div class="item socond-item"><%= link_to image_tag('body-weight2.jpg'),new_baby_body_weights_path(@baby)%>
+				<p class="first-p">体重</p>
+				<p class="second-p">Weight</p>
+			</div>
+			<div class="item socond-item"><%= link_to image_tag('body-temperature2.jpg'), new_baby_body_temperatures_path(@baby)%>
+				<p class="first-p">体温</p>
+				<p class="second-p">Temperature</p>
+			</div>
+			<div class="item socond-item"><%= link_to image_tag('history2.jpg'),  history_baby_path(@baby) %>
+				<P class="first-p">履歴</P>
+				<p class="second-p">History</p>
+			</div>
 		</div>
 </div>
