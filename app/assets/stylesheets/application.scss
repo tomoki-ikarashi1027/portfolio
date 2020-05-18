@@ -18,11 +18,6 @@
 
 *{box-sizing :border-box;}
 
-.first-item .second-p {
-
-}
-
-
 html, body{
   margin: 0;  /* 余白の削除 */
   padding: 0; /* 余白の削除 */
@@ -90,8 +85,12 @@ li{
 	font-family: 'Roboto Slab', serif;
 }
 
+a {
+  color:#191970;
+}
+
 a:hover{
- color:#664d51;
+ color:#FF4F02;
  text-decoration: none;
  }
 
@@ -128,6 +127,7 @@ a:hover{
 		}
 	}
 	}
+
 nav ul li{
     display: inline;
     width:20%;
@@ -189,7 +189,6 @@ input[type="date"]::-webkit-clear-button{
   font-size: 25px;
   padding: 20px 30px;
   display:none;
-  
 }
 
 .baby-name{
@@ -199,10 +198,8 @@ input[type="date"]::-webkit-clear-button{
   position: absolute;
   width: 50%;
   margin-left:25%;
-  font-size:30px;
+  font-size:25px;
 }
-
-
 
 @media(max-width: 1000px){
   .modal1{
@@ -210,8 +207,8 @@ input[type="date"]::-webkit-clear-button{
    padding:10px;
    margin-top:15px;
   }
-
 }
+
 @media(max-width: 670px){
   .modal1{
   margin-top:50px;
@@ -244,7 +241,6 @@ input[type="date"]::-webkit-clear-button{
   }
 }
 
-
 .nav-right{
   font-size:15px;
   text-align:right;
@@ -259,11 +255,9 @@ input[type="date"]::-webkit-clear-button{
    margin-left:40px;
 }
 
-
 .menu.active {
     transform: translateY(0%);
 }
-
 
 .nav-open{
   position: fixed;

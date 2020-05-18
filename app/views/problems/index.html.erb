@@ -14,9 +14,9 @@
 				<% end %>
 			</div>
 			<h1>お悩み相談室</h1>
-			<%= link_to "投稿する",new_problem_path  %>
-			<td> <%= link_to "赤ちゃん選択画面" , babies_path %></td>
-			<table class="table problem-table">
+			<div class="problem-table"><%= link_to "投稿画面",new_problem_path  %>
+			 <%= link_to "赤ちゃん選択画面" , babies_path %></div>
+			<table class="table">
 				<th>カテゴリ</th>
 				<th>投稿者</th>
 				<th>投稿内容</th>
