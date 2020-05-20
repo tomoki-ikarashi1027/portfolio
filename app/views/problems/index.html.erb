@@ -1,6 +1,5 @@
-<div class="container problem-wrapper">
-	<div class="row">
-        <div class="col-xs-10">
+<div class="container">
+	
         	<div class="search">
 				<%= form_tag problems_path, :method => 'get' do %>
 					<p>
@@ -13,6 +12,8 @@
 					<%= submit_tag "検索" %>
 				<% end %>
 			</div>
+		
+			<div class="problem-wrapper">
 			<h1>お悩み相談室</h1>
 			<div class="problem-table"><%= link_to "投稿画面",new_problem_path  %>
 			 <%= link_to "赤ちゃん選択画面" , babies_path %></div>
@@ -22,13 +23,12 @@
 				<th>投稿内容</th>
 					 <% @problems.each do |problem| %>
 						<tr>
-							<td class="problem-category col-xs-3" ><%= problem.category.problem_name  %></td>
+							<td><%= problem.category.problem_name  %></td>
 							<td ><%= problem.customer.name   %><span class="problemname">さん</span></td>
-							<td><%= link_to problem.body,problem_path(problem) %></td>
+							<td><%= link_to problem.body,problem_path(problem) , class: "problem-body"  %></td>
 						</tr>
 					<% end %>
 			</table>
 			<%= paginate @problems  %>
-		</div>
 	</div>
 </div>

@@ -1,22 +1,21 @@
 <div class="container">
 	<div class="problem">
         <div class="problem-content">
-			<h2>お悩み詳細</h2>
-			<table >
-				<tr>
-					<td>カテゴリー: <%= @problem.category.problem_name %></td>
-				</tr>
-				<tr>
-					<td>内容: <%= @problem.body %></td>
-					<% if @problem.customer_id == current_customer.id %>
-						<td><%= link_to "削除",  problem_path(@problem), method: :delete %></td>
-					<% end %>
-				</tr>
-				<tr>
-					<td>コメント数: <%= @problem.comments.count %></td>
-				</tr>
-				<td><%= link_to "戻る",problems_path(@problem) %></td>
-			</table>
+			<h2>お悩み詳細</h2>	
+			<div class="problem-category">
+				カテゴリ:<%= @problem.category.problem_name %>
+				<% if @problem.customer_id == current_customer.id %>
+					<%= link_to "削除する",  problem_path(@problem), method: :delete %>
+				<% end %>
+				<%= link_to "戻る",problems_path(@problem) %>
+			</div>
+			<div class="problem-body2"><%= @problem.body %></div>
+		
+					
+			
+		
+				<span>コメント数:</span> <%= @problem.comments.count %>件
+				
 			<%= form_for (@comment) ,url: comments_path  do |f| %>
 				<% if @comment.errors.any? %>
 					<% @comment.errors.full_messages.each do |message| %>
@@ -26,7 +25,7 @@
 				<h3>コメント</h3>
 					<%= f.text_area :body %>
 					<%= f.hidden_field :problem_id, :value => @problem.id %><br>
-					<%= f.submit "投稿する"  %>
+					<%= f.submit "投稿する" ,class: "problem_btn" %>
 			<% end %>
 		</div>
 		<div class="problem-comment">
