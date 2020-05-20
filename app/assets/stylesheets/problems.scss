@@ -11,7 +11,11 @@ ul.problem-list {
 }
 .problem-content{
 	font-size:20px;
-	margin:15px 0;
+	word-wrap: break-word;
+	margin-top:60px;
+	background-color:#e6ecf0;
+	padding:30px;
+	border-radius: 10px;
 }
 .problem-comment{
 	width:100%;
@@ -24,6 +28,15 @@ ul.problem-list {
 
 .problemname{
 	font-size:15px;
+}
+
+.problem-body{
+
+  width:600px;
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 
@@ -45,6 +58,12 @@ ul.problem-list {
 	.problemname{
 	font-size:10px;
 	}
+	.problem-body {
+	 width:130px;
+	}
+	.problem-category {
+	font-size:15px;
+	}
 }
 
 .problem-table {
@@ -60,4 +79,10 @@ ul.problem-list {
 	box-shadow:none;
 	position:relative;
 	top:6px;
+}
+.problem-category{
+	border-bottom:1px solid black;
+}
+.problem-body2 {
+	padding:15px;
 }
