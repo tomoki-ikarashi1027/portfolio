@@ -30,11 +30,7 @@ Rails.application.routes.draw do
    resources :comments, only: [:create, :destroy] do
    	resource :likes, only: [:create, :destroy]
    end
- resources :expertises, only: [:index, :show]
- resource :customer, only: [:show, :edit, :update, :destroy]
- resources :select_babies, only: [:index]
-
-
+ resources :customers, only: [:show, :edit, :update, :destroy]
  get 'homes/about' => "homes#about"
 
 end

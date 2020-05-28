@@ -1,34 +1,35 @@
 <div class="container">
-	
-        	<div class="search">
-				<%= form_tag problems_path, :method => 'get' do %>
-					<p>
-					    <%= text_field_tag :search, params[:search] ,placeholder: "キーワード検索" %>
-					    <%= submit_tag "検索", :body => nil %>
-					</p>
-				<% end %>
-				<%= form_tag(problems_path, method: "get") do %>
-					<%= select_tag "problem_name", options_for_select([["夜泣き", "夜泣き"],["睡眠","睡眠"],["沐浴","沐浴"],["授乳","授乳"]])  %>
-					<%= submit_tag "検索" %>
-				<% end %>
-			</div>
-		
-			<div class="problem-wrapper">
-			<h1>お悩み相談室</h1>
-			<div class="problem-table"><%= link_to "投稿画面",new_problem_path  %>
-			 <%= link_to "赤ちゃん選択画面" , babies_path %></div>
-			<table class="table">
+	<div class="search">
+		<%= form_tag problems_path, :method => 'get' do %>
+			<p>
+			    <%= text_field_tag :search, params[:search] ,placeholder: "キーワード検索" %>
+			    <%= submit_tag "検索", :body => nil %>
+			</p>
+		<% end %>
+		<%= form_tag(problems_path, method: "get") do %>
+			<%= select_tag "problem_name", options_for_select([["夜泣き", "夜泣き"],["睡眠","睡眠"],["沐浴","沐浴"],["授乳","授乳"]])  %>
+			<%= submit_tag "検索" %>
+		<% end %>
+	</div>
+	<div class="problem-wrapper">
+		<h1>お悩み相談室</h1>
+		<div class="problem-table"><%= link_to "投稿する",new_problem_path  %>/
+			<%= link_to "赤ちゃん選択ページ" , babies_path %>
+		</div>
+		<table class="table">
+			<tr>
 				<th>カテゴリ</th>
 				<th>投稿者</th>
 				<th>投稿内容</th>
-					 <% @problems.each do |problem| %>
-						<tr>
-							<td><%= problem.category.problem_name  %></td>
-							<td ><%= problem.customer.name   %><span class="problemname">さん</span></td>
-							<td><%= link_to problem.body,problem_path(problem) , class: "problem-body"  %></td>
-						</tr>
-					<% end %>
-			</table>
-			<%= paginate @problems  %>
+			</tr>
+			<% @problems.each do |problem| %>
+			<tr>
+				<td><%= problem.category.problem_name  %></td>
+				<td ><%= problem.customer.name   %><span class="problemname">さん</span></td>
+				<td><%= link_to problem.body,problem_path(problem) , class: "problem-body"  %></td>
+			</tr>
+			<% end %>
+		</table>
+		<%= paginate @problems  %>
 	</div>
 </div>

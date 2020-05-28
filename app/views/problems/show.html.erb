@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="problem">
         <div class="problem-content">
-			<h2>お悩み詳細</h2>	
+			<h2>お悩み詳細</h2>
 			<div class="problem-category">
 				カテゴリ:<%= @problem.category.problem_name %>
 				<% if @problem.customer_id == current_customer.id %>
@@ -10,12 +10,8 @@
 				<%= link_to "戻る",problems_path(@problem) %>
 			</div>
 			<div class="problem-body2"><%= @problem.body %></div>
-		
-					
-			
-		
-				<span>コメント数:</span> <%= @problem.comments.count %>件
-				
+
+			<span>コメント数:</span> <%= @problem.comments.count %>件
 			<%= form_for (@comment) ,url: comments_path  do |f| %>
 				<% if @comment.errors.any? %>
 					<% @comment.errors.full_messages.each do |message| %>

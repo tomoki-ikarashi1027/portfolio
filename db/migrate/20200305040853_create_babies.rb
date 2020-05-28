@@ -5,7 +5,6 @@ class CreateBabies < ActiveRecord::Migration[5.2]
       t.string :baby_name
       t.integer :sex
       t.date :birth
-      t.string :image_id
 
       t.timestamps
     end

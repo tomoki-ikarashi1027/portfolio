@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2020_04_28_021556) do
     t.string "baby_name"
     t.integer "sex"
     t.date "birth"
-    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_021556) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "image_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(version: 2020_04_28_021556) do
   create_table "excretions", force: :cascade do |t|
     t.integer "baby_id"
     t.text "body"
-    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "only"

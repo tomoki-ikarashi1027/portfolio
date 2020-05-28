@@ -62,5 +62,8 @@ $(function(){
   })
 })
 
+$(function(){
+  $('.input-image').hide();
+})
 
 
