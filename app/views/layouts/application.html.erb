@@ -23,7 +23,9 @@
                     <li><%= image_tag 'logo2.jpg',class: "logo2 " %></li>
                   </ul>
                   <ul class="nav-right ">
-                    <i class="fas fa-hands-helping "></i>
+                     <i class="fas fa-user"></i>
+                     <%= link_to "マイページ", customer_path(current_customer.id) %>
+                     <i class="fas fa-hands-helping "></i>
                      <li><%= link_to "悩み相談", problems_path  %></li>
                      <i class= "fas fa-book-open 2x"></i>
                      <li><%= link_to "使い方",homes_about_path  %></li>

@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="modal1">
+		<h2 class="user_info">User Info</h2>
+		<%= attachment_image_tag @customer,:image, size: "200x200",format: 'jpeg',fallback: "no_image.jpg" ,class: "self_image" %><br>
+		<label>ユーザー名:</label>
+		<%= @customer.name %>
+		<% if @customer.id == current_customer.id %>
+			<%= link_to '編集', edit_customer_path(@customer.id) %>
+		<% end %>
+		<table class="table">
+			<tbody>
+				<% @customer.babies.each do |baby| %>
+				<tr>
+
+					<td><%= baby.baby_name +  "(" + baby.sex + ")"%></td>
+					<td><%= link_to "編集", edit_baby_path(@baby) %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<%= link_to "記録ページへ", baby_path(@baby) %>
+	</div>
+</div>
