@@ -237,7 +237,7 @@ input[type="date"]::-webkit-clear-button{
 
   .menu-icon-open{
   background-color:red;
-  desplay:block;
+  display:block;
   }
 }
 
@@ -265,7 +265,7 @@ input[type="date"]::-webkit-clear-button{
   top: 80px;
   right:0;
   width: 140px;
-  height: 30vh;
+  height: 50vh;
   text-align:left;
   z-index: 200;
 }
@@ -279,4 +279,8 @@ input[type="date"]::-webkit-clear-button{
 
 .btn-primary{
   padding:5px 70px;
+}
+
+header i {
+  padding:0 5px;
 }

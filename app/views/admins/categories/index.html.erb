@@ -1,11 +1,11 @@
 <div class="container">
 	<div class="admin-box">
-		<h1>悩みのカテゴリ-追加・一覧</h1>
+		<h1>悩みのカテゴリ追加/一覧</h1>
 		<%= form_for(@category, url:admins_categories_path) do |f| %>
 			<label>カテゴリー<%= f.text_field :problem_name %></label>
 			<%= f.submit '追加' %>
 		<% end %>
-		<table>
+		<table class="table">
 			<tr>
 				<th>カテゴリー名</th>
 			</tr>

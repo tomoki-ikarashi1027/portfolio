@@ -18,60 +18,77 @@
         <nav>
             <% if customer_signed_in?
                    if request.fullpath.index("/admins/") == nil%>
-              <div class="menu">
-                  <ul>
-                    <li><%= image_tag 'logo2.jpg',class: "logo2 " %></li>
-                  </ul>
-                  <ul class="nav-right ">
-                     <i class="fas fa-user"></i>
-                     <%= link_to "マイページ", customer_path(current_customer.id) %>
-                     <i class="fas fa-hands-helping "></i>
-                     <li><%= link_to "悩み相談", problems_path  %></li>
-                     <i class= "fas fa-book-open 2x"></i>
-                     <li><%= link_to "使い方",homes_about_path  %></li>
-                     <i class="glyphicon glyphicon-log-out logout"></i>
-                     <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-                  </ul>
-              </div>
+                  <div class="menu">
+                      <ul>
+                        <li><%= link_to (image_tag 'logo2.jpg'),root_path, class: "logo2 " %></li>
+                      </ul>
+                      <ul class="nav-right">
+                        <%= link_to customer_path(current_customer.id) do %>
+                        <i class="fas fa-user"></i>MyPage
+                        <% end %>
+                        <%= link_to root_path do %>
+                        <i class="fas fa-home"></i>Home
+                        <% end %>
+                     <!--    <li><%= link_to problems_path do %></li>
+                          <i class="fas fa-hands-helping ">相談室</i>
+                        <% end %> -->
+                        <li><%= link_to homes_about_path do %></li>
+                          <i class= "fas fa-book-open 2x"></i>About
+                        <% end %>
+                        <%= link_to destroy_customer_session_path, method: :delete do %>
+                        <i class="fas fa-sign-out-alt"></i>LogOut
+                        <% end %>
+                      </ul>
+                  </div>
 
-              <span class="fa fa-bars menu-icon "></span>
-              <span class="fas fa-times close-icon"></span>
+                  <span class="fa fa-bars menu-icon "></span>
+                  <span class="fas fa-times close-icon"></span>
 
-              <% if @baby && @baby.baby_name %>
-                  <ul class="navbar-brand baby-name">
-                      <li><%= link_to @baby.baby_name, babies_path %></li>
-                  </ul>
-              <% end %>
-              
-            <% end %>
-            <% elsif admin_signed_in? %>
-                  <ul>
-                      <li><%= image_tag 'logo2.jpg' ,class: "logo2" %></li>
-                  </ul>
-                  <ul class="nav nav-right">
-                      <i class="far fa-window-maximize"></i>
-                      <%= link_to 'カテゴリー一覧', admins_categories_path  %>
-                      <i class= "fas fa-book-open 2x"></i>
-                      <%= link_to 'コメント一覧',  admins_comments_path %>
-                      <i class="fas fa-hands-helping"></i>
-                      <%= link_to 'お悩み一覧' ,  admins_problems_path %>
-                      <i class="glyphicon glyphicon-log-out logout"></i><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-                  </ul>
-            <% else %>
-            <div class="menu">
-                  <ul>
-                      <li><%= image_tag 'logo2.jpg' ,class: "logo2" %></li>
-                  </ul>
-                  <ul class="nav navbar-nav nav-right">
-                      <i class= "fas fa-book-open 2x"></i>
-                      <%= link_to "使い方",homes_about_path  %>
-                      <i class="glyphicon glyphicon-log-in sign_in"></i>
-                      <%= link_to "ログイン", new_customer_session_path %>
-                      <i class="glyphicon glyphicon-log-in sign_in"></i>
-                      <%= link_to "管理者の方はこちら", new_admin_session_path %>
-                  </ul>
-            </div>
-            <% end %>
+                  <% if @baby && @baby.baby_name %>
+                      <ul class="navbar-brand baby-name">
+                          <li><%= link_to @baby.baby_name, babies_path %></li>
+                      </ul>
+                  <% end %>
+                <% end %>
+                <% elsif admin_signed_in? %>
+                      <ul>
+                          <li><%= link_to (image_tag 'logo2.jpg'),root_path ,class: "logo2" %></li>
+                      </ul>
+                      <ul class="nav nav-right">
+                          <%= link_to admins_categories_path do %>
+                          <i class="far fa-window-maximize fas"></i>Category
+                          <% end %>
+                          <%= link_to admins_comments_path do %>
+                          <i class= "fas fa-book-open 2x"></i>Comment
+                          <% end %>
+                          <%= link_to admins_problems_path do %>
+                          <i class="fas fa-hands-helping"></i>Problem
+                          <% end %>
+                          <%= link_to destroy_admin_session_path, method: :delete do %>
+                          <i class="fas fa-sign-out-alt"></i>LogOut
+                          <% end %>
+                      </ul>
+                <% else %>
+                <div class="menu">
+                      <ul>
+                          <li><%= image_tag 'logo2.jpg' ,class: "logo2" %></li>
+                      </ul>
+                      <ul class="nav navbar-nav nav-right">
+                          <%= link_to new_customer_session_path do %>
+                          <i class="fas fa-user-plus"></i>SignUp
+                          <% end %>
+                          <%= link_to new_customer_session_path do %>
+                          <i class="fas fa-sign-in-alt"></i>LogIn
+                          <% end %>
+                           <%= link_to homes_about_path do %>
+                          <i class= "fas fa-book-open 2x"></i>About
+                          <% end %>
+                          <%= link_to new_admin_session_path do %>
+                          <i class="fas fa-sign-in-alt"></i>Admin
+                          <% end %>
+                      </ul>
+                </div>
+          　<% end %>
         </nav>
     </header>
     <div class ="contents">

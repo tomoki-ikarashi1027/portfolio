@@ -5,7 +5,7 @@
 			<%= form_for [@baby, @excretion] do |f| %>
 				<% if @excretion.errors.any? %>
 					<% @excretion.errors.full_messages.each do |message| %>
-						<li>どれか選択してください</li>
+						<li>いずれか選択してください</li>
 					<% end %>
 				<% end %>
 
@@ -19,9 +19,9 @@
 				<%=f.radio_button :only, :おしっこ %><p>おしっこ</p></div>
 
 					<%= f.text_area :body , class: 'text-area' %><br>
-					<%= f.submit '保存する',class: "btn btn-primary" %>
+					<%= f.submit 'Create',class: "btn btn-primary" %>
 			<% end %>
-			<%= link_to "戻る", baby_path(@baby.id) %>
+			<%= link_to "Back", baby_path(@baby.id) %>
 	</div>
 </div>
 
