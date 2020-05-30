@@ -12,9 +12,9 @@
                <%= f.select :body, grouped_options_for_select(MilkPowder::SELECT_OPTIONS), {include_blank: '授乳量を選択'} %>
                <span>cc</span><br>
             </div>
-            <%= f.submit '保存する',class: "btn btn-primary"  %>
+            <%= f.submit 'Create',class: "btn btn-primary"  %>
          <% end %>
-         <%= link_to "戻る", baby_path(@baby.id) %>
+         <%= link_to "Back", baby_path(@baby.id) %>
    </div>
 </div>
 

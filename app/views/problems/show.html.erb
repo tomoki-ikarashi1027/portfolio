@@ -7,7 +7,7 @@
 				<% if @problem.customer_id == current_customer.id %>
 					<%= link_to "削除する",  problem_path(@problem), method: :delete %>
 				<% end %>
-				<%= link_to "戻る",problems_path(@problem) %>
+				<%= link_to "Back",problems_path(@problem) %>
 			</div>
 			<div class="problem-body2"><%= @problem.body %></div>
 
