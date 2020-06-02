@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_153053) do
+ActiveRecord::Schema.define(version: 2020_05_31_095604) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2020_05_28_153053) do
     t.string "baby_name"
     t.integer "sex"
     t.date "birth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "baby_images", force: :cascade do |t|
+    t.string "baby_image_id"
+    t.text "body"
+    t.integer "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_153053) do
     t.decimal "score", precision: 5, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "baby_image_id"
   end
 
   create_table "customers", force: :cascade do |t|

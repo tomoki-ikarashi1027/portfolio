@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -31,6 +32,9 @@ Rails.application.routes.draw do
    	resource :likes, only: [:create, :destroy]
    end
  resources :customers, only: [:show, :edit, :update, :destroy]
+ resources :baby_images do
+  resources :baby_image_comments, only: [:create, :destroy]
+ end
  get 'homes/about' => "homes#about"
 
 end

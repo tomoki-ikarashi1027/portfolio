@@ -1,0 +1,14 @@
+<div class="container">
+	<h2 class="hiroba">自慢の赤ちゃんを投稿しよう！！</h2>
+	<%= link_to "Let's Post !", new_baby_image_path,class: "btn btn-default" %>
+	<div class="baby-images">
+		<% @baby_images.each do |image| %>
+			<div class="baby-image">
+				<%= link_to baby_image_path(image) do %>
+				<%= attachment_image_tag image,:baby_image, :fill,150,150,format: 'jpeg' %>
+				<% end %>
+				<div class="image-name"><%= "by" + image.customer.name %></div>
+			</div>
+		<% end %>
+	</div>
+</div>

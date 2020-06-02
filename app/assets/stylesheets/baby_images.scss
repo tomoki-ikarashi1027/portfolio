@@ -1,0 +1,72 @@
+// Place all the styles related to the BabyImages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.baby-images {
+	display:flex;
+	flex-wrap:wrap;
+	margin-top:15px;
+}
+.baby-image {
+	width:20%;
+}
+.baby_image_field {
+	padding-left:40px;
+}
+.modal2 h3 {
+	float:left;
+	margin-left:20px;
+	border-bottom:3px solid;
+	margin-bottom:20px;
+}
+.caption {
+	margin:20px 0;
+	width:80%;
+	height:150px;
+}
+.image-btn {
+	width:80%;
+	height:40px;
+	background-color:#1f3a93;
+	color:white;
+	box-shadow:0px 6px #000077 ;
+}
+
+.image-btn:active {
+	box-shadow:none;
+	position:relative;
+	top:6px;
+}
+
+.image-show{
+	text-align:center;
+	margin-top:100px;
+}
+
+.image-customer {
+	margin:30px;
+	text-align:left;
+}
+.customer-image {
+	border-radius:50%;
+}
+
+.image-customer span {
+	margin-left:30px;
+	font-size:20px;
+}
+
+.image-name{
+	margin-bottom:20px;
+	opacity:0.9;
+}
+
+.edit-image {
+	width:80%;
+	margin-bottom:20px;
+}
+
+.hiroba {
+	margin-top:30px;
+	font-size:25px;
+}

@@ -10,14 +10,13 @@ class CommentsController < ApplicationController
 		else
 		@comments = Comment.where(problem_id: @problem.id)
 		render template: "problems/show"
-	end
+		end
 	end
 	def destroy
 		@comment = Comment.find(params[:id])
 		@problem = @comment.problem
 		@comment.destroy
 		redirect_to problem_path(@problem)
-
 	end
 	private
 	def comment_params

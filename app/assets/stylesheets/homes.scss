@@ -16,8 +16,7 @@
     margin: 1em 0;
     color: #2c2c2f;
     background: dodgerblue;
-        height:90px;
-
+    height:90px;
 }
 
 
@@ -27,8 +26,7 @@
     margin: 1em 0;
     color: #2c2c2f;
     background: peru;
-        height:90px;
-
+    height:90px;
 }
 
 
@@ -38,8 +36,7 @@
     margin: 1em 0;
     color: #2c2c2f;
     background: lightcoral;
-        height:90px;
-
+    height:90px;
 }
 
 
@@ -49,8 +46,7 @@
     margin: 1em 0;
     color: #2c2c2f;
     background: springgreen;
-        height:90px;
-
+    height:90px;
 }
 
 
@@ -60,10 +56,8 @@
     margin: 1em 0;
     color: #2c2c2f;
     background: orangered;
-        height:90px;
-
+    height:90px;
 }
-
 
 .about-box{
 	margin-top
@@ -81,15 +75,13 @@
     background-position: center top;
 }
 
-.baby-link{
-    margin-left:100px;
-    padding-top:100px;
-}
 .top-title{
     font-size:40px;
-    opacity: 0.4;
+    opacity: 0.7;
     color:#00008B;
     margin-bottom:30px;
+    text-align:center;
+    padding-top:30px;
 }
 
 .top-content{
@@ -103,6 +95,102 @@
     display:flex;
 }
 
+.top-items {
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:300px;
+    margin-left: 150px;
+    font-size:20px;
+
+}
+
+.top-item1 {
+    width:200px;
+    height:200px;
+    background-color:#00CCFF;
+    border-radius:25%;
+    text-align:center;
+    padding-top:70px;
+    margin:40px;
+    box-shadow:0px 6px #444444 ;
+}
+
+.top-item1:active {
+    box-shadow:none;
+    position:relative;
+    top:6px;
+}
+
+.fa-pen {
+    margin-top:10px;
+    font-size:50px;
+}
+
+.top-item2 {
+    width:200px;
+    height:200px;
+    background-color:orange;
+    border-radius:25%;
+    text-align:center;
+    padding-top:70px;
+    margin:40px;
+    box-shadow:0px 6px #444444 ;
+}
+
+.top-item2:active {
+    box-shadow:none;
+    position:relative;
+    top:6px;
+}
+
+.fa-hands-helping {
+    margin-top:10px;
+    font-size:50px;
+}
+
+.top-item3 {
+    width:200px;
+    height:200px;
+    background-color:#FFCCFF;
+    border-radius:25%;
+    text-align:center;
+    padding-top:70px;
+    margin:40px;
+    box-shadow:0px 6px #444444 ;
+}
+
+.top-item3:active {
+    box-shadow:none;
+    position:relative;
+    top:6px;
+}
+
+.fa-camera{
+    margin-top:10px;
+    font-size:50px;
+}
+
+.top-item4 {
+    width:200px;
+    height:200px;
+    background-color:   #CCCC33;
+    border-radius:25%;
+    text-align:center;
+    padding-top:70px;
+    margin:40px;
+    box-shadow:0px 6px #444444 ;
+}
+
+.top-item4:active {
+    box-shadow:none;
+    position:relative;
+    top:6px;
+}
+
+.fa-book-open{
+    margin-top:10px;
+    font-size:50px;
+}
 
 @media(max-width: 1000px){
     .baby-content{

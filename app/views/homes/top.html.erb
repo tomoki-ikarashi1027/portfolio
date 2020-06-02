@@ -1,10 +1,30 @@
 <section id="mv" >
-	<div class="baby-link">
-		<h1 class="top-title" >I'll protect an important baby</h1>
-		<p class="top-content">大切な赤ちゃんを守るために<br>
-		   日々の記録を手助けします</p>
-		<P class="top-content2">子育てを楽しもう‼︎</P>
-		<%= link_to "新規登録", new_baby_path ,class: "btn btn-success baby-btn" %><br>
-		<%= link_to "登録済みの方はこちら", babies_path , class: "btn btn-info baby-btn" %>
+		<h1 class="top-title">I'll enjoy child rearing‼︎</h1>
+	<div class="top-items">
+		<%= link_to babies_path do %>
+		<div class="top-item1">
+			<div>Baby記録室</div>
+			<i class="fas fa-pen"></i>
+		</div>
+		<% end %>
+		<%= link_to problems_path do%>
+		<div class="top-item2">
+			<div>子育て相談室</div>
+			<i class="fas fa-hands-helping "></i>
+		</div>
+		<% end %>
+		<%= link_to baby_images_path do %>
+		<div class="top-item3">
+			<div>Baby自慢室</div>
+			<i class="fas fa-camera"></i>
+		</div>
+		<% end %>
+		<%= link_to homes_about_path do %>
+		<div class="top-item4">
+			<div>How To Use</div>
+			<i class= "fas fa-book-open 2x"></i>
+		</div>
+		<% end %>
 	</div>
 </section>
+
