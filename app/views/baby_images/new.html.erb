@@ -1,0 +1,10 @@
+<div class="container">
+	<div class="modal2">
+		<h3>画像投稿フォーム</h3>
+		<%= form_for (@baby_image) do |f| %>
+			<%= f.attachment_field :baby_image, class: "baby_image_field" %>
+			<%= f.text_area :body, placeholder: "画像の説明",class: "caption" %><br>
+			<%= f.submit '投稿', class: "image-btn" %>
+		<% end %>
+	</div>
+</div>

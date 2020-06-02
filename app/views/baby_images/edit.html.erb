@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="modal2">
+		<h3>画像編集フォーム</h3>
+		<%= form_for(@baby_image) do |f| %>
+		<%= attachment_image_tag @baby_image,:baby_image, :fill,500,300,format: 'jpeg' ,class: "edit-image" %>
+		<%= f.attachment_field :baby_image, class: "baby_image_field" %>
+			<%= f.text_area :body, placeholder: "画像の説明",class: "caption" %><br>
+			<%= f.submit 'Create', class: "image-btn" %>
+			<% end %>
+</div>
+</div>

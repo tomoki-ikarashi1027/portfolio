@@ -8,7 +8,7 @@ class Customer < ApplicationRecord
          has_many :comments, dependent: :destroy
          has_many :likes, dependent: :destroy
          has_many :problems, dependent: :destroy
-         has_many :excretions, dependent: :destroy
+         has_many :baby_images, dependent: :destroy
          validates :name, presence: true, length: { in: 2..20 }
          attachment :image
 end

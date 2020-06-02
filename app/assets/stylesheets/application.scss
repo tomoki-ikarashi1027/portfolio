@@ -34,7 +34,7 @@ img {
 header{
  height: 80px;
  font-size: 15px;
- background-color:gold;
+ background-color:#F5F5DC ;
  color:#664d51;
  width:100%;
  position:fixed;
@@ -156,6 +156,17 @@ nav ul li{
   text-align: center;
 }
 
+.modal2 {
+  margin:0 auto;
+  margin-top:100px;
+  background-color: white;
+  padding: 10px 0 40px;
+  border-radius: 5px;
+  width: 35%;
+  height: auto;
+  text-align: center;
+}
+
 footer p {
   color: #b3aeb5;
   font-size: 12px;
@@ -165,7 +176,7 @@ footer p {
 
 footer {
   height:50px;
-  background-color:gold;
+  background-color:#555555;
 }
 
 input[type="date"] {
