@@ -6,6 +6,7 @@ class BabyImagesController < ApplicationController
 
   def show
     @baby_image = BabyImage.find(params[:id])
+    @baby_image_comment = Comment.new
   end
 
   def new
