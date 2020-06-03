@@ -10,7 +10,7 @@ class ProblemsController < ApplicationController
 	def show
 		@problem = Problem.find(params[:id])
 		@comment = Comment.new
-		@comments = @problem.comments.page(params[:page]).per(5).reverse_order
+		@comments = @problem.comments.page(params[:page]).reverse_order.per(5)
 	end
 	def create
 		@problem = Problem.new(problem_params)

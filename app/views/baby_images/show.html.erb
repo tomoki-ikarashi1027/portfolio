@@ -2,11 +2,26 @@
 	<div class="image-show">
 		<%= attachment_image_tag @baby_image,:baby_image, format: 'jpeg' %>
 		<div class="image-customer">
-			<%= attachment_image_tag @baby_image.customer,:image, :fill,60,60,format: 'jpeg' ,class: "customer-image" %>
+			<%= attachment_image_tag @baby_image.customer,:image, :fill,80,80,format: 'jpeg' ,class: "customer-image" %>
 			<span><%= @baby_image.body %></span>
 			<div><%= "by" + @baby_image.customer.name %></div>
 			<%= link_to "編集", edit_baby_image_path(@baby_image) %>
 			<%= link_to "削除", baby_image_path(@baby_image) ,method: :delete %>
+		</div>
+	</div>
+	<div class="baby-comment-area">
+		<h3 class="baby-comment-count"><%= @baby_image.comments.count %>件のコメント</h3>
+		<%= form_for [@baby_image, @baby_image_comment] do |f| %>
+		<%= f.text_area :body %>
+		<%= f.submit '送信' %>
+		<% end %>
+
+		<div>
+			<% @baby_image.comments.each do |baby_comment| %>
+				<span><%= baby_comment.customer.name %></span>
+				<span><%= baby_comment.created_at.strftime('%Y/%m/%d') %></span>
+				<span><%= baby_comment.body %></span>
+			<% end %>
 		</div>
 	</div>
 </div>

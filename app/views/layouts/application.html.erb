@@ -29,12 +29,6 @@
                         <%= link_to customer_path(current_customer.id) do %>
                         <i class="fas fa-user"></i>MyPage
                         <% end %>
-                     <!--    <li><%= link_to problems_path do %></li>
-                          <i class="fas fa-hands-helping ">相談室</i>
-                        <% end %> -->
-                        <!-- <li><%= link_to homes_about_path do %></li>
-                          <i class= "fas fa-book-open 2x"></i>About
-                        <% end %> -->
                         <%= link_to destroy_customer_session_path, method: :delete do %>
                         <i class="fas fa-sign-out-alt"></i>LogOut
                         <% end %>
@@ -74,15 +68,12 @@
                           <li><%= image_tag 'logo2.jpg' ,class: "logo2" %></li>
                       </ul>
                       <ul class="nav navbar-nav nav-right">
-                          <%= link_to new_customer_session_path do %>
+                          <%= link_to new_customer_registration_path do %>
                           <i class="fas fa-user-plus"></i>SignUp
                           <% end %>
                           <%= link_to new_customer_session_path do %>
                           <i class="fas fa-sign-in-alt"></i>LogIn
                           <% end %>
-                        <!--    <%= link_to homes_about_path do %>
-                          <i class= "fas fa-book-open 2x"></i>About
-                          <% end %> -->
                           <%= link_to new_admin_session_path do %>
                           <i class="fas fa-sign-in-alt"></i>Admin
                           <% end %>
