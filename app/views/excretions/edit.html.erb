@@ -12,8 +12,8 @@
 
 				<div class="haisetu"><%= image_tag 'excretion2.jpg', size: '100x100' , class: 'excretion2' %>
 				<%=f.radio_button :only, "おしっこ" %><p>おしっこ</p></div>
-				<%= f.text_area :body %><br>
-				<%= f.submit 'Create',class: "btn btn-primary modal-btn" %>
+				<%= f.text_area :body,placeholder: "特記事項" %><br>
+				<%= f.submit 'Create',class: "textarea-btn" %>
 			<% end %>
 	</div>
 </div>

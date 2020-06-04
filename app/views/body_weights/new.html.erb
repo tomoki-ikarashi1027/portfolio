@@ -8,8 +8,8 @@
                <li><%= message %></li>
             <% end %>
             <% end %>
-         	<%= f.text_field :body %>kg<br>
-         	<%= f.submit 'Create' ,class: "btn btn-primary" %>
+         	<%= f.text_field :body ,placeholder: "数値のみでOK" %><br>
+         	<%= f.submit 'Create' ,class: "textfield-btn" %>
          <% end %>
          <%= link_to "Back", baby_path(@baby.id) %>
    </div>
