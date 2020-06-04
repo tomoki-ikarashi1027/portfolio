@@ -40,15 +40,19 @@
 
 .image-show{
 	text-align:center;
-	margin-top:100px;
 }
 
 .image-customer {
 	margin:30px;
 	text-align:left;
+	border-bottom:1px solid #CCCCCC;
 }
 .customer-image {
 	border-radius:50%;
+	border:1px solid #dddddd;
+	position:relative;
+	left:-35px;
+	top:10px;
 }
 
 .image-customer span {

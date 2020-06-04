@@ -13,7 +13,9 @@
 				<td><%= body_temperature.created_at.strftime("%H:%M") %></td>
 				<td>体温<%= body_temperature.body %>℃</td>
 				<td><%= link_to "編集", edit_baby_body_temperatures_path(@baby,baby_id: body_temperature.id ) %></td>
-				<td><%= link_to "削除", baby_body_temperatures_path(body_temperature), method: :delete %></td>
+				<td><%= link_to baby_body_temperatures_path(body_temperature), method: :delete do %>
+				<i class="far fa-trash-alt"></i></td>
+				<% end %>
 			</tr>
 		<% end %>
 
@@ -22,7 +24,9 @@
 				<td><%= body_weight.created_at.strftime("%H:%M") %></td>
 				<td>体重<%= body_weight.body %>KG</td>
 				<td><%= link_to "編集", edit_baby_body_weights_path(@baby,baby_id: body_weight.id ) %></td>
-				<td><%= link_to "削除", baby_body_weights_path(body_weight), method: :delete %></td>
+				<td><%= link_to baby_body_weights_path(body_weight), method: :delete do %>
+				<i class="far fa-trash-alt"></i></td>
+				<% end %>
 			</tr>
 		<% end %>
 
@@ -34,7 +38,9 @@
 				<td>内容<%= excretion.body %></td>
 			<% end %>
 				<td><%= link_to "編集", edit_baby_excretions_path(@baby,baby_id: excretion.id ) %></td>
-				<td><%= link_to "削除", baby_excretions_path(excretion), method: :delete %></td>
+				<td><%= link_to baby_excretions_path(excretion), method: :delete do %>
+				<i class="far fa-trash-alt"></i></td>
+				<% end %>
 			</tr>
 		<% end %>
 		<% @milk_powders.each do |milk_powder| %>
@@ -42,7 +48,9 @@
 				<td><%= milk_powder.created_at.strftime("%H:%M") %></td>
 				<td>ミルク<%= milk_powder.body %>CC</td>
 				<td><%= link_to "編集", edit_baby_milk_powders_path(@baby,baby_id: milk_powder.id ) %></td>
-				<td><%= link_to "削除", baby_milk_powders_path(milk_powder), method: :delete %></td>
+				<td><%= link_to baby_milk_powders_path(milk_powder), method: :delete do %>
+				<i class="far fa-trash-alt"></i></td>
+				<% end %>
 			</tr>
 		<% end %>
 
@@ -55,7 +63,9 @@
 					<td>母乳</td>
 				<% end %>
 				<td><%= link_to "編集", edit_baby_mother_milks_path(@baby,baby_id: mother_milk.id ) %></td>
-				<td><%= link_to "削除", baby_mother_milks_path(mother_milk), method: :delete %></td>
+				<td><%= link_to baby_mother_milks_path(mother_milk), method: :delete do %>
+				<i class="far fa-trash-alt"></i></td>
+				<% end %>
 			</tr>
 		<% end %>
 	</table>

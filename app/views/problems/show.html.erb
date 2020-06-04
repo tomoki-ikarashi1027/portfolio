@@ -1,54 +1,70 @@
 <div class="container">
 	<div class="problem">
         <div class="problem-content">
-			<h2>お悩み詳細</h2>
-			<div class="problem-category">
-				カテゴリ:<%= @problem.category.problem_name %>
-				<% if @problem.customer_id == current_customer.id %>
-					<%= link_to "削除する",  problem_path(@problem), method: :delete %>
-				<% end %>
-				<%= link_to "Back",problems_path(@problem) %>
-			</div>
-			<div class="problem-body2"><%= @problem.body %></div>
+			<div class="row">
+				<div class="col-lg problem-category">
+					<div><%= attachment_image_tag @problem.customer,:image, size: "100x100",format: 'jpeg',fallback: "no_image.jpg" ,class: "problem-customer-image" %>
+					</div>
+					<span><%= "by " + @problem.customer.name %></span>
+					<span><%= @problem.created_at.strftime('%Y/%m/%d') %></span>
+					<span><%= @problem.category.problem_name %></span>
+					<span class="fa fa-comment"><%= @problem.comments.count %></span>
+					<button class="problem-comment-btn">コメントする</button>
+					<button><%= link_to "Back",problems_path(@problem) %></button>
 
-			<span>コメント数:</span> <%= @problem.comments.count %>件
-			<%= form_for (@comment) ,url: comments_path  do |f| %>
-				<% if @comment.errors.any? %>
-					<% @comment.errors.full_messages.each do |message| %>
-					<li><%= message %></li>
-				<% end %>
-				<% end %>
-				<h3>コメント</h3>
-					<%= f.text_area :body %>
-					<%= f.hidden_field :problem_id, :value => @problem.id %><br>
-					<%= f.submit "投稿する" ,class: "problem_btn" %>
-			<% end %>
-		</div>
-		<div class="problem-comment">
-			<table class="table">
-				<% @comments.each do |comment| %>
-					<tr>
-						<td style="color:black;"><%= comment.body %></td>
-						<td id="likes_buttons_<%= comment.id %>">
-							<%= render partial: 'likes/like', locals: { comment: comment} , class: 'like' %>
-						</td>
-						<% if comment.customer_id == current_customer.id %>
-								<td ><%= link_to "削除",  comment_path(comment), method: :delete %></td>
+					<div class="problem-comment-box">
+						<%= form_for (@comment) ,url: comments_path  do |f| %>
+							<% if @comment.errors.any? %>
+								<% @comment.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+							<% end %>
+							<% end %>
+							<h3>コメント投稿フォーム</h3>
+							<%= f.text_area :body %>
+							<%= f.hidden_field :problem_id, :value => @problem.id %><br>
+							<%= f.submit "Post" ,class: "problem_btn" %>
 						<% end %>
-					<!-- 	<% if comment&.score.to_i >= 1.5  %>
-							<i class="fas fa-praying-hands"></i>
-							<td class="score_comment1">VeryGood</td>
-						<% elsif comment&.score.to_i <= 1.4 && comment&.score.to_i >= 0.7 %>
-							<td><i class="far fa-thumbs-up"></i></td>
-							<td class="score_comment2">good</td>
-						<% else  %>
-							<td><i class="far fa-thumbs-down"></i></td>
-							<td class="score_comment3">Bad</td>
-						<% end %> -->
-					</tr>
+					</div>
+				</div>
+			</div>
+			<div class="problem-body2">
+				<h4>相談内容</h4><%= @problem.body %>
+				<% if @problem.customer_id == current_customer.id %>
+					<%= link_to problem_path(@problem), method: :delete do %>
+						<i class="far fa-trash-alt"></i>
+					<% end %>
 				<% end %>
-				<%= paginate @comments %>
-			</table>
+			</div>
+		</div>
+
+		<div class="problem-comment">
+			<h3>コメント</h3>
+			<% @comments.each do |comment| %>
+				<div class="comment-content">
+					<span><%= attachment_image_tag comment.customer,:image, size: "60x60",format: 'jpeg',fallback: "no_image.jpg" ,class: "customer-image" %></span>
+					<span><%= comment.created_at.strftime('%Y/%m/%d') %></span><br>
+					<span class="comment-body"><%= comment.body %></span>
+					<span id="likes_buttons_<%= comment.id %>">
+						<%= render partial: 'likes/like', locals: { comment: comment} , class: 'like' %>
+					</span>
+					<% if comment.customer_id == current_customer.id %>
+						<span><%= link_to comment_path(comment), method: :delete do %></span>
+							<i class="far fa-trash-alt"></i>
+						<% end %>
+					<% end %>
+				<!-- 	<% if comment&.score.to_i >= 1.5  %>
+						<i class="fas fa-praying-hands"></i>
+						<td class="score_comment1">VeryGood</td>
+					<% elsif comment&.score.to_i <= 1.4 && comment&.score.to_i >= 0.7 %>
+						<td><i class="far fa-thumbs-up"></i></td>
+						<td class="score_comment2">good</td>
+					<% else  %>
+						<td><i class="far fa-thumbs-down"></i></td>
+						<td class="score_comment3">Bad</td>
+					<% end %> -->
+				</div>
+			<% end %>
+			<%= paginate @comments %>
 		</div>
 	</div>
 </div>

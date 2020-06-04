@@ -6,6 +6,7 @@ class Customer < ApplicationRecord
          enum sex: {man: 0, woman:1}
          has_many :babies, dependent: :destroy
          has_many :comments, dependent: :destroy
+         has_many :baby_image_comments, dependent: :destroy
          has_many :likes, dependent: :destroy
          has_many :problems, dependent: :destroy
          has_many :baby_images, dependent: :destroy

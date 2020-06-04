@@ -12,13 +12,20 @@
 	display:none;
 }
 
-.mybtn{
-	margin:10px;
-}
 .my-name{
 	margin-left:50px;
 }
 .my-name-field{
-	width:130px;
-	margin-right:50px;
+	width:190px;
+}
+
+.sign-head {
+	background-color:#ecf0f1;
+	padding:15px;
+	margin-bottom:10px;
+}
+
+.form-control-icon {
+	position:relative;
+	right:200px;
 }

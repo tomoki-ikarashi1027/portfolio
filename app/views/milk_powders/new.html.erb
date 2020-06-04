@@ -9,10 +9,9 @@
                <% end %>
                <% end %>
             <div class="milk-powder-select">
-               <%= f.select :body, grouped_options_for_select(MilkPowder::SELECT_OPTIONS), {include_blank: '授乳量を選択'} %>
-               <span>cc</span><br>
+               <%= f.select :body, grouped_options_for_select(MilkPowder::SELECT_OPTIONS), {include_blank: '授乳量を選択'} ,class: "milk-option"  %><br>
             </div>
-            <%= f.submit 'Create',class: "btn btn-primary"  %>
+            <%= f.submit 'Create',class: "textfield-btn"  %>
          <% end %>
          <%= link_to "Back", baby_path(@baby.id) %>
    </div>

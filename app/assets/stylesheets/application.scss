@@ -94,9 +94,18 @@ a:hover{
  text-decoration: none;
  }
 
-.text-area{
+textarea{
 	margin-top:10px;
+  height:200px;
+  width:300px;
 }
+
+
+textarea{
+
+}
+
+
 
 .like{
 	padding:111px;
@@ -160,7 +169,7 @@ nav ul li{
   margin:0 auto;
   margin-top:100px;
   background-color: white;
-  padding: 10px 0 40px;
+  padding: 0 0 40px;
   border-radius: 5px;
   width: 35%;
   height: auto;
@@ -294,4 +303,16 @@ input[type="date"]::-webkit-clear-button{
 
 header i {
   padding:0 5px;
+}
+
+.comment-content {
+  border:solid 1px;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  font-size:17px;
+}
+
+.comment-body {
+  color:black;
+  padding-left:50px;
 }

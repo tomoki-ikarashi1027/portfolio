@@ -9,11 +9,16 @@
 ul.problem-list {
   padding: 0;
 }
+
+.problem {
+	margin:0 auto;
+}
+
 .problem-content{
 	font-size:20px;
 	word-wrap: break-word;
-	margin-top:60px;
-	background-color:#e6ecf0;
+	margin-top:40px;
+
 	padding:30px;
 	border-radius: 10px;
 }
@@ -66,14 +71,16 @@ ul.problem-list {
 	}
 }
 
-.problem-table {
-	padding-bottom:20px;
-	font-size:17px;
+.problem-wrapper table{
+	margin-top:10px;
 }
 
 .problem_btn {
 	margin-top:8px;
-	box-shadow:0 6px #808080 ;
+	padding:0 130px;
+	background-color:#1f3a93;
+	box-shadow:0 6px #000077;
+	color:white;
 }
 .problem_btn:active {
 	box-shadow:none;
@@ -81,8 +88,49 @@ ul.problem-list {
 	top:6px;
 }
 .problem-category{
-	border-bottom:1px solid black;
+	border-bottom:1px solid #CCCCCC;
 }
+
 .problem-body2 {
 	padding:15px;
+	border-bottom:solid 1px;
+}
+
+.problem-comment-box{
+	display:none;
+	margin:50px auto;
+	background-color: white;
+	padding: 10px 0 40px;
+	border-radius: 5px;
+	width: 35%;
+	height: auto;
+	text-align: center;
+}
+
+.problem-comment-btn{
+	margin-bottom:10px;
+	background-color:#FFDBC9;
+}
+
+.problem-customer-image {
+	border-radius:50%;
+	border:1px solid #dddddd;
+	margin-bottom:15px;
+}
+
+.fa-comment {
+	margin:0 20px;
+}
+
+.customer-image {
+	border-radius:50%;
+	border:1px solid #dddddd;
+	position:relative;
+	left:-35px;
+	top:10px;
+}
+
+.baby-customer-image{
+	border-radius:50%;
+	border:1px solid #dddddd;
 }

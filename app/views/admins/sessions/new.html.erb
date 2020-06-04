@@ -1,7 +1,8 @@
 <div class="container">
-    <div class="modal1">
+    <div class="modal2">
+      <div class="sign-head">
         <h2>管理者ログイン</h2>
-
+      </div>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.label :メールアドレス %><br />
@@ -21,11 +22,9 @@
           <% end %>
 
           <div class="actions">
-            <%= f.submit "Log in" %>
+            <%= f.submit "Log In" ,class: "textfield-btn" %>
           </div>
         <% end %>
         <%= render "admins/shared/links" %>
     </div>
 </div>
-
-

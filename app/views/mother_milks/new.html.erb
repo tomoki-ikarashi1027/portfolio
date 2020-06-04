@@ -8,8 +8,8 @@
                 <input type="button" class="myButton" onclick="stop()" value="STOP">
                 <input type="button" class="myButton" onclick="reset()" value="RESET">
             <%= form_for [@baby, @mother_milk] do |f| %>
-            	<%= f.text_area :body %><br>
-            	<%= f.submit 'Create',class: "btn btn-primary"  %>
+            	<%= f.text_area :body ,placeholder: "特記事項" %><br>
+            	<%= f.submit 'Create',class: "textarea-btn"  %>
             <% end %>
             <%= link_to "Back", baby_path(@baby.id) %>
         </div>
@@ -17,7 +17,7 @@
 </div>
 
 <script>
-    	function set2fig(num) {
+    function set2fig(num) {
        var ret;
        if( num < 10 ) { ret = "0" + num; }
        else { ret = num; }

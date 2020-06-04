@@ -66,4 +66,16 @@ $(function(){
   $('.input-image').hide();
 })
 
+$(function(){
+  $('.problem-comment-btn').click(function(){
+    $('.problem-comment-box').fadeIn('slow');
+  })
+})
+
+$(function(){
+  $('.problem_btn').click(function(){
+    $('.problem-comment-box').fadeOut('slow');
+  })
+})
+
 

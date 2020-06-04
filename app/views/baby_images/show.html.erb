@@ -1,27 +1,37 @@
 <div class="container">
-	<div class="image-show">
+	<label style="padding-top:50px"><%= @baby_image.created_at.strftime('%Y/%m/%d') %></label>
 		<%= attachment_image_tag @baby_image,:baby_image, format: 'jpeg' %>
 		<div class="image-customer">
-			<%= attachment_image_tag @baby_image.customer,:image, :fill,80,80,format: 'jpeg' ,class: "customer-image" %>
+			<%= attachment_image_tag @baby_image.customer,:image, :fill,80,80,format: 'jpeg' ,fallback: "no_image.jpg",class: "baby-customer-image" %>
 			<span><%= @baby_image.body %></span>
 			<div><%= "by" + @baby_image.customer.name %></div>
-			<%= link_to "編集", edit_baby_image_path(@baby_image) %>
-			<%= link_to "削除", baby_image_path(@baby_image) ,method: :delete %>
+			<% if @baby_image.customer_id == current_customer.id %>
+				<%= link_to "Edit", edit_baby_image_path(@baby_image) %>
+				<%= link_to "Delete", baby_image_path(@baby_image) ,method: :delete %>
+			<% end %>
+			<span class="fa fa-comment"><%= @baby_image.baby_image_comments.count %></span>
+			<button class="problem-comment-btn">コメントする</button>
 		</div>
-	</div>
-	<div class="baby-comment-area">
-		<h3 class="baby-comment-count"><%= @baby_image.comments.count %>件のコメント</h3>
-		<%= form_for [@baby_image, @baby_image_comment] do |f| %>
-		<%= f.text_area :body %>
-		<%= f.submit '送信' %>
-		<% end %>
 
-		<div>
-			<% @baby_image.comments.each do |baby_comment| %>
-				<span><%= baby_comment.customer.name %></span>
-				<span><%= baby_comment.created_at.strftime('%Y/%m/%d') %></span>
-				<span><%= baby_comment.body %></span>
+	<div class="baby-comment-area">
+		<div class="problem-comment-box">
+			<h3>コメント投稿フォーム</h3>
+			<%= form_for [@baby_image, @baby_image_comment] do |f| %>
+			<%= f.text_area :body %><br>
+			<%= f.submit 'Post' ,class: "problem_btn" %>
 			<% end %>
 		</div>
+			<% @baby_image.baby_image_comments.each do |baby_comment| %>
+				<div class="comment-content">
+					<%= attachment_image_tag baby_comment.customer,:image, size: "60x60",format: 'jpeg',fallback: "no_image.jpg" ,class: "customer-image" %></span>
+					<%= baby_comment.created_at.strftime('%Y/%m/%d') %><br>
+					<span class="comment-body"><%= baby_comment.body %></span>
+				<% if baby_comment.customer_id == current_customer.id %>
+					<%= link_to baby_image_baby_image_comment_path(baby_comment.baby_image,baby_comment) ,method: :delete do %>
+					<i class="far fa-trash-alt"></i>
+					<% end %>
+				<% end %>
+				</div>
+			<% end %>
 	</div>
 </div>
