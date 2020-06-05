@@ -25,13 +25,13 @@ http://18.180.28.189/
 ・MySQL2
 
 ### Gemなど
-・devise (認証機能)
-・kaminari (ページネーション)
-・bootstrap-sass 
-・refile
-・refile-mini_magick
-・font-awesome
-・i18n (日本語化)
+・devise (認証機能)  
+・kaminari (ページネーション)  
+・bootstrap-sass   
+・refile  
+・refile-mini_magick  
+・font-awesome  
+・i18n (日本語化)  
  
 
 # Usage
