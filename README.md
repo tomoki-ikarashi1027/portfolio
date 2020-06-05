@@ -1,7 +1,7 @@
 # Lovely Baby
-
- 毎日の記録など、子育てを手助けするアプリケーションです。
- 
+http://18.180.28.189/
+# 概要
+ 毎日の記録など、子育てを手助けするアプリケーションです。 
 # 機能
 ・会員登録
 ・データ記録
@@ -16,47 +16,44 @@
 ・javascript/jQuery 
 
 # 使用技術
+### 開発環境
+・Vagrant + VirtualBox
+
+### インフラ
+・AWS(EC2, RDS, Route53)
+・Nginx(Webサーバ)
+・MySQL2
+
+### Gemなど
+・devise (認証機能)
+・kaminari (ページネーション)
+・bootstrap-sass 
+・refile
+・refile-mini_magick
+・font-awesome
+・i18n (日本語化)
  
-"hoge"を動かすのに必要なライブラリなどを列挙する
- 
-* huga 3.5.2
-* hogehuga 1.0.2
- 
-# Installation
- 
-Requirementで列挙したライブラリなどのインストール方法を説明する
- 
-```bash
-pip install huga_package
-```
- 
+
 # Usage
+### Baby記録室
+・赤ちゃんの名前を登録し、各データを記録します。
+・赤ちゃんの変更/追加はheaderにある赤ちゃんの名前がリンクとなっております。
+・Historyから過去のデータが閲覧できます。
+
+### 子育て相談室
+・お悩みを投稿できます。
+・投稿の本文が詳細ページへのリンクとなっております。
+・詳細ページよりコメント、コメントに対する「いいね」ができます。
+・検索窓より、部分一致もしくはカテゴリーで過去の投稿を検索できます。
+
+### Baby自慢室
+・画像を投稿できます。
+・一覧ページの画像は詳細ページへのリンクとなっております。
+・詳細ページよりコメントできます。
  
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
-```
- 
-# Note
- 
-注意点などがあれば書く
- 
-# Author
- 
-作成情報を列挙する
- 
-* 作成者
-* 所属
-* E-mail
- 
-# License
-ライセンスを明示する
- 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
- 
-社内向けなら社外秘であることを明示してる
- 
-"hoge" is Confidential.
+# 最後に
+説明は以上となります。
+私自身、子供を授かったことがきっかけでこのようなアプリケーションを作成しました。
+初めてのアプリ開発で至らない点は多いかと思いますが、少しでも子供に対する思いがみなさんに伝われば嬉しく思います。
+
+
