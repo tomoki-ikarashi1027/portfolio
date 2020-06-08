@@ -1,7 +1,6 @@
 class CustomersController < ApplicationController
 
 	def show
-		@baby = Baby.find(params[:id])
 		@customer = Customer.find(params[:id])
 	end
 
@@ -14,7 +13,6 @@ class CustomersController < ApplicationController
 		@customer.update(customer_params)
 		redirect_to customer_path(@customer.id)
 	end
-
 	private
 	def customer_params
 		params.require(:customer).permit(:image, :name)

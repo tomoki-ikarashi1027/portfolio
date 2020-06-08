@@ -3,7 +3,7 @@
         <div class="problem-content">
 			<div class="row">
 				<div class="col-lg problem-category">
-					<div><%= attachment_image_tag @problem.customer,:image, size: "100x100",format: 'jpeg',fallback: "no_image.jpg" ,class: "problem-customer-image" %>
+					<div><%= attachment_image_tag @problem.customer,:image, :fill,100,100,format: 'jpeg',fallback: "no_image.jpg" ,class: "problem-customer-image" %>
 					</div>
 					<span><%= "by " + @problem.customer.name %></span>
 					<span><%= @problem.created_at.strftime('%Y/%m/%d') %></span>
@@ -41,7 +41,7 @@
 			<h3>コメント</h3>
 			<% @comments.each do |comment| %>
 				<div class="comment-content">
-					<span><%= attachment_image_tag comment.customer,:image, size: "60x60",format: 'jpeg',fallback: "no_image.jpg" ,class: "customer-image" %></span>
+					<span><%= attachment_image_tag comment.customer,:image, :fill,60,60 ,format: 'jpeg',fallback: "no_image.jpg" ,class: "customer-image" %></span>
 					<span><%= comment.created_at.strftime('%Y/%m/%d') %></span><br>
 					<span class="comment-body"><%= comment.body %></span>
 					<span id="likes_buttons_<%= comment.id %>">

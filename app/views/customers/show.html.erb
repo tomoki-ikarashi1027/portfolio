@@ -6,18 +6,17 @@
 		<%= @customer.name %>
 		<% if @customer.id == current_customer.id %>
 			<%= link_to '編集', edit_customer_path(@customer.id) %>
-		<% end %>
 		<table class="table">
 			<tbody>
 				<% @customer.babies.each do |baby| %>
 				<tr>
-
 					<td><%= baby.baby_name +  "(" + baby.sex + ")"%></td>
-					<td><%= link_to "編集", edit_baby_path(@baby) %></td>
+					<td><%= link_to "選択", baby_path(baby) %></td>
+					<td><%= link_to "編集", edit_baby_path(baby) %></td>
 				</tr>
 				<% end %>
 			</tbody>
 		</table>
-		<%= link_to "記録ページへ", baby_path(@baby) %>
+		<% end %>
 	</div>
 </div>

@@ -1,5 +1,5 @@
 class BabyImagesController < ApplicationController
-  before_action :authenticate_customer!
+
   def index
     @baby_images = BabyImage.all
   end
