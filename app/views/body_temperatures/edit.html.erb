@@ -2,11 +2,11 @@
 	<div class="modal1">
 		<h2>体温・編集</h2>
 		<%= form_for [@baby, @body_temperature] , url:baby_body_temperatures_path(id:@body_temperature.baby_id) do |f| %>
-		<% if @body_temperature.errors.any? %>
-           <% @body_temperature.errors.full_messages.each do |message| %>
-           	<li><%= message %></li>
-       	   <% end %>
-        <% end %>
+			<% if @body_temperature.errors.any? %>
+	        <% @body_temperature.errors.full_messages.each do |message| %>
+	           	<li><%= message %></li>
+	       	<% end %>
+	        <% end %>
 			<%= f.text_field :body ,placeholder: "数値のみでOK" %><br>
 			<%= f.submit '保存する' ,class: "textfield-btn" %>
 		<% end %>

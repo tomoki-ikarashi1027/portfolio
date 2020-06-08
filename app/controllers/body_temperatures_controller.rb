@@ -1,5 +1,5 @@
 class BodyTemperaturesController < ApplicationController
-	before_action :authenticate_customer!
+
 	def new
 		@baby = Baby.find(params[:baby_id])
 		@body_temperature = BodyTemperature.new
