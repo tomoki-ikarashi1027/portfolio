@@ -68,13 +68,13 @@ $(function(){
 
 $(function(){
   $('.problem-comment-btn').click(function(){
-    $('.problem-comment-box').fadeIn('slow');
+    $('.problem-comment-box').slideDown('slow');
   })
 })
 
 $(function(){
   $('.problem_btn').click(function(){
-    $('.problem-comment-box').fadeOut('slow');
+    $('.problem-comment-box').slideUp('slow');
   })
 })
 

@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 		  redirect_to problem_path(@problem)
 		else
 		@comments = Comment.where(problem_id: @problem.id)
+		@comments = @problem.comments.page(params[:page]).reverse_order.per(5)
 		render template: "problems/show"
 		end
 	end

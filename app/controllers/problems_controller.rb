@@ -2,7 +2,8 @@ class ProblemsController < ApplicationController
 
 	def index
 		@problems = Problem.search(params[:search],params[:problem_name])
-		@problems = @problems.page(params[:page]).reverse_order.per(5)
+		@problems = @problems.page(params[:page]).reverse_order.per(10)
+		@problem = Problem.new
 	end
 	def new
 		@problem = Problem.new

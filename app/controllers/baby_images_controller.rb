@@ -1,7 +1,7 @@
 class BabyImagesController < ApplicationController
 
   def index
-    @baby_images = BabyImage.all
+    @baby_images = BabyImage.all.order(created_at: "DESC")
   end
 
   def show
@@ -14,9 +14,9 @@ class BabyImagesController < ApplicationController
   end
 
   def create
-    baby_image = BabyImage.new(baby_image_params)
-    baby_image.customer_id = current_customer.id
-    if baby_image.save
+    @baby_image = BabyImage.new(baby_image_params)
+    @baby_image.customer_id = current_customer.id
+    if @baby_image.save
        redirect_to baby_images_path
     else
       render :new
@@ -28,8 +28,8 @@ class BabyImagesController < ApplicationController
   end
 
   def update
-    baby_image = BabyImage.find(params[:id])
-    if baby_image.update(baby_image_params)
+    @baby_image = BabyImage.find(params[:id])
+    if @baby_image.update(baby_image_params)
         redirect_to baby_images_path
     else
       render :edit
