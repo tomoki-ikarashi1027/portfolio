@@ -19,7 +19,12 @@
 		<div class="problem-comment-box">
 			<h3>コメント投稿フォーム</h3>
 			<%= form_for [@baby_image, @baby_image_comment] do |f| %>
-				<%= f.text_area :body %><br>
+			<% if @baby_image_comment.errors.any? %>
+                  <% @baby_image_comment.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+               <% end %>
+               <% end %>
+				<%= f.text_area :body , required: true %><br>
 				<%= f.submit 'Post' ,class: "problem_btn" %>
 			<% end %>
 		</div>

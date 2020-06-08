@@ -1,9 +1,16 @@
 <div class="container">
 	<div class="modal2">
 		<h3>画像投稿フォーム</h3>
+		<div>
 		<%= form_for (@baby_image) do |f| %>
+		    <% if @baby_image.errors.any? %>
+                <% @baby_image.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            <% end %>
+        </div>
 			<%= f.attachment_field :baby_image, class: "baby_image_field" %>
-			<%= f.text_area :body, placeholder: "画像の説明",class: "caption" %><br>
+			<%= f.text_area :body, placeholder: "コメント",class: "caption" %><br>
 			<%= f.submit 'Post', class: "image-btn" %>
 		<% end %>
 	</div>

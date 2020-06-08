@@ -10,7 +10,7 @@
 					<span><%= @problem.category.problem_name %></span>
 					<span class="fa fa-comment"><%= @problem.comments.count %></span>
 					<button class="problem-comment-btn">コメントする</button>
-					<button><%= link_to "Back",problems_path(@problem) %></button>
+					<button style="padding:5px 10px;"><%= link_to "Back",problems_path(@problem) %></button>
 
 					<div class="problem-comment-box">
 						<%= form_for (@comment) ,url: comments_path  do |f| %>
@@ -20,7 +20,7 @@
 							<% end %>
 							<% end %>
 							<h3>コメント投稿フォーム</h3>
-							<%= f.text_area :body %>
+							<%= f.text_area :body ,required: true %>
 							<%= f.hidden_field :problem_id, :value => @problem.id %><br>
 							<%= f.submit "Post" ,class: "problem_btn" %>
 						<% end %>
