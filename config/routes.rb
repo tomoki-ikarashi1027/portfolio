@@ -17,6 +17,9 @@ Rails.application.routes.draw do
  	resources :comments, only:[:index, :show, :destroy]
  	resources :problems, only:[:index, :show, :destroy]
  	resources :categories, except: [:show, :new]
+  resources :baby_images, only:[:index, :destroy]
+  resources :baby_image_comments, only: [:index, :destroy]
+  get 'homes/top' => "homes#top"
  end
 #会員側
  resources  :babies do

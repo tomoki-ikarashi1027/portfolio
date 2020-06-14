@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="admin-box">
+	<h3>Baby自慢室/コメント一覧</h3>
+	<h4 style="color:red;">※不適切なコメントを削除してください</h4>
+	<% @baby_image_comments.each do |baby_comment| %>
+		<div class="comment-content">
+			<%= link_to customer_path(baby_comment.customer_id) do %>
+			<%= attachment_image_tag baby_comment.customer,:image, :fill,50,50,format: 'jpeg',fallback: "no_image.jpg" ,class: "customer-image" %></span>
+			<% end %>
+			<%= baby_comment.created_at.strftime('%Y/%m/%d') %><br>
+			<span class="comment-body"><%= baby_comment.body %></span>
+				<%= link_to admins_baby_image_comment_path(baby_comment) ,method: :delete do %>
+				<i class="far fa-trash-alt"></i>
+				<% end %>
+		</div>
+	<% end %>
+</div>
+</div>

@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="admin-box">
-		<h1>カテゴリー編集</h1>
+		<h3>カテゴリー編集</h3>
 		<%= form_for(@category, url:admins_category_path) do |f| %>
 			<label>カテゴリー<%= f.text_field :problem_name %></label>
 			<%= f.submit '編集' %>
