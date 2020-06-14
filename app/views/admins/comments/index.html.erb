@@ -1,11 +1,14 @@
 <div class="container">
 	<div class="admin-box">
-		<h1>コメント一覧</h1>
-		<table class="table">
+		<h3>子育て相談室/コメント一覧</h3>
+		<h4 style="color:red;">※不適切なコメントを削除してください</h4>
 			<% @comments.each do |comment| %>
-				<tr>
-					<td><%= comment.body %></td>
-					<td><%= link_to "削除",  admins_comment_path(comment), method: :delete %></td>
+			<div class="comment-content">
+				<span><%= attachment_image_tag comment.customer,:image, :fill,50,50 ,format: 'jpeg',fallback: "no_image.jpg" ,class: "customer-image" %></span>
+				<span class="comment-body"><%= comment.body %></span>
+					<%= link_to admins_comment_path(comment), method: :delete do %>
+					<i class="far fa-trash-alt"></i>
+					<% end %>
 			<!-- 	<% if comment.score.to_i <= 0 && comment.score.to_i >= 0.5  %>
 					<td><i class="far fa-thumbs-down"></i></td>
 					<div>
@@ -15,9 +18,8 @@
 					<td><i class="fas fa-exclamation-triangle"></i></td>
 					<td class="score_comment2">コメント内容に応じて削除して下さい</td>
 				<% end %>
- -->				</tr>
+ -->		</div>
 			<% end %>
-		</table>
 		<%= paginate @comments, class: "paginate" %>
 	</div>
 </div>

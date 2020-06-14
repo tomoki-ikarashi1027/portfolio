@@ -1,16 +1,12 @@
 <div class="container">
-	<div class="admin-box">
-		<h1>お悩み詳細</h1>
-		<table class="table">
-			<tr>
-				<td><%= @problem.category.problem_name %></td>
-			</tr>
-			<tr>
-				<td><%= @problem.body %></td>
-			</tr>
-				<td>コメント数：<%= @problem.comments.count %></td>
-			</tr>
-		</table>
+	<div class="modal1">
+		<h3>お悩み詳細</h3>
+		<div style="font-size:20px;"><%= @problem.customer.name %></div>
+		<div style="font-size:25px;"><%= @problem.body %></div>
+		<div><%= link_to admins_problem_path(@problem), method: :delete do %>
+			<i class="far fa-trash-alt"></i>
+			<% end %>
+		</div>
 	</div>
 </div>
 

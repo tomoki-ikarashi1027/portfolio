@@ -1,0 +1,13 @@
+<div class="container">
+	<h3 class="hiroba">Baby自慢室</h3>
+	<h4 style="color:red;">※不適切な画像を削除してください</h4>
+	<div class="baby-images">
+		<% @baby_images.each do |image| %>
+			<div class="baby-image">
+				<%= attachment_image_tag image,:baby_image, :fill,150,150,format: 'jpeg' %>
+				<div class="image-name"><%= "by" + image.customer.name %>
+				<%= link_to "削除",  admins_baby_image_path(image),method: :delete %></div>
+			</div>
+		<% end %>
+	</div>
+</div>
