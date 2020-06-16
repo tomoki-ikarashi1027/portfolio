@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'relationships/follower'
+  get 'relationships/followed'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -34,7 +36,11 @@ Rails.application.routes.draw do
    resources :comments, only: [:create, :destroy] do
    	resource :likes, only: [:create, :destroy]
    end
- resources :customers, only: [:show, :edit, :update, :destroy]
+ resources :customers, only: [:show, :edit, :update, :destroy] do
+    resource :relationships, only: [:create, :destroy]
+    get 'follows' => 'relationships#follower', as: 'follows'
+    get 'followers' => 'relationships#followed', as: 'followers'
+  end
  resources :baby_images do
   resources :baby_image_comments, only: [:create, :destroy]
  end

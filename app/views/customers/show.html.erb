@@ -4,6 +4,17 @@
 		<%= attachment_image_tag @customer,:image, size: "200x200",format: 'jpeg',fallback: "no_image.jpg" ,class: "self_image" %><br>
 		<label>ユーザー名:</label>
 		<%= @customer.name %>
+		<div>
+			<%= link_to "フォロー数" + @customer.follower.count.to_s ,customer_follows_path(@customer) %>
+			<%= link_to "フォロワー数" + @customer.followed.count.to_s ,customer_followers_path(@customer) %>
+		</div>
+		<% if current_customer != @customer  %>
+			<% if current_customer.following?(@customer) %>
+				<button class="problem-comment-btn"><%= link_to "フォロー外す",customer_relationships_path(@customer),method: :delete %></button>
+			<% else %>
+				<button class="problem-comment-btn"><%= link_to "フォローする",customer_relationships_path(@customer),method: :post %></button>
+			<% end %>
+		<% end %>
 		<% if @customer.id == current_customer.id %>
 			<%= link_to '編集', edit_customer_path(@customer.id) %>
 		<table class="table">
@@ -19,4 +30,11 @@
 		</table>
 		<% end %>
 	</div>
+
+<!-- 	<div>
+		<%= @customer.baby_images.each do |image| %>
+		<%= attachment_image_tag image,:baby_image, :fill,150,150,format: 'jpeg' %>
+		<% end %>
+	</div>
+ -->
 </div>

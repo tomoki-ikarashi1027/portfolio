@@ -1,0 +1,19 @@
+<div class="container">
+	<h2>Follower Users</h2>
+	<% if @customer.follower_customer.count == 0 %>
+		<p>ユーザーはいません</p>
+		<% else %>
+		<table>
+			<% @customer.follower_customer.each do |follower_user| %>
+				<tr>
+					<th>ユーザー名</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td><%= link_to follower_user.name, customer_path(follower_user) %></td>
+					<td><%= link_to "フォローする",customer_relationships_path(follower_user),method: :post %></td>
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+</div>

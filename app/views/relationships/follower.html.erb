@@ -1,0 +1,19 @@
+<div class="container">
+	<h2>Follow Users</h2>
+	<% if @customers.count == 0 %>
+		<p>ユーザーはいません</p>
+	<% else %>
+		<table class="table">
+			<% @customers.each do |follow_user| %>
+				<tr>
+					<th>ユーザー名</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td><%= link_to follow_user.name, customer_path(follow_user) %></td>
+					<td><%= link_to "フォロー外す",customer_relationships_path(follow_user),method: :delete %></td>
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+</div>

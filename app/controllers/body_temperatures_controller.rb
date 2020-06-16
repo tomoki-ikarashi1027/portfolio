@@ -1,5 +1,4 @@
 class BodyTemperaturesController < ApplicationController
-
 	def new
 		@baby = Baby.find(params[:baby_id])
 		@body_temperature = BodyTemperature.new

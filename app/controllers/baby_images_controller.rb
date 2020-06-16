@@ -1,5 +1,4 @@
 class BabyImagesController < ApplicationController
-
   def index
     @baby_images = BabyImage.all.order(created_at: "DESC")
   end
