@@ -1,5 +1,4 @@
 class MilkPowdersController < ApplicationController
-
 	def new
 		@baby = Baby.find(params[:baby_id])
 		@milk_powder = MilkPowder.new

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_03_113445) do
+ActiveRecord::Schema.define(version: 2020_06_16_013216) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -121,6 +121,13 @@ ActiveRecord::Schema.define(version: 2020_06_03_113445) do
     t.integer "category_id"
     t.text "body"
     t.decimal "score", precision: 5, scale: 3
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

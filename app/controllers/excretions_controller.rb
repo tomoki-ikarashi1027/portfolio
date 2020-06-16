@@ -1,5 +1,4 @@
 class ExcretionsController < ApplicationController
-
 	def new
 		@baby = Baby.find(params[:baby_id])
 		@excretion = Excretion.new

@@ -1,5 +1,4 @@
 class BodyWeightsController < ApplicationController
-
 	def new
 		@baby = Baby.find(params[:baby_id])
 		@body_weight = BodyWeight.new
