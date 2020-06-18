@@ -3,11 +3,56 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user_info{
-	margin-bottom:30px;
+    background-color:white;
+    margin-top:70px;
+    border-radius: 5px;
+    height: auto;
+    text-align: center;
+    border:1px solid;
+
+    .info-head{
+	    background-color:#EEEEEE;
+		padding:5px;
+		margin-bottom:10px;
+		margin-bottom:20px;
+    }
 }
+
+.user_edit {
+	background-color:white;
+    margin:70px auto ;
+    border-radius: 5px;
+    height: auto;
+    text-align: center;
+    border:1px solid;
+    width:35%;
+    padding-bottom:40px;
+
+   .info-head{
+    background-color:#EEEEEE;
+	padding:5px;
+	margin-bottom:10px;
+	margin-bottom:20px;
+	}
+}
+
+.customer-babies{
+	margin-top:50px;
+	padding-left:100px;
+	display:flex;
+	flex-wrap:wrap;
+
+	.customer-images {
+		margin-top:15px;
+		width:25%;
+	}
+}
+
 .self_image{
 	margin-bottom:5px;
+	border:1px solid;
 }
+
 .input-image{
 	display:none;
 }
@@ -15,6 +60,7 @@
 .my-name{
 	margin-left:50px;
 }
+
 .my-name-field{
 	width:190px;
 }
@@ -28,4 +74,9 @@
 .form-control-icon {
 	position:relative;
 	right:200px;
+}
+
+.customer_image_field{
+	padding-left:100px;
+	margin:15px 0;
 }
