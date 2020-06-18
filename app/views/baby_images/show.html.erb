@@ -9,7 +9,6 @@
 		<div><%= "by" + @baby_image.customer.name %></div>
 		<% if @baby_image.customer_id == current_customer.id %>
 			<%= link_to "Edit", edit_baby_image_path(@baby_image) %>
-			<%= link_to "Delete", baby_image_path(@baby_image) ,method: :delete %>
 		<% end %>
 		<span class="fa fa-comment"><%= @baby_image.baby_image_comments.count %></span>
 		<button class="problem-comment-btn">コメントする</button>
