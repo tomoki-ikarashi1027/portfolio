@@ -40,7 +40,9 @@
 	 			<h3 style="width: 500px;">投稿画像</h3>
 				<% @customer.baby_images.each do |image| %>
 					<div class="customer-images">
+						<%= link_to baby_image_path(image) do %>
 						<%= attachment_image_tag image,:baby_image, :fill,150,150,format: 'jpeg' %>
+						<% end %>
 						<% if @customer == current_customer %>
 						<%= link_to "削除", baby_image_path(image),method: :delete %>
 						<% end %>

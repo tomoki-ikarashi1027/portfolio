@@ -38,7 +38,7 @@ class BabyImagesController < ApplicationController
   def destroy
     @baby_image = BabyImage.find(params[:id])
     @baby_image.destroy
-    redirect_to baby_images_path
+    redirect_to request.referer
   end
   private
   def baby_image_params
