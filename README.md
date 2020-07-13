@@ -12,7 +12,7 @@ http://18.180.28.189/
 ・フォロー機能  
 
 # 使用言語
-・ruby 2.5.7  
+・ruby 2.6.3  
 ・Rails 5.2.4.１  
 ・javascript/jQuery 
 
