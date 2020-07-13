@@ -18,7 +18,8 @@ http://18.180.28.189/
 
 # 使用技術
 ### 開発環境
-・Vagrant + VirtualBox
+・Vagrant + VirtualBox  
+・Docker + Docker-compose
 
 ### インフラ
 ・AWS(EC2, RDS, Route53)  
